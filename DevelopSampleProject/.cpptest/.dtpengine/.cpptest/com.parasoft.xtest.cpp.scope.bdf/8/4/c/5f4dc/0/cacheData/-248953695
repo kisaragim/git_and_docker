@@ -1,0 +1,7 @@
+file=/home/keio/git_and_docker_cpptest/git_and_docker/DevelopSampleProject/BugDetective/unreachableCode.c
+compiler=gcc_11-64
+working_dir=/home/keio/git_and_docker_cpptest/git_and_docker/DevelopSampleProject/BugDetective
+arg=gcc
+arg=-I/opt/app/parasoft/cpptest/bin/engine/runtime/include
+arg=-DPARASOFT_CPPTEST
+arg=/home/keio/git_and_docker_cpptest/git_and_docker/DevelopSampleProject/BugDetective/unreachableCode.c

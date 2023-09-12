@@ -1,5 +1,5 @@
-<?xml version='1.0' encoding='UTF-8'?><ResultsSession buildId="Default Project-2023-09-12" date="09/12/23 06:06:40" machine="d1212b955e38" project="Default Project" tag="Recommended Rules" time="2023-09-12T06:06:40+00:00" toolName="C++test" toolVer="2022.2.0.20221118B1963" user="root">
-   <TestConfig machine="d1212b955e38" name="Recommended Rules" pseudoUrl="c++test.builtin://Recommended Rules" user="root"/>
+<?xml version='1.0' encoding='UTF-8'?><ResultsSession buildId="Default Project-2023-09-12" date="09/12/23 06:26:32" machine="d1212b955e38" project="Default Project" tag="Flow Analysis Aggressive" time="2023-09-12T06:26:32+00:00" toolName="C++test" toolVer="2022.2.0.20221118B1963" user="root">
+   <TestConfig machine="d1212b955e38" name="Flow Analysis Aggressive" pseudoUrl="c++test.builtin://Flow Analysis Aggressive" user="root"/>
    <Authors>
       <Author id="dev1" name="root"/>
    </Authors>
@@ -22,14 +22,32 @@
          <ScopeProjectInfo fltFiles="18" fltLns="660" project="/BugDetective" totFiles="18" totLns="660"/>
       </ProjectInformations>
    </Scope>
-   <CodingStandards ownerId="com.parasoft.xtest.checkers.api.standards" time="0:00:09">
+   <CodingStandards ownerId="com.parasoft.xtest.checkers.api.standards" time="0:00:13">
       <Goal mode="1" name="Static"/>
       <Projects>
-         <Project bdCheckedFiles="9" bdTotalFiles="9" checkedFiles="16" checkedLns="658" name="BugDetective" qfixErrs="0" suppErrs="0" totErrs="24" totFiles="16" totLns="658"/>
+         <Project bdCheckedFiles="11" bdTotalFiles="11" checkedFiles="16" checkedLns="658" name="BugDetective" qfixErrs="0" suppErrs="0" totErrs="43" totFiles="16" totLns="658"/>
       </Projects>
       <Rules>
          <RulesList>
+            <Rule cat="BD-API" desc="Do not pass incorrect values to library functions" id="BD-API-BADPARAM" sev="1">
+               <Stats authTot="0;" authUrg="0;" total="0"/>
+            </Rule>
             <Rule cat="BD-API" desc="Do not pass negative values to functions expecting non-negative arguments" id="BD-API-NEGPARAM" sev="1">
+               <Stats authTot="0;" authUrg="0;" total="0"/>
+            </Rule>
+            <Rule cat="BD-API" desc="Do not check for a non-negative value after passing as a non-negative argument" id="BD-API-REVNEGPARAM" sev="2">
+               <Stats authTot="0;" authUrg="0;" total="0"/>
+            </Rule>
+            <Rule cat="BD-CO" desc="Do not access iterator out of range" id="BD-CO-ITOUT" sev="1">
+               <Stats authTot="0;" authUrg="0;" total="0"/>
+            </Rule>
+            <Rule cat="BD-CO" desc="Use valid references, pointers, and iterators to reference elements of a basic_string" id="BD-CO-STRMOD" sev="1">
+               <Stats authTot="0;" authUrg="0;" total="0"/>
+            </Rule>
+            <Rule cat="BD-CO" desc="Do not pass empty container iterators to std algorithms as destinations" id="BD-CO-EMPCON" sev="2">
+               <Stats authTot="0;" authUrg="0;" total="0"/>
+            </Rule>
+            <Rule cat="BD-CO" desc="Do not modify container while iterating over it" id="BD-CO-ITMOD" sev="2">
                <Stats authTot="0;" authUrg="0;" total="0"/>
             </Rule>
             <Rule cat="BD-PB" desc="Always catch exceptions" id="BD-PB-EXCEPT" sev="1">
@@ -53,17 +71,152 @@
             <Rule cat="BD-PB" desc="Avoid overflow when writing to a buffer" id="BD-PB-OVERFWR" sev="1">
                <Stats authTot="1;" authUrg="1;" total="1"/>
             </Rule>
+            <Rule cat="BD-PB" desc="Avoid overwriting method parameters" id="BD-PB-POVR" sev="1">
+               <Stats authTot="0;" authUrg="0;" total="0"/>
+            </Rule>
+            <Rule cat="BD-PB" desc="Do not point to a wrapped object that has been freed" id="BD-PB-WRAPESC" sev="1">
+               <Stats authTot="0;" authUrg="0;" total="0"/>
+            </Rule>
             <Rule cat="BD-PB" desc="Avoid division by zero" id="BD-PB-ZERO" sev="1">
                <Stats authTot="2;" authUrg="2;" total="2"/>
             </Rule>
             <Rule cat="BD-PB" desc="Avoid accessing arrays out of bounds" id="BD-PB-ARRAY" sev="2">
                <Stats authTot="1;" authUrg="1;" total="1"/>
             </Rule>
+            <Rule cat="BD-PB" desc="A pointer pointing to an element of an array of objects shall not be passed to a smart pointer of single object type" id="BD-PB-ARRPTR" sev="2">
+               <Stats authTot="0;" authUrg="0;" total="0"/>
+            </Rule>
+            <Rule cat="BD-PB" desc="Avoid incorrect shift operations" id="BD-PB-BADSHIFT" sev="2">
+               <Stats authTot="0;" authUrg="0;" total="0"/>
+            </Rule>
+            <Rule cat="BD-PB" desc="Use the correct byte ordering when transferring data between systems" id="BD-PB-BYTEORD" sev="2">
+               <Stats authTot="0;" authUrg="0;" total="0"/>
+            </Rule>
             <Rule cat="BD-PB" desc="Avoid conditions that always evaluate to the same value" id="BD-PB-CC" sev="2">
+               <Stats authTot="5;" authUrg="5;" total="5"/>
+            </Rule>
+            <Rule cat="BD-PB" desc="Consistently check the returned value of non-void functions" id="BD-PB-CHECKRET" sev="2">
+               <Stats authTot="0;" authUrg="0;" total="0"/>
+            </Rule>
+            <Rule cat="BD-PB" desc="Always check the returned value of non-void function" id="BD-PB-CHECKRETGEN" sev="2">
                <Stats authTot="5;" authUrg="5;" total="5"/>
             </Rule>
             <Rule cat="BD-PB" desc="Do not check for null after dereferencing" id="BD-PB-DEREF" sev="2">
                <Stats authTot="1;" authUrg="1;" total="1"/>
+            </Rule>
+            <Rule cat="BD-PB" desc="Do not modify the alignment of objects by calling realloc()" id="BD-PB-DNMPTR" sev="2">
+               <Stats authTot="0;" authUrg="0;" total="0"/>
+            </Rule>
+            <Rule cat="BD-PB" desc="The macro EOF should be compared with the unmodified return value from the Standard Library function" id="BD-PB-EOFCOMP" sev="2">
+               <Stats authTot="1;" authUrg="1;" total="1"/>
+            </Rule>
+            <Rule cat="BD-PB" desc="Properly use errno value" id="BD-PB-ERRNO" sev="2">
+               <Stats authTot="0;" authUrg="0;" total="0"/>
+            </Rule>
+            <Rule cat="BD-PB" desc="Properly define exit handlers" id="BD-PB-EXITHAN" sev="2">
+               <Stats authTot="0;" authUrg="0;" total="0"/>
+            </Rule>
+            <Rule cat="BD-PB" desc="Reset strings on fgets() or fgetws() failure" id="BD-PB-FGETS" sev="2">
+               <Stats authTot="1;" authUrg="1;" total="1"/>
+            </Rule>
+            <Rule cat="BD-PB" desc="Only use values for fsetpos() that are returned from fgetpos()" id="BD-PB-FSETPOS" sev="2">
+               <Stats authTot="0;" authUrg="0;" total="0"/>
+            </Rule>
+            <Rule cat="BD-PB" desc="Do not rely on an environment pointer following an operation that may invalidate it" id="BD-PB-INVENV" sev="2">
+               <Stats authTot="0;" authUrg="0;" total="0"/>
+            </Rule>
+            <Rule cat="BD-PB" desc="Pointers returned by certain Standard Library functions should not be used following a subsequent call to the same or related function" id="BD-PB-INVRET" sev="2">
+               <Stats authTot="0;" authUrg="0;" total="0"/>
+            </Rule>
+            <Rule cat="BD-PB" desc="The Standard Library function memcmp shall not be used to compare null terminated strings" id="BD-PB-MCCSTR" sev="2">
+               <Stats authTot="0;" authUrg="0;" total="0"/>
+            </Rule>
+            <Rule cat="BD-PB" desc="Avoid calls to memory-setting functions that can be optimized out by the compiler" id="BD-PB-MEMOPT" sev="2">
+               <Stats authTot="0;" authUrg="0;" total="0"/>
+            </Rule>
+            <Rule cat="BD-PB" desc="Properly define new handlers" id="BD-PB-NEWHAN" sev="2">
+               <Stats authTot="0;" authUrg="0;" total="0"/>
+            </Rule>
+            <Rule cat="BD-PB" desc="Avoid throwing exceptions from functions that are declared not to throw" id="BD-PB-NOEXCEPT" sev="2">
+               <Stats authTot="0;" authUrg="0;" total="0"/>
+            </Rule>
+            <Rule cat="BD-PB" desc="Never return from functions that should not return" id="BD-PB-NORETURN" sev="2">
+               <Stats authTot="0;" authUrg="0;" total="0"/>
+            </Rule>
+            <Rule cat="BD-PB" desc="Avoid accessing arrays and pointers out of bounds" id="BD-PB-OVERFARRAY" sev="2">
+               <Stats authTot="0;" authUrg="0;" total="0"/>
+            </Rule>
+            <Rule cat="BD-PB" desc="An object shall not be assigned or copied to an overlapping object" id="BD-PB-OVERLAP" sev="2">
+               <Stats authTot="0;" authUrg="0;" total="0"/>
+            </Rule>
+            <Rule cat="BD-PB" desc="Do not treat arrays polymorphically" id="BD-PB-POLARR" sev="2">
+               <Stats authTot="0;" authUrg="0;" total="0"/>
+            </Rule>
+            <Rule cat="BD-PB" desc="Do not compare two unrelated pointers" id="BD-PB-PTRCMP" sev="2">
+               <Stats authTot="0;" authUrg="0;" total="0"/>
+            </Rule>
+            <Rule cat="BD-PB" desc="Do not subtract two pointers that do not address elements of the same array" id="BD-PB-PTRSUB" sev="2">
+               <Stats authTot="0;" authUrg="0;" total="0"/>
+            </Rule>
+            <Rule cat="BD-PB" desc="Do not store an already-owned pointer value in an unrelated smart pointer" id="BD-PB-PTRVALUE" sev="2">
+               <Stats authTot="0;" authUrg="0;" total="0"/>
+            </Rule>
+            <Rule cat="BD-PB" desc="Do not call putenv() with a pointer to an automatic variable as the argument" id="BD-PB-PUTENV" sev="2">
+               <Stats authTot="0;" authUrg="0;" total="0"/>
+            </Rule>
+            <Rule cat="BD-PB" desc="Properly define signal handlers" id="BD-PB-SIGHAN" sev="2">
+               <Stats authTot="0;" authUrg="0;" total="0"/>
+            </Rule>
+            <Rule cat="BD-PB" desc="Do not return from a computational exception signal handler" id="BD-PB-SIGRETURN" sev="2">
+               <Stats authTot="0;" authUrg="0;" total="0"/>
+            </Rule>
+            <Rule cat="BD-PB" desc="Do not alternately input and output from a stream without an intervening flush or positioning call" id="BD-PB-STREAMINOUT" sev="2">
+               <Stats authTot="0;" authUrg="0;" total="0"/>
+            </Rule>
+            <Rule cat="BD-PB" desc="Do not subsequently use the argument to std::forward" id="BD-PB-SUBSEQFRWD" sev="2">
+               <Stats authTot="0;" authUrg="0;" total="0"/>
+            </Rule>
+            <Rule cat="BD-PB" desc="Do not rely on the value of a moved-from object" id="BD-PB-SUBSEQMOVE" sev="2">
+               <Stats authTot="0;" authUrg="0;" total="0"/>
+            </Rule>
+            <Rule cat="BD-PB" desc="Avoid switch with unreachable branches" id="BD-PB-SWITCH" sev="2">
+               <Stats authTot="1;" authUrg="1;" total="1"/>
+            </Rule>
+            <Rule cat="BD-PB" desc="Properly define terminate handlers" id="BD-PB-TERMHAN" sev="2">
+               <Stats authTot="0;" authUrg="0;" total="0"/>
+            </Rule>
+            <Rule cat="BD-PB" desc="Properly define unexpected handlers" id="BD-PB-UNEXPHAN" sev="2">
+               <Stats authTot="0;" authUrg="0;" total="0"/>
+            </Rule>
+            <Rule cat="BD-PB" desc="Do not use the ungetc function on a stream with the file position indicator zero" id="BD-PB-UNGETC" sev="2">
+               <Stats authTot="0;" authUrg="0;" total="0"/>
+            </Rule>
+            <Rule cat="BD-PB" desc="Do not use dynamic type of an object under construction" id="BD-PB-VCTOR" sev="2">
+               <Stats authTot="0;" authUrg="0;" total="0"/>
+            </Rule>
+            <Rule cat="BD-PB" desc="Do not use dynamic type of an object under destruction" id="BD-PB-VDTOR" sev="2">
+               <Stats authTot="0;" authUrg="0;" total="0"/>
+            </Rule>
+            <Rule cat="BD-PB" desc="Ensure the size of the variable length array is in valid range" id="BD-PB-VLASIZE" sev="2">
+               <Stats authTot="0;" authUrg="0;" total="0"/>
+            </Rule>
+            <Rule cat="BD-PB" desc="The same file shall not be opened for read and write access at the same time on different streams" id="BD-PB-WRRDSTR" sev="2">
+               <Stats authTot="0;" authUrg="0;" total="0"/>
+            </Rule>
+            <Rule cat="BD-PB" desc="Avoid writing to a stream which has been opened as read only" id="BD-PB-WRROS" sev="2">
+               <Stats authTot="0;" authUrg="0;" total="0"/>
+            </Rule>
+            <Rule cat="BD-PB" desc="Avoid integer overflows" id="BD-PB-INTOVERF" sev="3">
+               <Stats authTot="0;" authUrg="0;" total="0"/>
+            </Rule>
+            <Rule cat="BD-PB" desc="Ensure strings are zero terminated" id="BD-PB-NZTS" sev="3">
+               <Stats authTot="0;" authUrg="0;" total="0"/>
+            </Rule>
+            <Rule cat="BD-PB" desc="Ensure the output buffer is large enough when using path manipulation functions" id="BD-PB-PATHBUF" sev="3">
+               <Stats authTot="0;" authUrg="0;" total="0"/>
+            </Rule>
+            <Rule cat="BD-PB" desc="Always throw the created std::exception object" id="BD-PB-STDEXC" sev="3">
+               <Stats authTot="0;" authUrg="0;" total="0"/>
             </Rule>
             <Rule cat="BD-PB" desc="Suspicious setting of stream flags" id="BD-PB-STREAMFLAGS" sev="3">
                <Stats authTot="0;" authUrg="0;" total="0"/>
@@ -71,10 +224,22 @@
             <Rule cat="BD-PB" desc="Restore stream format" id="BD-PB-STREAMFMT" sev="3">
                <Stats authTot="0;" authUrg="0;" total="0"/>
             </Rule>
+            <Rule cat="BD-PB" desc="Avoid unused values" id="BD-PB-VOVR" sev="3">
+               <Stats authTot="4;" authUrg="4;" total="4"/>
+            </Rule>
+            <Rule cat="BD-PB" desc="Guarantee that container indices are within the valid range" id="BD-PB-VALRANGE" sev="4">
+               <Stats authTot="0;" authUrg="0;" total="0"/>
+            </Rule>
             <Rule cat="BD-RES" desc="Properly deallocate dynamically allocated resources" id="BD-RES-BADDEALLOC" sev="1">
                <Stats authTot="0;" authUrg="0;" total="0"/>
             </Rule>
+            <Rule cat="BD-RES" desc="Ensure deallocation functions guarantee resource freeing" id="BD-RES-BADFREEF" sev="1">
+               <Stats authTot="0;" authUrg="0;" total="0"/>
+            </Rule>
             <Rule cat="BD-RES" desc="Do not use resources that have been freed" id="BD-RES-FREE" sev="1">
+               <Stats authTot="0;" authUrg="0;" total="0"/>
+            </Rule>
+            <Rule cat="BD-RES" desc="Allocate sufficient memory to hold an object of a given type" id="BD-RES-INSUFMEM" sev="1">
                <Stats authTot="0;" authUrg="0;" total="0"/>
             </Rule>
             <Rule cat="BD-RES" desc="Do not free resources using invalid pointers" id="BD-RES-INVFREE" sev="1">
@@ -82,6 +247,66 @@
             </Rule>
             <Rule cat="BD-RES" desc="Ensure resources are freed" id="BD-RES-LEAKS" sev="1">
                <Stats authTot="5;" authUrg="5;" total="5"/>
+            </Rule>
+            <Rule cat="BD-RES" desc="Avoid cyclic shared_ptr references" id="BD-RES-CSP" sev="2">
+               <Stats authTot="0;" authUrg="0;" total="0"/>
+            </Rule>
+            <Rule cat="BD-RES" desc="Do not create variables on the stack above the defined limits" id="BD-RES-STACKLIM" sev="3">
+               <Stats authTot="0;" authUrg="0;" total="0"/>
+            </Rule>
+            <Rule cat="BD-SECURITY" desc="Avoid tainted data in array indexes" id="BD-SECURITY-ARRAY" sev="1">
+               <Stats authTot="1;" authUrg="1;" total="1"/>
+            </Rule>
+            <Rule cat="BD-SECURITY" desc="Prevent buffer overflows from tainted data" id="BD-SECURITY-BUFWRITE" sev="1">
+               <Stats authTot="0;" authUrg="0;" total="0"/>
+            </Rule>
+            <Rule cat="BD-SECURITY" desc="Protect against integer overflow/underflow from tainted data" id="BD-SECURITY-INTOVERF" sev="1">
+               <Stats authTot="2;" authUrg="2;" total="2"/>
+            </Rule>
+            <Rule cat="BD-SECURITY" desc="Avoid buffer overflow from tainted data due to defining incorrect format limits" id="BD-SECURITY-OVERFFMT" sev="1">
+               <Stats authTot="0;" authUrg="0;" total="0"/>
+            </Rule>
+            <Rule cat="BD-SECURITY" desc="Avoid buffer read overflow from tainted data" id="BD-SECURITY-OVERFRD" sev="1">
+               <Stats authTot="0;" authUrg="0;" total="0"/>
+            </Rule>
+            <Rule cat="BD-SECURITY" desc="Avoid buffer write overflow from tainted data" id="BD-SECURITY-OVERFWR" sev="1">
+               <Stats authTot="1;" authUrg="1;" total="1"/>
+            </Rule>
+            <Rule cat="BD-SECURITY" desc="Protect against command injection" id="BD-SECURITY-TDCMD" sev="1">
+               <Stats authTot="0;" authUrg="0;" total="0"/>
+            </Rule>
+            <Rule cat="BD-SECURITY" desc="Avoid printing tainted data on the output console" id="BD-SECURITY-TDCONSOLE" sev="1">
+               <Stats authTot="1;" authUrg="1;" total="1"/>
+            </Rule>
+            <Rule cat="BD-SECURITY" desc="Protect against environment injection" id="BD-SECURITY-TDENV" sev="1">
+               <Stats authTot="0;" authUrg="0;" total="0"/>
+            </Rule>
+            <Rule cat="BD-SECURITY" desc="Protect against file name injection" id="BD-SECURITY-TDFNAMES" sev="1">
+               <Stats authTot="0;" authUrg="0;" total="0"/>
+            </Rule>
+            <Rule cat="BD-SECURITY" desc="Exclude unsanitized user input from format strings" id="BD-SECURITY-TDINPUT" sev="1">
+               <Stats authTot="0;" authUrg="0;" total="0"/>
+            </Rule>
+            <Rule cat="BD-SECURITY" desc="Validate potentially tainted data before it is used in the controlling expression of a loop" id="BD-SECURITY-TDLOOP" sev="1">
+               <Stats authTot="1;" authUrg="1;" total="1"/>
+            </Rule>
+            <Rule cat="BD-SECURITY" desc="Protect against SQL injection" id="BD-SECURITY-TDSQL" sev="1">
+               <Stats authTot="1;" authUrg="1;" total="1"/>
+            </Rule>
+            <Rule cat="BD-SECURITY" desc="Properly seed pseudorandom number generators" id="BD-SECURITY-RAND" sev="2">
+               <Stats authTot="0;" authUrg="0;" total="0"/>
+            </Rule>
+            <Rule cat="BD-SECURITY" desc="Sensitive data should be cleared before being deallocated" id="BD-SECURITY-SENSFREE" sev="2">
+               <Stats authTot="0;" authUrg="0;" total="0"/>
+            </Rule>
+            <Rule cat="BD-SECURITY" desc="Avoid passing sensitive data to functions that write to log files" id="BD-SECURITY-SENSLOG" sev="2">
+               <Stats authTot="0;" authUrg="0;" total="0"/>
+            </Rule>
+            <Rule cat="BD-SECURITY" desc="Validate potentially tainted data before it is used to determine the size of memory allocation" id="BD-SECURITY-TDALLOC" sev="2">
+               <Stats authTot="0;" authUrg="0;" total="0"/>
+            </Rule>
+            <Rule cat="BD-SECURITY" desc="Disable resolving XML external entities (XXE) in libxerces-c" id="BD-SECURITY-XXEXRC" sev="2">
+               <Stats authTot="0;" authUrg="0;" total="0"/>
             </Rule>
             <Rule cat="BD-TRS" desc="Avoid double locking" id="BD-TRS-DLOCK" sev="1">
                <Stats authTot="0;" authUrg="0;" total="0"/>
@@ -101,97 +326,19 @@
             <Rule cat="BD-TRS" desc="Do not use blocking functions while holding a lock" id="BD-TRS-TSHL" sev="1">
                <Stats authTot="0;" authUrg="0;" total="0"/>
             </Rule>
-            <Rule cat="CDD" desc="Avoid function duplication" id="CDD-DUPM" sev="2">
+            <Rule cat="BD-TRS" desc="Declare objects shared between POSIX threads with appropriate storage durations" id="BD-TRS-ARG" sev="2">
                <Stats authTot="0;" authUrg="0;" total="0"/>
             </Rule>
-            <Rule cat="CODSTA" desc="Local variables should not use the same names as member variables" id="CODSTA-44" sev="1">
+            <Rule cat="BD-TRS" desc="Variable should be used in context of single critical section" id="BD-TRS-DIFCS" sev="2">
                <Stats authTot="0;" authUrg="0;" total="0"/>
             </Rule>
-            <Rule cat="CODSTA" desc="Pointer should not be compared with NULL using relational operators &lt;, >, >=, &lt;=" id="CODSTA-147" sev="3">
+            <Rule cat="BD-TRS" desc="Avoid race conditions while accessing files" id="BD-TRS-FRC" sev="2">
                <Stats authTot="0;" authUrg="0;" total="0"/>
             </Rule>
-            <Rule cat="CODSTA" desc="Do not use string literals as operands of equality or relational operators" id="CODSTA-148" sev="3">
+            <Rule cat="BD-TRS" desc="Do not join or detach a thread that was previously joined or detached" id="BD-TRS-JOINDETACH" sev="2">
                <Stats authTot="0;" authUrg="0;" total="0"/>
             </Rule>
-            <Rule cat="CODSTA" desc="Avoid infinite loops" id="CODSTA-82" sev="3">
-               <Stats authTot="0;" authUrg="0;" total="0"/>
-            </Rule>
-            <Rule cat="CODSTA-CPP" desc="Constructors allowing for conversion should be made explicit" id="CODSTA-CPP-04" sev="1">
-               <Stats authTot="0;" authUrg="0;" total="0"/>
-            </Rule>
-            <Rule cat="EXCEPT" desc="Throw by value, catch by reference" id="EXCEPT-02" sev="1">
-               <Stats authTot="0;" authUrg="0;" total="0"/>
-            </Rule>
-            <Rule cat="EXCEPT" desc="Do not throw from within destructor" id="EXCEPT-03" sev="1">
-               <Stats authTot="0;" authUrg="0;" total="0"/>
-            </Rule>
-            <Rule cat="INIT" desc="All member variables should be initialized in constructor" id="INIT-06" sev="1">
-               <Stats authTot="0;" authUrg="0;" total="0"/>
-            </Rule>
-            <Rule cat="METRIC" desc="McCabe Cyclomatic Complexity" id="METRIC.CC" sev="3">
-               <Stats authTot="0;" authUrg="0;" total="0"/>
-            </Rule>
-            <Rule cat="METRIC" desc="Nested Blocks Depth" id="METRIC.NBD" sev="3">
-               <Stats authTot="0;" authUrg="0;" total="0"/>
-            </Rule>
-            <Rule cat="MISRA2004" desc="Floating-point expressions shall not be tested for equality or inequality" id="MISRA2004-13_3" sev="3">
-               <Stats authTot="0;" authUrg="0;" total="0"/>
-            </Rule>
-            <Rule cat="MISRA2004" desc="All exit paths from a function with non-void return type shall have an explicit return statement with an expression" id="MISRA2004-16_8" sev="3">
-               <Stats authTot="0;" authUrg="0;" total="0"/>
-            </Rule>
-            <Rule cat="MISRA2004" desc="The address of an object with automatic storage shall not be returned from a function" id="MISRA2004-17_6_a" sev="3">
-               <Stats authTot="0;" authUrg="0;" total="0"/>
-            </Rule>
-            <Rule cat="MRM" desc="Do not invoke malloc/realloc for objects having constructors" id="MRM-08" sev="1">
-               <Stats authTot="0;" authUrg="0;" total="0"/>
-            </Rule>
-            <Rule cat="MRM" desc="Declare a copy assignment operator for classes with dynamically allocated memory" id="MRM-37" sev="1">
-               <Stats authTot="0;" authUrg="0;" total="0"/>
-            </Rule>
-            <Rule cat="MRM" desc="Declare a copy constructor for classes with dynamically allocated memory" id="MRM-38" sev="1">
-               <Stats authTot="0;" authUrg="0;" total="0"/>
-            </Rule>
-            <Rule cat="MRM" desc="Never provide brackets ([]) for delete when deallocating non-arrays" id="MRM-35" sev="3">
-               <Stats authTot="0;" authUrg="0;" total="0"/>
-            </Rule>
-            <Rule cat="MRM" desc="Always provide empty brackets ([]) for delete when deallocating arrays" id="MRM-36" sev="3">
-               <Stats authTot="0;" authUrg="0;" total="0"/>
-            </Rule>
-            <Rule cat="MRM" desc="Do not use 'delete' on pointers to a void type" id="MRM-51" sev="3">
-               <Stats authTot="0;" authUrg="0;" total="0"/>
-            </Rule>
-            <Rule cat="OOP" desc="Class cannot inherit other class more than once unless it is virtual inheritance" id="OOP-03" sev="1">
-               <Stats authTot="0;" authUrg="0;" total="0"/>
-            </Rule>
-            <Rule cat="OOP" desc="Avoid calling virtual functions from constructors" id="OOP-16" sev="1">
-               <Stats authTot="0;" authUrg="0;" total="0"/>
-            </Rule>
-            <Rule cat="OOP" desc="If a class has virtual functions it shall have a virtual destructor" id="OOP-23" sev="2">
-               <Stats authTot="0;" authUrg="0;" total="0"/>
-            </Rule>
-            <Rule cat="OPT" desc="Pass objects by reference instead of by value" id="OPT-14" sev="3">
-               <Stats authTot="0;" authUrg="0;" total="0"/>
-            </Rule>
-            <Rule cat="PB" desc="Do not call delete on non-pointers" id="PB-13" sev="1">
-               <Stats authTot="0;" authUrg="0;" total="0"/>
-            </Rule>
-            <Rule cat="PB" desc="Properly terminate character strings" id="PB-21" sev="1">
-               <Stats authTot="0;" authUrg="0;" total="0"/>
-            </Rule>
-            <Rule cat="PB" desc="Do not cast from or to incomplete class at the point of casting" id="PB-54" sev="2">
-               <Stats authTot="0;" authUrg="0;" total="0"/>
-            </Rule>
-            <Rule cat="PB" desc="Do not delete objects with incomplete class at the point of deletion" id="PB-55" sev="2">
-               <Stats authTot="0;" authUrg="0;" total="0"/>
-            </Rule>
-            <Rule cat="PB" desc="Boolean condition always evaluates to the same value due to enumeration with only zero or only non-zero constants" id="PB-68" sev="2">
-               <Stats authTot="0;" authUrg="0;" total="0"/>
-            </Rule>
-            <Rule cat="PB" desc="Suspicious argument to malloc" id="PB-60" sev="3">
-               <Stats authTot="0;" authUrg="0;" total="0"/>
-            </Rule>
-            <Rule cat="PB" desc="Pointer arithmetic performed on freshly allocated memory" id="PB-61" sev="3">
+            <Rule cat="BD-TRS" desc="Do not release a lock that has not been acquired" id="BD-TRS-REVLOCK" sev="3">
                <Stats authTot="0;" authUrg="0;" total="0"/>
             </Rule>
          </RulesList>
@@ -201,96 +348,127 @@
                   <Stats authTot="0;" authUrg="0;" total="0"/>
                </Category>
                <Category desc="Possible Bugs" name="BD-PB" total="69">
-                  <Stats authTot="19;" authUrg="19;" total="19"/>
+                  <Stats authTot="31;" authUrg="31;" total="31"/>
                </Category>
                <Category desc="Resources" name="BD-RES" total="8">
                   <Stats authTot="5;" authUrg="5;" total="5"/>
+               </Category>
+               <Category desc="Security" name="BD-SECURITY" total="19">
+                  <Stats authTot="7;" authUrg="7;" total="7"/>
+               </Category>
+               <Category desc="Containers" name="BD-CO" total="5">
+                  <Stats authTot="0;" authUrg="0;" total="0"/>
                </Category>
                <Category desc="Threads &amp; Synchronization" name="BD-TRS" total="15">
                   <Stats authTot="0;" authUrg="0;" total="0"/>
                </Category>
                <Stats authTot="0;" authUrg="0;" total="0"/>
             </Category>
-            <Category desc="Code Duplication Detection" name="CDD" total="4">
-               <Stats authTot="0;" authUrg="0;" total="0"/>
-            </Category>
-            <Category desc="Coding Conventions" name="CODSTA" total="465">
-               <Category desc="Coding Conventions for C++" name="CODSTA-CPP" total="112">
-                  <Stats authTot="0;" authUrg="0;" total="0"/>
-               </Category>
-               <Stats authTot="0;" authUrg="0;" total="0"/>
-            </Category>
-            <Category desc="Exceptions" name="EXCEPT" total="26">
-               <Stats authTot="0;" authUrg="0;" total="0"/>
-            </Category>
-            <Category desc="Initialization" name="INIT" total="22">
-               <Stats authTot="0;" authUrg="0;" total="0"/>
-            </Category>
-            <Category desc="Metric" name="METRIC" total="50">
-               <Stats authTot="0;" authUrg="0;" total="0"/>
-            </Category>
-            <Category desc="MISRA C 2004" name="MISRA2004" total="223">
-               <Stats authTot="0;" authUrg="0;" total="0"/>
-            </Category>
-            <Category desc="Memory and Resource Management" name="MRM" total="60">
-               <Stats authTot="0;" authUrg="0;" total="0"/>
-            </Category>
-            <Category desc="Object Oriented" name="OOP" total="61">
-               <Stats authTot="0;" authUrg="0;" total="0"/>
-            </Category>
-            <Category desc="Optimization" name="OPT" total="43">
-               <Stats authTot="0;" authUrg="0;" total="0"/>
-            </Category>
-            <Category desc="Possible Bugs" name="PB" total="85">
-               <Stats authTot="0;" authUrg="0;" total="0"/>
-            </Category>
          </CategoriesList>
          <SeverityList>
             <Severity id="1">
-               <Stats authTot="17;" authUrg="17;" total="17"/>
+               <Stats authTot="24;" authUrg="24;" total="24"/>
             </Severity>
             <Severity id="2">
-               <Stats authTot="7;" authUrg="7;" total="7"/>
+               <Stats authTot="15;" authUrg="15;" total="15"/>
+            </Severity>
+            <Severity id="3">
+               <Stats authTot="4;" authUrg="4;" total="4"/>
             </Severity>
          </SeverityList>
       </Rules>
       
   <StdViols>
-    <FlowViol msg="Possibly accessing array &quot;cache&quot; out of bounds at index [1...1000]. Correct index(es): [0...999]" ln="37" ruleSAFMsg="Out of bounds access point" auth="root" sev="2" rule="BD-PB-ARRAY" ruleSCSCMsg="Start of the path" tool="c++test" id="1283572058" lang="cpp" locType="sr" urgent="true" config="1" hash="-1375949553" locStartln="37" locStartPos="0" locEndLn="38" locEndPos="0" locFile="/BugDetective/arrayOutOfBounds.c" FirstElSrcRngStartln="44" FirstElSrcRngStartPos="0" FirstElSrcRngEndLn="45" FirstElSrcRngEndPos="0" FirstElSrcRngFile="/BugDetective/arrayOutOfBounds.c">
+    <FlowViol msg="Value of &quot;git_test&quot; is never used" ln="12" ruleSAFMsg="Point where value is declared" auth="root" sev="3" rule="BD-PB-VOVR" ruleSCSCMsg="Point where value is declared" tool="c++test" id="-343441187" lang="cpp" locType="sr" urgent="true" config="1" hash="-553123729" locStartln="12" locStartPos="0" locEndLn="13" locEndPos="0" locFile="/BugDetective/arrayOutOfBounds.c" FirstElSrcRngStartln="12" FirstElSrcRngStartPos="0" FirstElSrcRngEndLn="13" FirstElSrcRngEndPos="0" FirstElSrcRngFile="/BugDetective/arrayOutOfBounds.c">
       <Props/>
       <ElDescList>
-        <ElDesc srcRngStartln="44" srcRngStartPos="0" srcRngEndLn="45" srcRngEndPos="0" srcRngFile="/BugDetective/arrayOutOfBounds.c" srcRnghash="-1375949553" ln="44" ElType=".C" desc="void clearAllCache()" rngLn="44">
+        <ElDesc srcRngStartln="12" srcRngStartPos="0" srcRngEndLn="13" srcRngEndPos="0" srcRngFile="/BugDetective/arrayOutOfBounds.c" srcRnghash="-553123729" ln="12" ElType="CP" desc="int git_test = 0;" rngLn="12">
+          <Props/>
+          <Anns>
+            <Ann msg="Point where value is declared" kind="cause"/>
+            <Ann msg="Point where value is declared" kind="point"/>
+          </Anns>
+        </ElDesc>
+      </ElDescList>
+    </FlowViol>
+    <FlowViol msg="Value of &quot;asasas&quot; is never used" ln="14" ruleSAFMsg="Point where value is declared" auth="root" sev="3" rule="BD-PB-VOVR" ruleSCSCMsg="Point where value is declared" tool="c++test" id="2044490312" lang="cpp" locType="sr" urgent="true" config="1" hash="-553123729" locStartln="14" locStartPos="0" locEndLn="15" locEndPos="0" locFile="/BugDetective/arrayOutOfBounds.c" FirstElSrcRngStartln="14" FirstElSrcRngStartPos="0" FirstElSrcRngEndLn="15" FirstElSrcRngEndPos="0" FirstElSrcRngFile="/BugDetective/arrayOutOfBounds.c">
+      <Props/>
+      <ElDescList>
+        <ElDesc srcRngStartln="14" srcRngStartPos="0" srcRngEndLn="15" srcRngEndPos="0" srcRngFile="/BugDetective/arrayOutOfBounds.c" srcRnghash="-553123729" ln="14" ElType="CP" desc="int asasas = 10;" rngLn="14">
+          <Props/>
+          <Anns>
+            <Ann msg="Point where value is declared" kind="cause"/>
+            <Ann msg="Point where value is declared" kind="point"/>
+          </Anns>
+        </ElDesc>
+      </ElDescList>
+    </FlowViol>
+    <FlowViol msg="Data obtained from a console (&quot;id&quot;, possibly &lt;= -1 or >= 1000) is used to index an array Person *[1000]" ln="27" ruleSAFMsg="Call to a dangerous method" auth="root" sev="1" rule="BD-SECURITY-ARRAY" ruleSCSCMsg="Tainting point" tool="c++test" id="1816942363" lang="cpp" locType="sr" urgent="true" config="1" hash="-553123729" locStartln="27" locStartPos="0" locEndLn="28" locEndPos="0" locFile="/BugDetective/arrayOutOfBounds.c" FirstElSrcRngStartln="22" FirstElSrcRngStartPos="0" FirstElSrcRngEndLn="23" FirstElSrcRngEndPos="0" FirstElSrcRngFile="/BugDetective/arrayOutOfBounds.c">
+      <Props>
+        <Prop key="Tracked variables" val="Tainted data"/>
+      </Props>
+      <ElDescList>
+        <ElDesc srcRngStartln="20" srcRngStartPos="0" srcRngEndLn="21" srcRngEndPos="0" srcRngFile="/BugDetective/arrayOutOfBounds.c" srcRnghash="-553123729" ln="20" ElType="." desc="int id;" rngLn="20">
+          <Props/>
+        </ElDesc>
+        <ElDesc srcRngStartln="21" srcRngStartPos="0" srcRngEndLn="22" srcRngEndPos="0" srcRngFile="/BugDetective/arrayOutOfBounds.c" srcRnghash="-553123729" ln="21" ElType="." desc="printf(&quot;Please enter person id: \n&quot;);" rngLn="21">
+          <Props/>
+        </ElDesc>
+        <ElDesc srcRngStartln="22" srcRngStartPos="0" srcRngEndLn="23" srcRngEndPos="0" srcRngFile="/BugDetective/arrayOutOfBounds.c" srcRnghash="-553123729" ln="22" ElType=".C" desc="scanf(&quot;%d&quot;, &amp;id);" rngLn="22">
+          <Props>
+            <Prop key="Tracked variables" val="id"/>
+          </Props>
+          <Anns>
+            <Ann msg="Tainting point" kind="cause"/>
+            <Ann msg="Tainted data: id" kind="var"/>
+          </Anns>
+        </ElDesc>
+        <ElDesc srcRngStartln="27" srcRngStartPos="0" srcRngEndLn="28" srcRngEndPos="0" srcRngFile="/BugDetective/arrayOutOfBounds.c" srcRnghash="-553123729" ln="27" ElType=".P" desc="if (cache[id] == 0) {" rngLn="27">
+          <Props>
+            <Prop key="Tracked variables" val="id"/>
+          </Props>
+          <Anns>
+            <Ann msg="Tainted data: id" kind="var"/>
+            <Ann msg="Call to a dangerous method" kind="point"/>
+          </Anns>
+        </ElDesc>
+      </ElDescList>
+    </FlowViol>
+    <FlowViol msg="Possibly accessing array &quot;cache&quot; out of bounds at index [1...1000]. Correct index(es): [0...999]" ln="37" ruleSAFMsg="Out of bounds access point" auth="root" sev="2" rule="BD-PB-ARRAY" ruleSCSCMsg="Start of the path" tool="c++test" id="1283572058" lang="cpp" locType="sr" urgent="true" config="1" hash="-553123729" locStartln="37" locStartPos="0" locEndLn="38" locEndPos="0" locFile="/BugDetective/arrayOutOfBounds.c" FirstElSrcRngStartln="44" FirstElSrcRngStartPos="0" FirstElSrcRngEndLn="45" FirstElSrcRngEndPos="0" FirstElSrcRngFile="/BugDetective/arrayOutOfBounds.c">
+      <Props/>
+      <ElDescList>
+        <ElDesc srcRngStartln="44" srcRngStartPos="0" srcRngEndLn="45" srcRngEndPos="0" srcRngFile="/BugDetective/arrayOutOfBounds.c" srcRnghash="-553123729" ln="44" ElType=".C" desc="void clearAllCache()" rngLn="44">
           <Props/>
           <Anns>
             <Ann msg="Start of the path" kind="cause"/>
           </Anns>
         </ElDesc>
-        <ElDesc srcRngStartln="46" srcRngStartPos="0" srcRngEndLn="47" srcRngEndPos="0" srcRngFile="/BugDetective/arrayOutOfBounds.c" srcRnghash="-1375949553" ln="46" ElType="!" desc="clearCache(0, CACHE_SIZE /* -1 */ ); /* Uncomment to fix accessing out of bounds */" rngLn="46">
+        <ElDesc srcRngStartln="46" srcRngStartPos="0" srcRngEndLn="47" srcRngEndPos="0" srcRngFile="/BugDetective/arrayOutOfBounds.c" srcRnghash="-553123729" ln="46" ElType="!" desc="clearCache(0, CACHE_SIZE /* -1 */ ); /* Uncomment to fix accessing out of bounds */" rngLn="46">
           <ElDescList>
-            <ElDesc srcRngStartln="35" srcRngStartPos="0" srcRngEndLn="36" srcRngEndPos="0" srcRngFile="/BugDetective/arrayOutOfBounds.c" srcRnghash="-1375949553" ln="35" ElType="." desc="int i;" rngLn="35">
+            <ElDesc srcRngStartln="35" srcRngStartPos="0" srcRngEndLn="36" srcRngEndPos="0" srcRngFile="/BugDetective/arrayOutOfBounds.c" srcRnghash="-553123729" ln="35" ElType="." desc="int i;" rngLn="35">
               <Props/>
             </ElDesc>
-            <ElDesc srcRngStartln="36" srcRngStartPos="0" srcRngEndLn="37" srcRngEndPos="0" srcRngFile="/BugDetective/arrayOutOfBounds.c" srcRnghash="-1375949553" ln="36" ElType="." desc="for (i = from_id; i &lt;= to_id; i++) {" rngLn="36">
+            <ElDesc srcRngStartln="36" srcRngStartPos="0" srcRngEndLn="37" srcRngEndPos="0" srcRngFile="/BugDetective/arrayOutOfBounds.c" srcRnghash="-553123729" ln="36" ElType="." desc="for (i = from_id; i &lt;= to_id; i++) {" rngLn="36">
               <Props/>
               <Anns>
                 <Ann msg="Loop condition evaluation: (i &lt;= to_id) (true)" kind="condEval"/>
                 <Ann msg="Entering the loop" kind="condEval"/>
               </Anns>
             </ElDesc>
-            <ElDesc srcRngStartln="37" srcRngStartPos="0" srcRngEndLn="38" srcRngEndPos="0" srcRngFile="/BugDetective/arrayOutOfBounds.c" srcRnghash="-1375949553" ln="37" ElType="." desc="if (cache[i] != 0) {" rngLn="37">
+            <ElDesc srcRngStartln="37" srcRngStartPos="0" srcRngEndLn="38" srcRngEndPos="0" srcRngFile="/BugDetective/arrayOutOfBounds.c" srcRnghash="-553123729" ln="37" ElType="." desc="if (cache[i] != 0) {" rngLn="37">
               <Props/>
               <Anns>
                 <Ann msg="Condition evaluation: (cache[i] != 0) (assuming false)" kind="condEval"/>
               </Anns>
             </ElDesc>
-            <ElDesc srcRngStartln="36" srcRngStartPos="0" srcRngEndLn="37" srcRngEndPos="0" srcRngFile="/BugDetective/arrayOutOfBounds.c" srcRnghash="-1375949553" ln="36" ElType="." desc="for (i = from_id; i &lt;= to_id; i++) {" rngLn="36">
+            <ElDesc srcRngStartln="36" srcRngStartPos="0" srcRngEndLn="37" srcRngEndPos="0" srcRngFile="/BugDetective/arrayOutOfBounds.c" srcRnghash="-553123729" ln="36" ElType="." desc="for (i = from_id; i &lt;= to_id; i++) {" rngLn="36">
               <Props/>
               <Anns>
                 <Ann msg="Loop condition evaluation: (i &lt;= to_id) (true)" kind="condEval"/>
                 <Ann msg="Entering the loop" kind="condEval"/>
               </Anns>
             </ElDesc>
-            <ElDesc srcRngStartln="37" srcRngStartPos="0" srcRngEndLn="38" srcRngEndPos="0" srcRngFile="/BugDetective/arrayOutOfBounds.c" srcRnghash="-1375949553" ln="37" ElType=".P" desc="if (cache[i] != 0) {" rngLn="37">
+            <ElDesc srcRngStartln="37" srcRngStartPos="0" srcRngEndLn="38" srcRngEndPos="0" srcRngFile="/BugDetective/arrayOutOfBounds.c" srcRnghash="-553123729" ln="37" ElType=".P" desc="if (cache[i] != 0) {" rngLn="37">
               <Props/>
               <Anns>
                 <Ann msg="Out of bounds access point" kind="point"/>
@@ -298,6 +476,54 @@
             </ElDesc>
           </ElDescList>
           <Props/>
+        </ElDesc>
+      </ElDescList>
+    </FlowViol>
+    <FlowViol msg="Overflow when writing to buffer &quot;buffer&quot; (char[999], 999 bytes large). Number of bytes written is an arbitrary value possibly >= 999" ln="21" ruleSAFMsg="Point where the buffer overflow occurs" auth="root" sev="1" rule="BD-SECURITY-OVERFWR" ruleSCSCMsg="Point where number of elements to write is defined by tainting function" tool="c++test" id="40924891" lang="cpp" locType="sr" urgent="true" config="1" hash="1082458265" locStartln="21" locStartPos="0" locEndLn="22" locEndPos="0" locFile="/BugDetective/bufferOverflow.c" FirstElSrcRngStartln="13" FirstElSrcRngStartPos="0" FirstElSrcRngEndLn="14" FirstElSrcRngEndPos="0" FirstElSrcRngFile="/BugDetective/bufferOverflow.c">
+      <Props>
+        <Prop key="Tracked variables" val="Tainted data"/>
+        <Prop key="Important values" val="Tainted data"/>
+      </Props>
+      <ElDescList>
+        <ElDesc srcRngStartln="11" srcRngStartPos="0" srcRngEndLn="12" srcRngEndPos="0" srcRngFile="/BugDetective/bufferOverflow.c" srcRnghash="1082458265" ln="11" ElType="." desc="int size, character;" rngLn="11">
+          <Props/>
+        </ElDesc>
+        <ElDesc srcRngStartln="12" srcRngStartPos="0" srcRngEndLn="13" srcRngEndPos="0" srcRngFile="/BugDetective/bufferOverflow.c" srcRnghash="1082458265" ln="12" ElType="." desc="printf(&quot;Please enter filling parameters: \n&quot;);" rngLn="12">
+          <Props/>
+        </ElDesc>
+        <ElDesc srcRngStartln="13" srcRngStartPos="0" srcRngEndLn="14" srcRngEndPos="0" srcRngFile="/BugDetective/bufferOverflow.c" srcRnghash="1082458265" ln="13" ElType=".C" desc="scanf(&quot;%d%d&quot;, &amp;size, &amp;character);" rngLn="13">
+          <Props>
+            <Prop key="Tracked variables" val="size"/>
+            <Prop key="Important values" val="char buffer[999]"/>
+          </Props>
+          <Anns>
+            <Ann msg="Point where number of elements to write is defined by tainting function" kind="cause"/>
+            <Ann msg="Tainted data: size" kind="var"/>
+            <Ann msg="Tainted data: char buffer[999]" kind="var"/>
+          </Anns>
+        </ElDesc>
+        <ElDesc srcRngStartln="21" srcRngStartPos="0" srcRngEndLn="22" srcRngEndPos="0" srcRngFile="/BugDetective/bufferOverflow.c" srcRnghash="1082458265" ln="21" ElType=".P" desc="memset(buffer, character, size); /* POSSIBLE BUFFER OVERFLOW HERE */" rngLn="21">
+          <Props>
+            <Prop key="Tracked variables" val="size"/>
+            <Prop key="Important values" val="char buffer[999]"/>
+          </Props>
+          <Anns>
+            <Ann msg="Tainted data: size" kind="var"/>
+            <Ann msg="Tainted data: char buffer[999]" kind="var"/>
+            <Ann msg="Point where the buffer overflow occurs" kind="point"/>
+          </Anns>
+        </ElDesc>
+      </ElDescList>
+    </FlowViol>
+    <FlowViol msg="Value of &quot;i&quot; is never used" ln="26" ruleSAFMsg="Point where value is declared" auth="root" sev="3" rule="BD-PB-VOVR" ruleSCSCMsg="Point where value is declared" tool="c++test" id="-824063767" lang="cpp" locType="sr" urgent="true" config="1" hash="1082458265" locStartln="26" locStartPos="0" locEndLn="27" locEndPos="0" locFile="/BugDetective/bufferOverflow.c" FirstElSrcRngStartln="26" FirstElSrcRngStartPos="0" FirstElSrcRngEndLn="27" FirstElSrcRngEndPos="0" FirstElSrcRngFile="/BugDetective/bufferOverflow.c">
+      <Props/>
+      <ElDescList>
+        <ElDesc srcRngStartln="26" srcRngStartPos="0" srcRngEndLn="27" srcRngEndPos="0" srcRngFile="/BugDetective/bufferOverflow.c" srcRnghash="1082458265" ln="26" ElType="CP" desc="int i;" rngLn="26">
+          <Props/>
+          <Anns>
+            <Ann msg="Point where value is declared" kind="cause"/>
+            <Ann msg="Point where value is declared" kind="point"/>
+          </Anns>
         </ElDesc>
       </ElDescList>
     </FlowViol>
@@ -407,6 +633,80 @@
             </ElDesc>
           </ElDescList>
           <Props/>
+        </ElDesc>
+      </ElDescList>
+    </FlowViol>
+    <FlowViol msg="The EOF macro is compared with the modified value returned by the &quot;fgetc&quot; function" ln="15" ruleSAFMsg="Comparing value with EOF" auth="root" sev="2" rule="BD-PB-EOFCOMP" ruleSCSCMsg="Invoke function capable of returning EOF" tool="c++test" id="910895208" lang="cpp" locType="sr" urgent="true" config="1" hash="1210532432" locStartln="15" locStartPos="0" locEndLn="16" locEndPos="0" locFile="/BugDetective/fileLeaks.c" FirstElSrcRngStartln="14" FirstElSrcRngStartPos="0" FirstElSrcRngEndLn="15" FirstElSrcRngEndPos="0" FirstElSrcRngFile="/BugDetective/fileLeaks.c">
+      <Props/>
+      <ElDescList>
+        <ElDesc srcRngStartln="14" srcRngStartPos="0" srcRngEndLn="15" srcRngEndPos="0" srcRngFile="/BugDetective/fileLeaks.c" srcRnghash="1210532432" ln="14" ElType=".C" desc="fgetc(...)" rngLn="14">
+          <Props/>
+          <Anns>
+            <Ann msg="Invoke function capable of returning EOF" kind="cause"/>
+          </Anns>
+        </ElDesc>
+        <ElDesc srcRngStartln="14" srcRngStartPos="0" srcRngEndLn="15" srcRngEndPos="0" srcRngFile="/BugDetective/fileLeaks.c" srcRnghash="1210532432" ln="14" ElType="!" desc="c = fgetc(file);" rngLn="14">
+          <Props/>
+          <Anns>
+            <Ann msg="Casting int -> char" kind="comment"/>
+          </Anns>
+        </ElDesc>
+        <ElDesc srcRngStartln="15" srcRngStartPos="0" srcRngEndLn="16" srcRngEndPos="0" srcRngFile="/BugDetective/fileLeaks.c" srcRnghash="1210532432" ln="15" ElType=".P" desc="if (c!=EOF) {" rngLn="15">
+          <Props/>
+          <Anns>
+            <Ann msg="Casting char -> int" kind="comment"/>
+            <Ann msg="Comparing value with EOF" kind="point"/>
+          </Anns>
+        </ElDesc>
+      </ElDescList>
+    </FlowViol>
+    <FlowViol msg="Data obtained from a file (&quot;c&quot;) is printed on a console" ln="16" ruleSAFMsg="Call to a dangerous method" auth="root" sev="1" rule="BD-SECURITY-TDCONSOLE" ruleSCSCMsg="Tainting point" tool="c++test" id="729845392" lang="cpp" locType="sr" urgent="true" config="1" hash="1210532432" locStartln="16" locStartPos="0" locEndLn="17" locEndPos="0" locFile="/BugDetective/fileLeaks.c" FirstElSrcRngStartln="14" FirstElSrcRngStartPos="0" FirstElSrcRngEndLn="15" FirstElSrcRngEndPos="0" FirstElSrcRngFile="/BugDetective/fileLeaks.c">
+      <Props>
+        <Prop key="Tracked variables" val="Tainted data"/>
+      </Props>
+      <ElDescList>
+        <ElDesc srcRngStartln="11" srcRngStartPos="0" srcRngEndLn="12" srcRngEndPos="0" srcRngFile="/BugDetective/fileLeaks.c" srcRnghash="1210532432" ln="11" ElType="." desc="char c;" rngLn="11">
+          <Props/>
+        </ElDesc>
+        <ElDesc srcRngStartln="12" srcRngStartPos="0" srcRngEndLn="13" srcRngEndPos="0" srcRngFile="/BugDetective/fileLeaks.c" srcRnghash="1210532432" ln="12" ElType="." desc="printf(&quot;Reading file contents:\n\n&quot;);" rngLn="12">
+          <Props/>
+        </ElDesc>
+        <ElDesc srcRngStartln="13" srcRngStartPos="0" srcRngEndLn="14" srcRngEndPos="0" srcRngFile="/BugDetective/fileLeaks.c" srcRnghash="1210532432" ln="13" ElType="." desc="while(1) {" rngLn="13">
+          <Props/>
+          <Anns>
+            <Ann msg="Loop condition evaluation: 1 (true)" kind="condEval"/>
+            <Ann msg="Entering the loop" kind="condEval"/>
+          </Anns>
+        </ElDesc>
+        <ElDesc srcRngStartln="14" srcRngStartPos="0" srcRngEndLn="15" srcRngEndPos="0" srcRngFile="/BugDetective/fileLeaks.c" srcRnghash="1210532432" ln="14" ElType=".C" desc="fgetc(...)" rngLn="14">
+          <Props>
+            <Prop key="Tracked variables" val="fgetc(...)"/>
+          </Props>
+          <Anns>
+            <Ann msg="Tainting point" kind="cause"/>
+            <Ann msg="Tainted data: fgetc(...)" kind="var"/>
+          </Anns>
+        </ElDesc>
+        <ElDesc srcRngStartln="14" srcRngStartPos="0" srcRngEndLn="15" srcRngEndPos="0" srcRngFile="/BugDetective/fileLeaks.c" srcRnghash="1210532432" ln="14" ElType="!" desc="c = fgetc(file);" rngLn="14">
+          <Props/>
+        </ElDesc>
+        <ElDesc srcRngStartln="15" srcRngStartPos="0" srcRngEndLn="16" srcRngEndPos="0" srcRngFile="/BugDetective/fileLeaks.c" srcRnghash="1210532432" ln="15" ElType="." desc="if (c!=EOF) {" rngLn="15">
+          <Props>
+            <Prop key="Tracked variables" val="c"/>
+          </Props>
+          <Anns>
+            <Ann msg="Tainted data: c" kind="var"/>
+            <Ann msg="Condition evaluation: (c != -1) (assuming true)" kind="condEval"/>
+          </Anns>
+        </ElDesc>
+        <ElDesc srcRngStartln="16" srcRngStartPos="0" srcRngEndLn="17" srcRngEndPos="0" srcRngFile="/BugDetective/fileLeaks.c" srcRnghash="1210532432" ln="16" ElType=".P" desc="printf(&quot;%c&quot;, c);" rngLn="16">
+          <Props>
+            <Prop key="Tracked variables" val="c"/>
+          </Props>
+          <Anns>
+            <Ann msg="Tainted data: c" kind="var"/>
+            <Ann msg="Call to a dangerous method" kind="point"/>
+          </Anns>
         </ElDesc>
       </ElDescList>
     </FlowViol>
@@ -580,6 +880,204 @@
         </ElDesc>
       </ElDescList>
     </FlowViol>
+    <FlowViol msg="Usage of possibly overflowed/underflowed value: total_len" ln="29" ruleSAFMsg="Point of using possibly overflowed/underflowed value" auth="root" sev="1" rule="BD-SECURITY-INTOVERF" ruleSCSCMsg="Point where value is defined by tainting function" tool="c++test" id="1907083985" lang="cpp" locType="sr" urgent="true" config="1" hash="-1197576192" locStartln="29" locStartPos="0" locEndLn="30" locEndPos="0" locFile="/BugDetective/integerOverflow.c" FirstElSrcRngStartln="23" FirstElSrcRngStartPos="0" FirstElSrcRngEndLn="24" FirstElSrcRngEndPos="0" FirstElSrcRngFile="/BugDetective/integerOverflow.c">
+      <Props>
+        <Prop key="Tracked variables" val="Tainted data"/>
+      </Props>
+      <ElDescList>
+        <ElDesc srcRngStartln="18" srcRngStartPos="0" srcRngEndLn="19" srcRngEndPos="0" srcRngFile="/BugDetective/integerOverflow.c" srcRnghash="-1197576192" ln="18" ElType="." desc="int i, header_len;" rngLn="18">
+          <Props/>
+        </ElDesc>
+        <ElDesc srcRngStartln="19" srcRngStartPos="0" srcRngEndLn="20" srcRngEndPos="0" srcRngFile="/BugDetective/integerOverflow.c" srcRnghash="-1197576192" ln="19" ElType="." desc="long msg_len;" rngLn="19">
+          <Props/>
+        </ElDesc>
+        <ElDesc srcRngStartln="20" srcRngStartPos="0" srcRngEndLn="21" srcRngEndPos="0" srcRngFile="/BugDetective/integerOverflow.c" srcRnghash="-1197576192" ln="20" ElType="." desc="size_t total_len;" rngLn="20">
+          <Props/>
+        </ElDesc>
+        <ElDesc srcRngStartln="21" srcRngStartPos="0" srcRngEndLn="22" srcRngEndPos="0" srcRngFile="/BugDetective/integerOverflow.c" srcRnghash="-1197576192" ln="21" ElType="." desc="char *msg;" rngLn="21">
+          <Props/>
+        </ElDesc>
+        <ElDesc srcRngStartln="23" srcRngStartPos="0" srcRngEndLn="24" srcRngEndPos="0" srcRngFile="/BugDetective/integerOverflow.c" srcRnghash="-1197576192" ln="23" ElType=".C" desc="recv(socket, buffer, BUFFER_SIZE, MSG_NOSIGNAL);" rngLn="23">
+          <Props>
+            <Prop key="Tracked variables" val="buffer[]"/>
+          </Props>
+          <Anns>
+            <Ann msg="Point where value is defined by tainting function" kind="cause"/>
+            <Ann msg="Tainted data: buffer[]" kind="var"/>
+          </Anns>
+        </ElDesc>
+        <ElDesc srcRngStartln="24" srcRngStartPos="0" srcRngEndLn="25" srcRngEndPos="0" srcRngFile="/BugDetective/integerOverflow.c" srcRnghash="-1197576192" ln="24" ElType="!" desc="msg_len = atol(buffer);" rngLn="24">
+          <Props/>
+        </ElDesc>
+        <ElDesc srcRngStartln="25" srcRngStartPos="0" srcRngEndLn="26" srcRngEndPos="0" srcRngFile="/BugDetective/integerOverflow.c" srcRnghash="-1197576192" ln="25" ElType="." desc="header_len = strlen(header);" rngLn="25">
+          <Props>
+            <Prop key="Tracked variables" val="msg_len"/>
+          </Props>
+          <Anns>
+            <Ann msg="Tainted data: msg_len" kind="var"/>
+          </Anns>
+        </ElDesc>
+        <ElDesc srcRngStartln="26" srcRngStartPos="0" srcRngEndLn="27" srcRngEndPos="0" srcRngFile="/BugDetective/integerOverflow.c" srcRnghash="-1197576192" ln="26" ElType="." desc="total_len = header_len;" rngLn="26">
+          <Props/>
+        </ElDesc>
+        <ElDesc srcRngStartln="27" srcRngStartPos="0" srcRngEndLn="28" srcRngEndPos="0" srcRngFile="/BugDetective/integerOverflow.c" srcRnghash="-1197576192" ln="27" ElType="!" desc="total_len += msg_len; /* POSSIBLE INTEGER OVERFLOW HERE */" rngLn="27">
+          <Props/>
+          <Anns>
+            <Ann msg="Point of possible overflow/underflow" kind="info"/>
+          </Anns>
+        </ElDesc>
+        <ElDesc srcRngStartln="29" srcRngStartPos="0" srcRngEndLn="30" srcRngEndPos="0" srcRngFile="/BugDetective/integerOverflow.c" srcRnghash="-1197576192" ln="29" ElType=".P" desc="malloc(...)" rngLn="29">
+          <Props>
+            <Prop key="Tracked variables" val="total_len"/>
+          </Props>
+          <Anns>
+            <Ann msg="Tainted data: total_len" kind="var"/>
+            <Ann msg="Point of using possibly overflowed/underflowed value" kind="point"/>
+          </Anns>
+        </ElDesc>
+      </ElDescList>
+    </FlowViol>
+    <FlowViol msg="Data obtained from a socket (&quot;total_len&quot;) is used in a loop condition" ln="38" ruleSAFMsg="Tainted data use in a loop condition" auth="root" sev="1" rule="BD-SECURITY-TDLOOP" ruleSCSCMsg="Tainting point" tool="c++test" id="-2054941873" lang="cpp" locType="sr" urgent="true" config="1" hash="-1197576192" locStartln="38" locStartPos="0" locEndLn="39" locEndPos="0" locFile="/BugDetective/integerOverflow.c" FirstElSrcRngStartln="23" FirstElSrcRngStartPos="0" FirstElSrcRngEndLn="24" FirstElSrcRngEndPos="0" FirstElSrcRngFile="/BugDetective/integerOverflow.c">
+      <Props>
+        <Prop key="Tracked variables" val="Tainted data"/>
+      </Props>
+      <ElDescList>
+        <ElDesc srcRngStartln="18" srcRngStartPos="0" srcRngEndLn="19" srcRngEndPos="0" srcRngFile="/BugDetective/integerOverflow.c" srcRnghash="-1197576192" ln="18" ElType="." desc="int i, header_len;" rngLn="18">
+          <Props/>
+        </ElDesc>
+        <ElDesc srcRngStartln="19" srcRngStartPos="0" srcRngEndLn="20" srcRngEndPos="0" srcRngFile="/BugDetective/integerOverflow.c" srcRnghash="-1197576192" ln="19" ElType="." desc="long msg_len;" rngLn="19">
+          <Props/>
+        </ElDesc>
+        <ElDesc srcRngStartln="20" srcRngStartPos="0" srcRngEndLn="21" srcRngEndPos="0" srcRngFile="/BugDetective/integerOverflow.c" srcRnghash="-1197576192" ln="20" ElType="." desc="size_t total_len;" rngLn="20">
+          <Props/>
+        </ElDesc>
+        <ElDesc srcRngStartln="21" srcRngStartPos="0" srcRngEndLn="22" srcRngEndPos="0" srcRngFile="/BugDetective/integerOverflow.c" srcRnghash="-1197576192" ln="21" ElType="." desc="char *msg;" rngLn="21">
+          <Props/>
+        </ElDesc>
+        <ElDesc srcRngStartln="23" srcRngStartPos="0" srcRngEndLn="24" srcRngEndPos="0" srcRngFile="/BugDetective/integerOverflow.c" srcRnghash="-1197576192" ln="23" ElType=".C" desc="recv(socket, buffer, BUFFER_SIZE, MSG_NOSIGNAL);" rngLn="23">
+          <Props>
+            <Prop key="Tracked variables" val="buffer[]"/>
+          </Props>
+          <Anns>
+            <Ann msg="Tainting point" kind="cause"/>
+            <Ann msg="Tainted data: buffer[]" kind="var"/>
+          </Anns>
+        </ElDesc>
+        <ElDesc srcRngStartln="24" srcRngStartPos="0" srcRngEndLn="25" srcRngEndPos="0" srcRngFile="/BugDetective/integerOverflow.c" srcRnghash="-1197576192" ln="24" ElType="." desc="msg_len = atol(buffer);" rngLn="24">
+          <Props/>
+        </ElDesc>
+        <ElDesc srcRngStartln="25" srcRngStartPos="0" srcRngEndLn="26" srcRngEndPos="0" srcRngFile="/BugDetective/integerOverflow.c" srcRnghash="-1197576192" ln="25" ElType="." desc="header_len = strlen(header);" rngLn="25">
+          <Props/>
+        </ElDesc>
+        <ElDesc srcRngStartln="26" srcRngStartPos="0" srcRngEndLn="27" srcRngEndPos="0" srcRngFile="/BugDetective/integerOverflow.c" srcRnghash="-1197576192" ln="26" ElType="." desc="total_len = header_len;" rngLn="26">
+          <Props/>
+        </ElDesc>
+        <ElDesc srcRngStartln="27" srcRngStartPos="0" srcRngEndLn="28" srcRngEndPos="0" srcRngFile="/BugDetective/integerOverflow.c" srcRnghash="-1197576192" ln="27" ElType="." desc="total_len += msg_len; /* POSSIBLE INTEGER OVERFLOW HERE */" rngLn="27">
+          <Props/>
+        </ElDesc>
+        <ElDesc srcRngStartln="29" srcRngStartPos="0" srcRngEndLn="30" srcRngEndPos="0" srcRngFile="/BugDetective/integerOverflow.c" srcRnghash="-1197576192" ln="29" ElType="." desc="msg = (char*)malloc(total_len); /* VIOLATION, USAGE OF OVERFLOWED VALUE */" rngLn="29">
+          <Props/>
+        </ElDesc>
+        <ElDesc srcRngStartln="30" srcRngStartPos="0" srcRngEndLn="31" srcRngEndPos="0" srcRngFile="/BugDetective/integerOverflow.c" srcRnghash="-1197576192" ln="30" ElType="." desc="if (!msg) {" rngLn="30">
+          <Props/>
+          <Anns>
+            <Ann msg="Condition evaluation: !msg (assuming false)" kind="condEval"/>
+          </Anns>
+        </ElDesc>
+        <ElDesc srcRngStartln="34" srcRngStartPos="0" srcRngEndLn="35" srcRngEndPos="0" srcRngFile="/BugDetective/integerOverflow.c" srcRnghash="-1197576192" ln="34" ElType="." desc="strcpy(msg, header);" rngLn="34">
+          <Props/>
+        </ElDesc>
+        <ElDesc srcRngStartln="36" srcRngStartPos="0" srcRngEndLn="37" srcRngEndPos="0" srcRngFile="/BugDetective/integerOverflow.c" srcRnghash="-1197576192" ln="36" ElType="." desc="recv(socket, msg + msg_len, msg_len, MSG_NOSIGNAL);" rngLn="36">
+          <Props/>
+        </ElDesc>
+        <ElDesc srcRngStartln="38" srcRngStartPos="0" srcRngEndLn="39" srcRngEndPos="0" srcRngFile="/BugDetective/integerOverflow.c" srcRnghash="-1197576192" ln="38" ElType=".P" desc="for (i = header_len; i &lt; total_len; i++) { /* VIOLATION, USAGE OF OVERFLOWED VALUE */" rngLn="38">
+          <Props>
+            <Prop key="Tracked variables" val="buffer[]"/>
+          </Props>
+          <Anns>
+            <Ann msg="Tainted data: buffer[]" kind="var"/>
+            <Ann msg="Tainted data use in a loop condition" kind="point"/>
+          </Anns>
+        </ElDesc>
+      </ElDescList>
+    </FlowViol>
+    <FlowViol msg="Usage of possibly overflowed/underflowed value: total_len" ln="38" ruleSAFMsg="Point of using possibly overflowed/underflowed value" auth="root" sev="1" rule="BD-SECURITY-INTOVERF" ruleSCSCMsg="Point where value is defined by tainting function" tool="c++test" id="-1363473727" lang="cpp" locType="sr" urgent="true" config="1" hash="-1197576192" locStartln="38" locStartPos="0" locEndLn="39" locEndPos="0" locFile="/BugDetective/integerOverflow.c" FirstElSrcRngStartln="23" FirstElSrcRngStartPos="0" FirstElSrcRngEndLn="24" FirstElSrcRngEndPos="0" FirstElSrcRngFile="/BugDetective/integerOverflow.c">
+      <Props>
+        <Prop key="Tracked variables" val="Tainted data"/>
+      </Props>
+      <ElDescList>
+        <ElDesc srcRngStartln="18" srcRngStartPos="0" srcRngEndLn="19" srcRngEndPos="0" srcRngFile="/BugDetective/integerOverflow.c" srcRnghash="-1197576192" ln="18" ElType="." desc="int i, header_len;" rngLn="18">
+          <Props/>
+        </ElDesc>
+        <ElDesc srcRngStartln="19" srcRngStartPos="0" srcRngEndLn="20" srcRngEndPos="0" srcRngFile="/BugDetective/integerOverflow.c" srcRnghash="-1197576192" ln="19" ElType="." desc="long msg_len;" rngLn="19">
+          <Props/>
+        </ElDesc>
+        <ElDesc srcRngStartln="20" srcRngStartPos="0" srcRngEndLn="21" srcRngEndPos="0" srcRngFile="/BugDetective/integerOverflow.c" srcRnghash="-1197576192" ln="20" ElType="." desc="size_t total_len;" rngLn="20">
+          <Props/>
+        </ElDesc>
+        <ElDesc srcRngStartln="21" srcRngStartPos="0" srcRngEndLn="22" srcRngEndPos="0" srcRngFile="/BugDetective/integerOverflow.c" srcRnghash="-1197576192" ln="21" ElType="." desc="char *msg;" rngLn="21">
+          <Props/>
+        </ElDesc>
+        <ElDesc srcRngStartln="23" srcRngStartPos="0" srcRngEndLn="24" srcRngEndPos="0" srcRngFile="/BugDetective/integerOverflow.c" srcRnghash="-1197576192" ln="23" ElType=".C" desc="recv(socket, buffer, BUFFER_SIZE, MSG_NOSIGNAL);" rngLn="23">
+          <Props>
+            <Prop key="Tracked variables" val="buffer[]"/>
+          </Props>
+          <Anns>
+            <Ann msg="Point where value is defined by tainting function" kind="cause"/>
+            <Ann msg="Tainted data: buffer[]" kind="var"/>
+          </Anns>
+        </ElDesc>
+        <ElDesc srcRngStartln="24" srcRngStartPos="0" srcRngEndLn="25" srcRngEndPos="0" srcRngFile="/BugDetective/integerOverflow.c" srcRnghash="-1197576192" ln="24" ElType="!" desc="msg_len = atol(buffer);" rngLn="24">
+          <Props/>
+        </ElDesc>
+        <ElDesc srcRngStartln="25" srcRngStartPos="0" srcRngEndLn="26" srcRngEndPos="0" srcRngFile="/BugDetective/integerOverflow.c" srcRnghash="-1197576192" ln="25" ElType="." desc="header_len = strlen(header);" rngLn="25">
+          <Props>
+            <Prop key="Tracked variables" val="msg_len"/>
+          </Props>
+          <Anns>
+            <Ann msg="Tainted data: msg_len" kind="var"/>
+          </Anns>
+        </ElDesc>
+        <ElDesc srcRngStartln="26" srcRngStartPos="0" srcRngEndLn="27" srcRngEndPos="0" srcRngFile="/BugDetective/integerOverflow.c" srcRnghash="-1197576192" ln="26" ElType="." desc="total_len = header_len;" rngLn="26">
+          <Props/>
+        </ElDesc>
+        <ElDesc srcRngStartln="27" srcRngStartPos="0" srcRngEndLn="28" srcRngEndPos="0" srcRngFile="/BugDetective/integerOverflow.c" srcRnghash="-1197576192" ln="27" ElType="!" desc="total_len += msg_len; /* POSSIBLE INTEGER OVERFLOW HERE */" rngLn="27">
+          <Props/>
+          <Anns>
+            <Ann msg="Point of possible overflow/underflow" kind="info"/>
+          </Anns>
+        </ElDesc>
+        <ElDesc srcRngStartln="29" srcRngStartPos="0" srcRngEndLn="30" srcRngEndPos="0" srcRngFile="/BugDetective/integerOverflow.c" srcRnghash="-1197576192" ln="29" ElType="." desc="msg = (char*)malloc(total_len); /* VIOLATION, USAGE OF OVERFLOWED VALUE */" rngLn="29">
+          <Props>
+            <Prop key="Tracked variables" val="total_len"/>
+          </Props>
+          <Anns>
+            <Ann msg="Tainted data: total_len" kind="var"/>
+          </Anns>
+        </ElDesc>
+        <ElDesc srcRngStartln="30" srcRngStartPos="0" srcRngEndLn="31" srcRngEndPos="0" srcRngFile="/BugDetective/integerOverflow.c" srcRnghash="-1197576192" ln="30" ElType="." desc="if (!msg) {" rngLn="30">
+          <Props/>
+          <Anns>
+            <Ann msg="Condition evaluation: !msg (assuming false)" kind="condEval"/>
+          </Anns>
+        </ElDesc>
+        <ElDesc srcRngStartln="34" srcRngStartPos="0" srcRngEndLn="35" srcRngEndPos="0" srcRngFile="/BugDetective/integerOverflow.c" srcRnghash="-1197576192" ln="34" ElType="." desc="strcpy(msg, header);" rngLn="34">
+          <Props/>
+        </ElDesc>
+        <ElDesc srcRngStartln="36" srcRngStartPos="0" srcRngEndLn="37" srcRngEndPos="0" srcRngFile="/BugDetective/integerOverflow.c" srcRnghash="-1197576192" ln="36" ElType="." desc="recv(socket, msg + msg_len, msg_len, MSG_NOSIGNAL);" rngLn="36">
+          <Props/>
+        </ElDesc>
+        <ElDesc srcRngStartln="38" srcRngStartPos="0" srcRngEndLn="39" srcRngEndPos="0" srcRngFile="/BugDetective/integerOverflow.c" srcRnghash="-1197576192" ln="38" ElType=".P" desc="for (i = header_len; i &lt; total_len; i++) { /* VIOLATION, USAGE OF OVERFLOWED VALUE */" rngLn="38">
+          <Props>
+            <Prop key="Tracked variables" val="total_len"/>
+          </Props>
+          <Anns>
+            <Ann msg="Tainted data: total_len" kind="var"/>
+            <Ann msg="Point of using possibly overflowed/underflowed value" kind="point"/>
+          </Anns>
+        </ElDesc>
+      </ElDescList>
+    </FlowViol>
     <FlowViol msg="Memory not deallocated: p" ln="26" ruleSAFMsg="Point where allocated memory is lost" auth="root" sev="1" rule="BD-RES-LEAKS" ruleSCSCMsg="Point where memory is allocated" tool="c++test" id="585789567" lang="cpp" locType="sr" urgent="true" config="1" hash="1502549011" locStartln="26" locStartPos="0" locEndLn="27" locEndPos="0" locFile="/BugDetective/memoryLeaks.c" FirstElSrcRngStartln="18" FirstElSrcRngStartPos="0" FirstElSrcRngEndLn="19" FirstElSrcRngEndPos="0" FirstElSrcRngFile="/BugDetective/memoryLeaks.c">
       <Props>
         <Prop key="Tracked variables" val="Allocated memory"/>
@@ -704,6 +1202,52 @@
           <Anns>
             <Ann msg="Allocated memory: pointer" kind="var"/>
             <Ann msg="Point where allocated memory is lost" kind="point"/>
+          </Anns>
+        </ElDesc>
+      </ElDescList>
+    </FlowViol>
+    <FlowViol msg="Value returned from method &quot;malloc&quot; should be checked" ln="44" ruleSAFMsg="Point by which returned value should be checked" auth="root" sev="2" rule="BD-PB-CHECKRETGEN" ruleSCSCMsg="Method call" tool="c++test" id="1381748893" lang="cpp" locType="sr" urgent="true" config="1" hash="1502549011" locStartln="44" locStartPos="0" locEndLn="45" locEndPos="0" locFile="/BugDetective/memoryLeaks.c" FirstElSrcRngStartln="40" FirstElSrcRngStartPos="0" FirstElSrcRngEndLn="41" FirstElSrcRngEndPos="0" FirstElSrcRngFile="/BugDetective/memoryLeaks.c">
+      <Props/>
+      <ElDescList>
+        <ElDesc srcRngStartln="34" srcRngStartPos="0" srcRngEndLn="35" srcRngEndPos="0" srcRngFile="/BugDetective/memoryLeaks.c" srcRnghash="1502549011" ln="34" ElType="." desc="int count = 0;" rngLn="34">
+          <Props/>
+        </ElDesc>
+        <ElDesc srcRngStartln="35" srcRngStartPos="0" srcRngEndLn="36" srcRngEndPos="0" srcRngFile="/BugDetective/memoryLeaks.c" srcRnghash="1502549011" ln="35" ElType="." desc="int LOOPS = 100;" rngLn="35">
+          <Props/>
+        </ElDesc>
+        <ElDesc srcRngStartln="36" srcRngStartPos="0" srcRngEndLn="37" srcRngEndPos="0" srcRngFile="/BugDetective/memoryLeaks.c" srcRnghash="1502549011" ln="36" ElType="." desc="int MAXSIZE = 100;" rngLn="36">
+          <Props/>
+        </ElDesc>
+        <ElDesc srcRngStartln="37" srcRngStartPos="0" srcRngEndLn="38" srcRngEndPos="0" srcRngFile="/BugDetective/memoryLeaks.c" srcRnghash="1502549011" ln="37" ElType="." desc="char *pointer = NULL;" rngLn="37">
+          <Props/>
+        </ElDesc>
+        <ElDesc srcRngStartln="39" srcRngStartPos="0" srcRngEndLn="40" srcRngEndPos="0" srcRngFile="/BugDetective/memoryLeaks.c" srcRnghash="1502549011" ln="39" ElType="." desc="for(count=0; count &lt; LOOPS; count++) {" rngLn="39">
+          <Props/>
+          <Anns>
+            <Ann msg="Loop condition evaluation: (count &lt; LOOPS) (true)" kind="condEval"/>
+            <Ann msg="Entering the loop" kind="condEval"/>
+          </Anns>
+        </ElDesc>
+        <ElDesc srcRngStartln="40" srcRngStartPos="0" srcRngEndLn="41" srcRngEndPos="0" srcRngFile="/BugDetective/memoryLeaks.c" srcRnghash="1502549011" ln="40" ElType=".C" desc="malloc(...)" rngLn="40">
+          <Props/>
+          <Anns>
+            <Ann msg="Method call" kind="cause"/>
+          </Anns>
+        </ElDesc>
+        <ElDesc srcRngStartln="40" srcRngStartPos="0" srcRngEndLn="41" srcRngEndPos="0" srcRngFile="/BugDetective/memoryLeaks.c" srcRnghash="1502549011" ln="40" ElType="." desc="pointer = (char *)malloc(sizeof(char) * MAXSIZE);" rngLn="40">
+          <Props/>
+        </ElDesc>
+        <ElDesc srcRngStartln="39" srcRngStartPos="0" srcRngEndLn="40" srcRngEndPos="0" srcRngFile="/BugDetective/memoryLeaks.c" srcRnghash="1502549011" ln="39" ElType="." desc="for(count=0; count &lt; LOOPS; count++) {" rngLn="39">
+          <Props/>
+          <Anns>
+            <Ann msg="Loop condition evaluation: (count &lt; LOOPS) (assuming false)" kind="condEval"/>
+            <Ann msg="Not entering the loop" kind="condEval"/>
+          </Anns>
+        </ElDesc>
+        <ElDesc srcRngStartln="44" srcRngStartPos="0" srcRngEndLn="45" srcRngEndPos="0" srcRngFile="/BugDetective/memoryLeaks.c" srcRnghash="1502549011" ln="44" ElType=".P" desc="free(pointer);" rngLn="44">
+          <Props/>
+          <Anns>
+            <Ann msg="Point by which returned value should be checked" kind="point"/>
           </Anns>
         </ElDesc>
       </ElDescList>
@@ -866,6 +1410,18 @@
         </ElDesc>
       </ElDescList>
     </FlowViol>
+    <FlowViol msg="Value of &quot;c&quot; is never used" ln="40" ruleSAFMsg="Point where value is declared" auth="root" sev="3" rule="BD-PB-VOVR" ruleSCSCMsg="Point where value is declared" tool="c++test" id="-2055826223" lang="cpp" locType="sr" urgent="true" config="1" hash="522847191" locStartln="40" locStartPos="0" locEndLn="41" locEndPos="0" locFile="/BugDetective/nullPointerDeref.c" FirstElSrcRngStartln="40" FirstElSrcRngStartPos="0" FirstElSrcRngEndLn="41" FirstElSrcRngEndPos="0" FirstElSrcRngFile="/BugDetective/nullPointerDeref.c">
+      <Props/>
+      <ElDescList>
+        <ElDesc srcRngStartln="40" srcRngStartPos="0" srcRngEndLn="41" srcRngEndPos="0" srcRngFile="/BugDetective/nullPointerDeref.c" srcRnghash="522847191" ln="40" ElType="CP" desc="c = *p->reference;" rngLn="40">
+          <Props/>
+          <Anns>
+            <Ann msg="Point where value is declared" kind="cause"/>
+            <Ann msg="Point where value is declared" kind="point"/>
+          </Anns>
+        </ElDesc>
+      </ElDescList>
+    </FlowViol>
     <FlowViol msg="&quot;x&quot; may possibly be null" ln="9" ruleSAFMsg="Null pointer dereferencing point" auth="root" sev="1" rule="BD-PB-NP" ruleSCSCMsg="Source of null value" tool="c++test" id="203144837" lang="cpp" locType="sr" urgent="true" config="1" hash="-1583021683" locStartln="9" locStartPos="0" locEndLn="10" locEndPos="0" locFile="/BugDetective/nullPointerDerefBenchmark.c" FirstElSrcRngStartln="69" FirstElSrcRngStartPos="0" FirstElSrcRngEndLn="70" FirstElSrcRngEndPos="0" FirstElSrcRngFile="/BugDetective/nullPointerDerefBenchmark.c">
       <Props>
         <Prop key="Tracked variables" val="Null value carrier"/>
@@ -961,6 +1517,101 @@
         </ElDesc>
       </ElDescList>
     </FlowViol>
+    <FlowViol msg="Value returned from method &quot;fread&quot; should be checked" ln="29" ruleSAFMsg="Point by which returned value should be checked" auth="root" sev="2" rule="BD-PB-CHECKRETGEN" ruleSCSCMsg="Method call" tool="c++test" id="-1426786920" lang="cpp" locType="sr" urgent="true" config="1" hash="-1138451494" locStartln="29" locStartPos="0" locEndLn="30" locEndPos="0" locFile="/BugDetective/sqlInjection.c" FirstElSrcRngStartln="29" FirstElSrcRngStartPos="0" FirstElSrcRngEndLn="30" FirstElSrcRngEndPos="0" FirstElSrcRngFile="/BugDetective/sqlInjection.c">
+      <Props/>
+      <ElDescList>
+        <ElDesc srcRngStartln="26" srcRngStartPos="0" srcRngEndLn="27" srcRngEndPos="0" srcRngFile="/BugDetective/sqlInjection.c" srcRnghash="-1138451494" ln="26" ElType="." desc="char parametersString[BUF_SIZE];" rngLn="26">
+          <Props/>
+        </ElDesc>
+        <ElDesc srcRngStartln="27" srcRngStartPos="0" srcRngEndLn="28" srcRngEndPos="0" srcRngFile="/BugDetective/sqlInjection.c" srcRnghash="-1138451494" ln="27" ElType="." desc="char request[BUF_SIZE];" rngLn="27">
+          <Props/>
+        </ElDesc>
+        <ElDesc srcRngStartln="29" srcRngStartPos="0" srcRngEndLn="30" srcRngEndPos="0" srcRngFile="/BugDetective/sqlInjection.c" srcRnghash="-1138451494" ln="29" ElType="CP" desc="fread(parametersString, 1, BUF_SIZE, file);" rngLn="29">
+          <Props/>
+          <Anns>
+            <Ann msg="Method call" kind="cause"/>
+            <Ann msg="Point by which returned value should be checked" kind="point"/>
+          </Anns>
+        </ElDesc>
+      </ElDescList>
+    </FlowViol>
+    <FlowViol msg="Data obtained from a file (&quot;request[]&quot;) is injected to an SQL query" ln="35" ruleSAFMsg="Call to a dangerous method" auth="root" sev="1" rule="BD-SECURITY-TDSQL" ruleSCSCMsg="Tainting point" tool="c++test" id="1873730567" lang="cpp" locType="sr" urgent="true" config="1" hash="-1138451494" locStartln="35" locStartPos="0" locEndLn="36" locEndPos="0" locFile="/BugDetective/sqlInjection.c" FirstElSrcRngStartln="29" FirstElSrcRngStartPos="0" FirstElSrcRngEndLn="30" FirstElSrcRngEndPos="0" FirstElSrcRngFile="/BugDetective/sqlInjection.c">
+      <Props>
+        <Prop key="Tracked variables" val="Tainted data"/>
+      </Props>
+      <ElDescList>
+        <ElDesc srcRngStartln="26" srcRngStartPos="0" srcRngEndLn="27" srcRngEndPos="0" srcRngFile="/BugDetective/sqlInjection.c" srcRnghash="-1138451494" ln="26" ElType="." desc="char parametersString[BUF_SIZE];" rngLn="26">
+          <Props/>
+        </ElDesc>
+        <ElDesc srcRngStartln="27" srcRngStartPos="0" srcRngEndLn="28" srcRngEndPos="0" srcRngFile="/BugDetective/sqlInjection.c" srcRnghash="-1138451494" ln="27" ElType="." desc="char request[BUF_SIZE];" rngLn="27">
+          <Props/>
+        </ElDesc>
+        <ElDesc srcRngStartln="29" srcRngStartPos="0" srcRngEndLn="30" srcRngEndPos="0" srcRngFile="/BugDetective/sqlInjection.c" srcRnghash="-1138451494" ln="29" ElType=".C" desc="fread(parametersString, 1, BUF_SIZE, file);" rngLn="29">
+          <Props>
+            <Prop key="Tracked variables" val="parametersString[]"/>
+          </Props>
+          <Anns>
+            <Ann msg="Tainting point" kind="cause"/>
+            <Ann msg="Tainted data: parametersString[]" kind="var"/>
+          </Anns>
+        </ElDesc>
+        <ElDesc srcRngStartln="30" srcRngStartPos="0" srcRngEndLn="31" srcRngEndPos="0" srcRngFile="/BugDetective/sqlInjection.c" srcRnghash="-1138451494" ln="30" ElType="." desc="strcpy(request, requestBeginning);" rngLn="30">
+          <Props/>
+        </ElDesc>
+        <ElDesc srcRngStartln="31" srcRngStartPos="0" srcRngEndLn="32" srcRngEndPos="0" srcRngFile="/BugDetective/sqlInjection.c" srcRnghash="-1138451494" ln="31" ElType="!" desc="extractUsername(...)" rngLn="31">
+          <ElDescList>
+            <ElDesc srcRngStartln="15" srcRngStartPos="0" srcRngEndLn="16" srcRngEndPos="0" srcRngFile="/BugDetective/sqlInjection.c" srcRnghash="-1138451494" ln="15" ElType="!" desc="return s;" rngLn="15">
+              <Props>
+                <Prop key="Tracked variables" val="s[]"/>
+              </Props>
+              <Anns>
+                <Ann msg="Tainted data: s[]" kind="var"/>
+              </Anns>
+            </ElDesc>
+          </ElDescList>
+          <Props/>
+        </ElDesc>
+        <ElDesc srcRngStartln="31" srcRngStartPos="0" srcRngEndLn="32" srcRngEndPos="0" srcRngFile="/BugDetective/sqlInjection.c" srcRnghash="-1138451494" ln="31" ElType="." desc="strcat(request, extractUsername(parametersString));" rngLn="31">
+          <Props/>
+        </ElDesc>
+        <ElDesc srcRngStartln="32" srcRngStartPos="0" srcRngEndLn="33" srcRngEndPos="0" srcRngFile="/BugDetective/sqlInjection.c" srcRnghash="-1138451494" ln="32" ElType="." desc="strcat(request, requestPassword);" rngLn="32">
+          <Props/>
+        </ElDesc>
+        <ElDesc srcRngStartln="33" srcRngStartPos="0" srcRngEndLn="34" srcRngEndPos="0" srcRngFile="/BugDetective/sqlInjection.c" srcRnghash="-1138451494" ln="33" ElType="!" desc="extractPassword(...)" rngLn="33">
+          <ElDescList>
+            <ElDesc srcRngStartln="21" srcRngStartPos="0" srcRngEndLn="22" srcRngEndPos="0" srcRngFile="/BugDetective/sqlInjection.c" srcRnghash="-1138451494" ln="21" ElType="!" desc="return s;" rngLn="21">
+              <Props>
+                <Prop key="Tracked variables" val="s[]"/>
+              </Props>
+              <Anns>
+                <Ann msg="Tainted data: s[]" kind="var"/>
+              </Anns>
+            </ElDesc>
+          </ElDescList>
+          <Props/>
+        </ElDesc>
+        <ElDesc srcRngStartln="33" srcRngStartPos="0" srcRngEndLn="34" srcRngEndPos="0" srcRngFile="/BugDetective/sqlInjection.c" srcRnghash="-1138451494" ln="33" ElType="!" desc="strcat(request, extractPassword(parametersString));" rngLn="33">
+          <Props/>
+        </ElDesc>
+        <ElDesc srcRngStartln="34" srcRngStartPos="0" srcRngEndLn="35" srcRngEndPos="0" srcRngFile="/BugDetective/sqlInjection.c" srcRnghash="-1138451494" ln="34" ElType="." desc="strcat(request, requestEnding);" rngLn="34">
+          <Props>
+            <Prop key="Tracked variables" val="request[]"/>
+          </Props>
+          <Anns>
+            <Ann msg="Tainted data: request[]" kind="var"/>
+          </Anns>
+        </ElDesc>
+        <ElDesc srcRngStartln="35" srcRngStartPos="0" srcRngEndLn="36" srcRngEndPos="0" srcRngFile="/BugDetective/sqlInjection.c" srcRnghash="-1138451494" ln="35" ElType=".P" desc="SQLExecDirect(statementHandle, (SQLCHAR *)request, strlen(request));" rngLn="35">
+          <Props>
+            <Prop key="Tracked variables" val="request[]"/>
+          </Props>
+          <Anns>
+            <Ann msg="Tainted data: request[]" kind="var"/>
+            <Ann msg="Call to a dangerous method" kind="point"/>
+          </Anns>
+        </ElDesc>
+      </ElDescList>
+    </FlowViol>
     <FlowViol msg="Condition &quot;!volumetric&quot; always evaluates to true" ln="16" ruleSAFMsg="Point where senseless condition is used" auth="root" sev="2" rule="BD-PB-CC" ruleSCSCMsg="Start of the path" tool="c++test" id="-527458111" lang="cpp" locType="sr" urgent="true" config="1" hash="1398926183" locStartln="16" locStartPos="0" locEndLn="17" locEndPos="0" locFile="/BugDetective/unreachableCode.c" FirstElSrcRngStartln="11" FirstElSrcRngStartPos="0" FirstElSrcRngEndLn="12" FirstElSrcRngEndPos="0" FirstElSrcRngFile="/BugDetective/unreachableCode.c">
       <Props/>
       <ElDescList>
@@ -1020,6 +1671,37 @@
           <Props/>
           <Anns>
             <Ann msg="Point where senseless condition is used" kind="point"/>
+          </Anns>
+        </ElDesc>
+      </ElDescList>
+    </FlowViol>
+    <FlowViol msg="Unreachable branch(es): &quot;case HEMISPHERE&quot;" ln="24" ruleSAFMsg="Point where switch with unreachable branch(es) is defined" auth="root" sev="2" rule="BD-PB-SWITCH" ruleSCSCMsg="Start of the path" tool="c++test" id="1540691550" lang="cpp" locType="sr" urgent="true" config="1" hash="1398926183" locStartln="24" locStartPos="0" locEndLn="25" locEndPos="0" locFile="/BugDetective/unreachableCode.c" FirstElSrcRngStartln="11" FirstElSrcRngStartPos="0" FirstElSrcRngEndLn="12" FirstElSrcRngEndPos="0" FirstElSrcRngFile="/BugDetective/unreachableCode.c">
+      <Props/>
+      <ElDescList>
+        <ElDesc srcRngStartln="11" srcRngStartPos="0" srcRngEndLn="12" srcRngEndPos="0" srcRngFile="/BugDetective/unreachableCode.c" srcRnghash="1398926183" ln="11" ElType=".C" desc="static void guessFigure(int round, int volumetric)" rngLn="11">
+          <Props/>
+          <Anns>
+            <Ann msg="Start of the path" kind="cause"/>
+          </Anns>
+        </ElDesc>
+        <ElDesc srcRngStartln="13" srcRngStartPos="0" srcRngEndLn="14" srcRngEndPos="0" srcRngFile="/BugDetective/unreachableCode.c" srcRnghash="1398926183" ln="13" ElType="." desc="int figure;" rngLn="13">
+          <Props/>
+        </ElDesc>
+        <ElDesc srcRngStartln="14" srcRngStartPos="0" srcRngEndLn="15" srcRngEndPos="0" srcRngFile="/BugDetective/unreachableCode.c" srcRnghash="1398926183" ln="14" ElType="." desc="if (round &amp;&amp; volumetric) {" rngLn="14">
+          <Props/>
+          <Anns>
+            <Ann msg="Condition evaluation: (round != 0) (assuming true)" kind="condEval"/>
+            <Ann msg="Condition evaluation: (volumetric != 0) (assuming true)" kind="condEval"/>
+            <Ann msg="Condition evaluation: round &amp;&amp; volumetric (true)" kind="condEval"/>
+          </Anns>
+        </ElDesc>
+        <ElDesc srcRngStartln="15" srcRngStartPos="0" srcRngEndLn="16" srcRngEndPos="0" srcRngFile="/BugDetective/unreachableCode.c" srcRnghash="1398926183" ln="15" ElType="!" desc="figure = SPHERE;" rngLn="15">
+          <Props/>
+        </ElDesc>
+        <ElDesc srcRngStartln="24" srcRngStartPos="0" srcRngEndLn="25" srcRngEndPos="0" srcRngFile="/BugDetective/unreachableCode.c" srcRnghash="1398926183" ln="24" ElType=".P" desc="switch (figure) {" rngLn="24">
+          <Props/>
+          <Anns>
+            <Ann msg="Point where switch with unreachable branch(es) is defined" kind="point"/>
           </Anns>
         </ElDesc>
       </ElDescList>
@@ -1210,6 +1892,176 @@
         </ElDesc>
       </ElDescList>
     </FlowViol>
+    <FlowViol msg="Value returned from method &quot;fgets&quot; should be checked" ln="41" ruleSAFMsg="Point by which returned value should be checked" auth="root" sev="2" rule="BD-PB-CHECKRETGEN" ruleSCSCMsg="Method call" tool="c++test" id="1482391288" lang="cpp" locType="sr" urgent="true" config="1" hash="-54878936" locStartln="41" locStartPos="0" locEndLn="42" locEndPos="0" locFile="/BugDetective/useBeforeInit.c" FirstElSrcRngStartln="41" FirstElSrcRngStartPos="0" FirstElSrcRngEndLn="42" FirstElSrcRngEndPos="0" FirstElSrcRngFile="/BugDetective/useBeforeInit.c">
+      <Props/>
+      <ElDescList>
+        <ElDesc srcRngStartln="32" srcRngStartPos="0" srcRngEndLn="33" srcRngEndPos="0" srcRngFile="/BugDetective/useBeforeInit.c" srcRnghash="-54878936" ln="32" ElType="." desc="Person* p;" rngLn="32">
+          <Props/>
+        </ElDesc>
+        <ElDesc srcRngStartln="33" srcRngStartPos="0" srcRngEndLn="34" srcRngEndPos="0" srcRngFile="/BugDetective/useBeforeInit.c" srcRnghash="-54878936" ln="33" ElType="." desc="FILE *file;" rngLn="33">
+          <Props/>
+        </ElDesc>
+        <ElDesc srcRngStartln="34" srcRngStartPos="0" srcRngEndLn="35" srcRngEndPos="0" srcRngFile="/BugDetective/useBeforeInit.c" srcRnghash="-54878936" ln="34" ElType="." desc="file = fopen(filename, &quot;r&quot;);" rngLn="34">
+          <Props/>
+        </ElDesc>
+        <ElDesc srcRngStartln="35" srcRngStartPos="0" srcRngEndLn="36" srcRngEndPos="0" srcRngFile="/BugDetective/useBeforeInit.c" srcRnghash="-54878936" ln="35" ElType="." desc="if (file!=NULL) {" rngLn="35">
+          <Props/>
+          <Anns>
+            <Ann msg="Condition evaluation: (file != 0) (assuming true)" kind="condEval"/>
+          </Anns>
+        </ElDesc>
+        <ElDesc srcRngStartln="36" srcRngStartPos="0" srcRngEndLn="37" srcRngEndPos="0" srcRngFile="/BugDetective/useBeforeInit.c" srcRnghash="-54878936" ln="36" ElType="." desc="char id[10];" rngLn="36">
+          <Props/>
+        </ElDesc>
+        <ElDesc srcRngStartln="37" srcRngStartPos="0" srcRngEndLn="38" srcRngEndPos="0" srcRngFile="/BugDetective/useBeforeInit.c" srcRnghash="-54878936" ln="37" ElType="." desc="char name[100];" rngLn="37">
+          <Props/>
+        </ElDesc>
+        <ElDesc srcRngStartln="38" srcRngStartPos="0" srcRngEndLn="39" srcRngEndPos="0" srcRngFile="/BugDetective/useBeforeInit.c" srcRnghash="-54878936" ln="38" ElType="." desc="char reference[1000];" rngLn="38">
+          <Props/>
+        </ElDesc>
+        <ElDesc srcRngStartln="39" srcRngStartPos="0" srcRngEndLn="40" srcRngEndPos="0" srcRngFile="/BugDetective/useBeforeInit.c" srcRnghash="-54878936" ln="39" ElType="." desc="p = malloc(sizeof(Person));" rngLn="39">
+          <Props/>
+        </ElDesc>
+        <ElDesc srcRngStartln="40" srcRngStartPos="0" srcRngEndLn="41" srcRngEndPos="0" srcRngFile="/BugDetective/useBeforeInit.c" srcRnghash="-54878936" ln="40" ElType="." desc="if (p == 0) exit(1);" rngLn="40">
+          <Props/>
+          <Anns>
+            <Ann msg="Condition evaluation: (p == 0) (assuming false)" kind="condEval"/>
+          </Anns>
+        </ElDesc>
+        <ElDesc srcRngStartln="41" srcRngStartPos="0" srcRngEndLn="42" srcRngEndPos="0" srcRngFile="/BugDetective/useBeforeInit.c" srcRnghash="-54878936" ln="41" ElType="CP" desc="fgets(id, 10, file);" rngLn="41">
+          <Props/>
+          <Anns>
+            <Ann msg="Method call" kind="cause"/>
+            <Ann msg="Point by which returned value should be checked" kind="point"/>
+          </Anns>
+        </ElDesc>
+      </ElDescList>
+    </FlowViol>
+    <FlowViol msg="The &quot;id&quot; string from the &quot;fgets&quot; method is used but was not reset" ln="42" ruleSAFMsg="Place where the string is used" auth="root" sev="2" rule="BD-PB-FGETS" ruleSCSCMsg="Place where the string is obtained" tool="c++test" id="-1805367807" lang="cpp" locType="sr" urgent="true" config="1" hash="-54878936" locStartln="42" locStartPos="0" locEndLn="43" locEndPos="0" locFile="/BugDetective/useBeforeInit.c" FirstElSrcRngStartln="41" FirstElSrcRngStartPos="0" FirstElSrcRngEndLn="42" FirstElSrcRngEndPos="0" FirstElSrcRngFile="/BugDetective/useBeforeInit.c">
+      <Props/>
+      <ElDescList>
+        <ElDesc srcRngStartln="41" srcRngStartPos="0" srcRngEndLn="42" srcRngEndPos="0" srcRngFile="/BugDetective/useBeforeInit.c" srcRnghash="-54878936" ln="41" ElType=".C" desc="fgets(id, 10, file);" rngLn="41">
+          <Props/>
+          <Anns>
+            <Ann msg="Place where the string is obtained" kind="cause"/>
+          </Anns>
+        </ElDesc>
+        <ElDesc srcRngStartln="42" srcRngStartPos="0" srcRngEndLn="43" srcRngEndPos="0" srcRngFile="/BugDetective/useBeforeInit.c" srcRnghash="-54878936" ln="42" ElType=".P" desc="p->personalId = atoi(id);" rngLn="42">
+          <Props/>
+          <Anns>
+            <Ann msg="Place where the string is used" kind="point"/>
+          </Anns>
+        </ElDesc>
+      </ElDescList>
+    </FlowViol>
+    <FlowViol msg="Value returned from method &quot;fgets&quot; should be checked" ln="43" ruleSAFMsg="Point by which returned value should be checked" auth="root" sev="2" rule="BD-PB-CHECKRETGEN" ruleSCSCMsg="Method call" tool="c++test" id="-1678578016" lang="cpp" locType="sr" urgent="true" config="1" hash="-54878936" locStartln="43" locStartPos="0" locEndLn="44" locEndPos="0" locFile="/BugDetective/useBeforeInit.c" FirstElSrcRngStartln="43" FirstElSrcRngStartPos="0" FirstElSrcRngEndLn="44" FirstElSrcRngEndPos="0" FirstElSrcRngFile="/BugDetective/useBeforeInit.c">
+      <Props/>
+      <ElDescList>
+        <ElDesc srcRngStartln="32" srcRngStartPos="0" srcRngEndLn="33" srcRngEndPos="0" srcRngFile="/BugDetective/useBeforeInit.c" srcRnghash="-54878936" ln="32" ElType="." desc="Person* p;" rngLn="32">
+          <Props/>
+        </ElDesc>
+        <ElDesc srcRngStartln="33" srcRngStartPos="0" srcRngEndLn="34" srcRngEndPos="0" srcRngFile="/BugDetective/useBeforeInit.c" srcRnghash="-54878936" ln="33" ElType="." desc="FILE *file;" rngLn="33">
+          <Props/>
+        </ElDesc>
+        <ElDesc srcRngStartln="34" srcRngStartPos="0" srcRngEndLn="35" srcRngEndPos="0" srcRngFile="/BugDetective/useBeforeInit.c" srcRnghash="-54878936" ln="34" ElType="." desc="file = fopen(filename, &quot;r&quot;);" rngLn="34">
+          <Props/>
+        </ElDesc>
+        <ElDesc srcRngStartln="35" srcRngStartPos="0" srcRngEndLn="36" srcRngEndPos="0" srcRngFile="/BugDetective/useBeforeInit.c" srcRnghash="-54878936" ln="35" ElType="." desc="if (file!=NULL) {" rngLn="35">
+          <Props/>
+          <Anns>
+            <Ann msg="Condition evaluation: (file != 0) (assuming true)" kind="condEval"/>
+          </Anns>
+        </ElDesc>
+        <ElDesc srcRngStartln="36" srcRngStartPos="0" srcRngEndLn="37" srcRngEndPos="0" srcRngFile="/BugDetective/useBeforeInit.c" srcRnghash="-54878936" ln="36" ElType="." desc="char id[10];" rngLn="36">
+          <Props/>
+        </ElDesc>
+        <ElDesc srcRngStartln="37" srcRngStartPos="0" srcRngEndLn="38" srcRngEndPos="0" srcRngFile="/BugDetective/useBeforeInit.c" srcRnghash="-54878936" ln="37" ElType="." desc="char name[100];" rngLn="37">
+          <Props/>
+        </ElDesc>
+        <ElDesc srcRngStartln="38" srcRngStartPos="0" srcRngEndLn="39" srcRngEndPos="0" srcRngFile="/BugDetective/useBeforeInit.c" srcRnghash="-54878936" ln="38" ElType="." desc="char reference[1000];" rngLn="38">
+          <Props/>
+        </ElDesc>
+        <ElDesc srcRngStartln="39" srcRngStartPos="0" srcRngEndLn="40" srcRngEndPos="0" srcRngFile="/BugDetective/useBeforeInit.c" srcRnghash="-54878936" ln="39" ElType="." desc="p = malloc(sizeof(Person));" rngLn="39">
+          <Props/>
+        </ElDesc>
+        <ElDesc srcRngStartln="40" srcRngStartPos="0" srcRngEndLn="41" srcRngEndPos="0" srcRngFile="/BugDetective/useBeforeInit.c" srcRnghash="-54878936" ln="40" ElType="." desc="if (p == 0) exit(1);" rngLn="40">
+          <Props/>
+          <Anns>
+            <Ann msg="Condition evaluation: (p == 0) (assuming false)" kind="condEval"/>
+          </Anns>
+        </ElDesc>
+        <ElDesc srcRngStartln="41" srcRngStartPos="0" srcRngEndLn="42" srcRngEndPos="0" srcRngFile="/BugDetective/useBeforeInit.c" srcRnghash="-54878936" ln="41" ElType="." desc="fgets(id, 10, file);" rngLn="41">
+          <Props/>
+        </ElDesc>
+        <ElDesc srcRngStartln="42" srcRngStartPos="0" srcRngEndLn="43" srcRngEndPos="0" srcRngFile="/BugDetective/useBeforeInit.c" srcRnghash="-54878936" ln="42" ElType="." desc="p->personalId = atoi(id);" rngLn="42">
+          <Props/>
+        </ElDesc>
+        <ElDesc srcRngStartln="43" srcRngStartPos="0" srcRngEndLn="44" srcRngEndPos="0" srcRngFile="/BugDetective/useBeforeInit.c" srcRnghash="-54878936" ln="43" ElType="CP" desc="fgets(name, 100, file);" rngLn="43">
+          <Props/>
+          <Anns>
+            <Ann msg="Method call" kind="cause"/>
+            <Ann msg="Point by which returned value should be checked" kind="point"/>
+          </Anns>
+        </ElDesc>
+      </ElDescList>
+    </FlowViol>
+    <FlowViol msg="Value returned from method &quot;fgets&quot; should be checked" ln="45" ruleSAFMsg="Point by which returned value should be checked" auth="root" sev="2" rule="BD-PB-CHECKRETGEN" ruleSCSCMsg="Method call" tool="c++test" id="-2100132604" lang="cpp" locType="sr" urgent="true" config="1" hash="-54878936" locStartln="45" locStartPos="0" locEndLn="46" locEndPos="0" locFile="/BugDetective/useBeforeInit.c" FirstElSrcRngStartln="45" FirstElSrcRngStartPos="0" FirstElSrcRngEndLn="46" FirstElSrcRngEndPos="0" FirstElSrcRngFile="/BugDetective/useBeforeInit.c">
+      <Props/>
+      <ElDescList>
+        <ElDesc srcRngStartln="32" srcRngStartPos="0" srcRngEndLn="33" srcRngEndPos="0" srcRngFile="/BugDetective/useBeforeInit.c" srcRnghash="-54878936" ln="32" ElType="." desc="Person* p;" rngLn="32">
+          <Props/>
+        </ElDesc>
+        <ElDesc srcRngStartln="33" srcRngStartPos="0" srcRngEndLn="34" srcRngEndPos="0" srcRngFile="/BugDetective/useBeforeInit.c" srcRnghash="-54878936" ln="33" ElType="." desc="FILE *file;" rngLn="33">
+          <Props/>
+        </ElDesc>
+        <ElDesc srcRngStartln="34" srcRngStartPos="0" srcRngEndLn="35" srcRngEndPos="0" srcRngFile="/BugDetective/useBeforeInit.c" srcRnghash="-54878936" ln="34" ElType="." desc="file = fopen(filename, &quot;r&quot;);" rngLn="34">
+          <Props/>
+        </ElDesc>
+        <ElDesc srcRngStartln="35" srcRngStartPos="0" srcRngEndLn="36" srcRngEndPos="0" srcRngFile="/BugDetective/useBeforeInit.c" srcRnghash="-54878936" ln="35" ElType="." desc="if (file!=NULL) {" rngLn="35">
+          <Props/>
+          <Anns>
+            <Ann msg="Condition evaluation: (file != 0) (assuming true)" kind="condEval"/>
+          </Anns>
+        </ElDesc>
+        <ElDesc srcRngStartln="36" srcRngStartPos="0" srcRngEndLn="37" srcRngEndPos="0" srcRngFile="/BugDetective/useBeforeInit.c" srcRnghash="-54878936" ln="36" ElType="." desc="char id[10];" rngLn="36">
+          <Props/>
+        </ElDesc>
+        <ElDesc srcRngStartln="37" srcRngStartPos="0" srcRngEndLn="38" srcRngEndPos="0" srcRngFile="/BugDetective/useBeforeInit.c" srcRnghash="-54878936" ln="37" ElType="." desc="char name[100];" rngLn="37">
+          <Props/>
+        </ElDesc>
+        <ElDesc srcRngStartln="38" srcRngStartPos="0" srcRngEndLn="39" srcRngEndPos="0" srcRngFile="/BugDetective/useBeforeInit.c" srcRnghash="-54878936" ln="38" ElType="." desc="char reference[1000];" rngLn="38">
+          <Props/>
+        </ElDesc>
+        <ElDesc srcRngStartln="39" srcRngStartPos="0" srcRngEndLn="40" srcRngEndPos="0" srcRngFile="/BugDetective/useBeforeInit.c" srcRnghash="-54878936" ln="39" ElType="." desc="p = malloc(sizeof(Person));" rngLn="39">
+          <Props/>
+        </ElDesc>
+        <ElDesc srcRngStartln="40" srcRngStartPos="0" srcRngEndLn="41" srcRngEndPos="0" srcRngFile="/BugDetective/useBeforeInit.c" srcRnghash="-54878936" ln="40" ElType="." desc="if (p == 0) exit(1);" rngLn="40">
+          <Props/>
+          <Anns>
+            <Ann msg="Condition evaluation: (p == 0) (assuming false)" kind="condEval"/>
+          </Anns>
+        </ElDesc>
+        <ElDesc srcRngStartln="41" srcRngStartPos="0" srcRngEndLn="42" srcRngEndPos="0" srcRngFile="/BugDetective/useBeforeInit.c" srcRnghash="-54878936" ln="41" ElType="." desc="fgets(id, 10, file);" rngLn="41">
+          <Props/>
+        </ElDesc>
+        <ElDesc srcRngStartln="42" srcRngStartPos="0" srcRngEndLn="43" srcRngEndPos="0" srcRngFile="/BugDetective/useBeforeInit.c" srcRnghash="-54878936" ln="42" ElType="." desc="p->personalId = atoi(id);" rngLn="42">
+          <Props/>
+        </ElDesc>
+        <ElDesc srcRngStartln="43" srcRngStartPos="0" srcRngEndLn="44" srcRngEndPos="0" srcRngFile="/BugDetective/useBeforeInit.c" srcRnghash="-54878936" ln="43" ElType="." desc="fgets(name, 100, file);" rngLn="43">
+          <Props/>
+        </ElDesc>
+        <ElDesc srcRngStartln="44" srcRngStartPos="0" srcRngEndLn="45" srcRngEndPos="0" srcRngFile="/BugDetective/useBeforeInit.c" srcRnghash="-54878936" ln="44" ElType="." desc="p->name = name;" rngLn="44">
+          <Props/>
+        </ElDesc>
+        <ElDesc srcRngStartln="45" srcRngStartPos="0" srcRngEndLn="46" srcRngEndPos="0" srcRngFile="/BugDetective/useBeforeInit.c" srcRnghash="-54878936" ln="45" ElType="CP" desc="fgets(reference, 100, file);" rngLn="45">
+          <Props/>
+          <Anns>
+            <Ann msg="Method call" kind="cause"/>
+            <Ann msg="Point by which returned value should be checked" kind="point"/>
+          </Anns>
+        </ElDesc>
+      </ElDescList>
+    </FlowViol>
     <FlowViol msg="&quot;p&quot; is used prior to initialization" ln="51" ruleSAFMsg="Usage point" auth="root" sev="1" rule="BD-PB-NOTINIT" ruleSCSCMsg="Source of not initialized value" tool="c++test" id="-1888625583" lang="cpp" locType="sr" urgent="true" config="1" hash="-54878936" locStartln="51" locStartPos="0" locEndLn="52" locEndPos="0" locFile="/BugDetective/useBeforeInit.c" FirstElSrcRngStartln="32" FirstElSrcRngStartPos="0" FirstElSrcRngEndLn="33" FirstElSrcRngEndPos="0" FirstElSrcRngFile="/BugDetective/useBeforeInit.c">
       <Props>
         <Prop key="Tracked variables" val="Not initialized value"/>
@@ -1256,7 +2108,7 @@
       
       
    </CodingStandards>
-   <Metrics ownerId="com.parasoft.xtest.checkers.api.standards" time="0:00:09">
+   <Metrics ownerId="com.parasoft.xtest.checkers.api.standards" time="0:00:13">
       
    </Metrics>
    <AssocUrls/>
