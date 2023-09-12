@@ -1,0 +1,74 @@
+# Use C++test 2022.0
+name: CI-Test-2022-1
+
+on:
+  push:
+    branches: [ main ]
+  #pull_request:
+  #  branches: [ master,child_02 ]
+  #workflow_dispatch:
+
+permissions: write-all
+
+jobs:
+  test-cpptest:
+    name: Analyze project with C/C++test
+    runs-on: docker_label-1
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v3
+    
+    - name: ls_check
+      run: |
+         pwd
+         ls 
+
+    - name: Generate BDF
+      env: 
+        CPPTEST_SCAN_PROJECT_NAME: DevelopSampleProject
+      run: |
+           & docker exec gcc /opt/app/parasoft/cpptest/bin/cpptesttrace make all
+
+      working-directory: ./DevelopSampleProject
+      
+    - name: gcc_version_container
+      run: |
+         ls
+         docker exec gcc gcc --version
+         
+    - name: delete_reportfiles
+      run: |
+         rm -rf /home/keio/git_and_docker_cpptest/git_and_docker/DevelopSampleProject/reports/report.sarif
+         rm -rf /home/keio/git_and_docker_cpptest/git_and_docker/DevelopSampleProject/reports/report.xml
+
+    - name: Run C++test_git
+      # Use the 'run-cpptest-action' GitHub Action.
+      uses: parasoft/run-cpptest-action@2.0.0
+      with:
+        installDir: '/opt/app/parasoft/cpptest/'
+        compilerConfig: 'gcc_11-64'
+        testConfig: 'builtin://Recommended Rules'
+        reportFormat: xml,html,sarif
+        input: './DevelopSampleProject/BugDetective/cpptestscan.bdf'
+        reportDir: '/home/keio/git_and_docker_cpptest/git_and_docker/DevelopSampleProject/reports'
+        additionalParams: './DevelopSampleProject/cpptestcli.properties'
+        commandLinePattern: docker exec gcc "${installDir}/cpptestcli" -data ./ -config "${testConfig}" -bdf "${input}" -localsettings "${additionalParams}" -report "${reportDir}"
+        
+
+    # Uploads analysis results in the SARIF format, so that they are displayed as GitHub code scanning alerts.
+    - name: Upload results (SARIF)
+      if: always()
+      uses: github/codeql-action/upload-sarif@v2
+      env: 
+        GITHUB_TOKEN: ${{ secrets.ubuntu_key_docker }}
+      with:
+        sarif_file: /home/keio/cpptest_git/cpptest_docker/sagyou/reports/report.sarif
+    
+    # Uploads an archive that includes all report files (.xml, .html, .sarif).
+    - name: Archive reports
+      if: always()
+      uses: actions/upload-artifact@v3
+      with:
+        name: Static analysis reports
+        path: /home/keio/cpptest_git/cpptest_docker/sagyou/reports/*.*
