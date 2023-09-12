@@ -51,7 +51,7 @@ jobs:
         testConfig: 'builtin://Flow Analysis Aggressive'
         reportFormat: xml,html,sarif
         input: './BugDetective/cpptestscan.bdf'
-        reportDir: '/home/keio/git_and_docker_cpptest/git_and_docker/DevelopSampleProject/reports'
+        reportDir: '../reports'
         additionalParams: './cpptestcli.properties'
         commandLinePattern: docker exec gcc "${installDir}/cpptestcli" -data ./ -config "${testConfig}" -bdf "${input}" -localsettings "${additionalParams}" -report "${reportDir}"
         
@@ -63,7 +63,7 @@ jobs:
       env: 
         GITHUB_TOKEN: ${{ secrets.ubuntu_key_docker }}
       with:
-        sarif_file: reports/report.sarif
+        sarif_file: ./reports/report.sarif
     
     # Uploads an archive that includes all report files (.xml, .html, .sarif).
     - name: Archive reports
@@ -71,4 +71,4 @@ jobs:
       uses: actions/upload-artifact@v3
       with:
         name: Static analysis reports
-        path: reports/*.*
+        path: ./reports/*.*
