@@ -52,7 +52,7 @@ jobs:
         reportFormat: xml,html,sarif
         input: './DevelopSampleProject/BugDetective/cpptestscan.bdf'
         reportDir: '/home/keio/git_and_docker_cpptest/git_and_docker/DevelopSampleProject/reports'
-        additionalParams: './DevelopSampleProject/cpptestcli.properties'
+        additionalParams: './cpptestcli.properties'
         commandLinePattern: docker exec gcc "${installDir}/cpptestcli" -data ./ -config "${testConfig}" -bdf "${input}" -localsettings "${additionalParams}" -report "${reportDir}"
         
 
