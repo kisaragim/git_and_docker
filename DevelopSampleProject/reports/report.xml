@@ -1,0 +1,1263 @@
+<?xml version='1.0' encoding='UTF-8'?><ResultsSession buildId="Default Project-2023-09-12" date="09/12/23 06:06:40" machine="d1212b955e38" project="Default Project" tag="Recommended Rules" time="2023-09-12T06:06:40+00:00" toolName="C++test" toolVer="2022.2.0.20221118B1963" user="root">
+   <TestConfig machine="d1212b955e38" name="Recommended Rules" pseudoUrl="c++test.builtin://Recommended Rules" user="root"/>
+   <Authors>
+      <Author id="dev1" name="root"/>
+   </Authors>
+   <VersionInfos>
+      <StorageInfo ownerId="com.parasoft.xtest.checkers.api.execution" resultId="IExecutionViolation" ver="2"/>
+      <StorageInfo ownerId="com.parasoft.xtest.checkers.api.execution" resultId="InsureViolation" ver="3"/>
+      <StorageInfo ownerId="com.parasoft.xtest.checkers.api.scope" resultId="IScopeProjectInfo" ver="3"/>
+      <StorageInfo ownerId="com.parasoft.xtest.checkers.api.standards" resultId="IMetricsViolation" ver="2"/>
+      <StorageInfo ownerId="com.parasoft.xtest.checkers.api.standards" resultId="IDupCodeViolation" ver="2"/>
+      <StorageInfo ownerId="com.parasoft.xtest.checkers.api.standards" resultId="IMetricEstimationInfo" ver="2"/>
+      <StorageInfo ownerId="com.parasoft.xtest.checkers.api.standards" resultId="IFlowAnalysisViolation" ver="2"/>
+      <StorageInfo ownerId="com.parasoft.xtest.checkers.api.standards" resultId="ICodingStandardsViolation" ver="2"/>
+      <StorageInfo ownerId="com.parasoft.xtest.checkers.api.generation" resultId="IGenerationInfo" ver="2"/>
+      <StorageInfo ownerId="com.parasoft.xtest.checkers.api.generation" resultId="IGenerationProjectInfo" ver="2"/>
+   </VersionInfos>
+   
+   
+   <Scope>
+      <ProjectInformations>
+         <ScopeProjectInfo fltFiles="18" fltLns="660" project="/BugDetective" totFiles="18" totLns="660"/>
+      </ProjectInformations>
+   </Scope>
+   <CodingStandards ownerId="com.parasoft.xtest.checkers.api.standards" time="0:00:09">
+      <Goal mode="1" name="Static"/>
+      <Projects>
+         <Project bdCheckedFiles="9" bdTotalFiles="9" checkedFiles="16" checkedLns="658" name="BugDetective" qfixErrs="0" suppErrs="0" totErrs="24" totFiles="16" totLns="658"/>
+      </Projects>
+      <Rules>
+         <RulesList>
+            <Rule cat="BD-API" desc="Do not pass negative values to functions expecting non-negative arguments" id="BD-API-NEGPARAM" sev="1">
+               <Stats authTot="0;" authUrg="0;" total="0"/>
+            </Rule>
+            <Rule cat="BD-PB" desc="Always catch exceptions" id="BD-PB-EXCEPT" sev="1">
+               <Stats authTot="0;" authUrg="0;" total="0"/>
+            </Rule>
+            <Rule cat="BD-PB" desc="Avoid use before initialization" id="BD-PB-NOTINIT" sev="1">
+               <Stats authTot="2;" authUrg="2;" total="2"/>
+            </Rule>
+            <Rule cat="BD-PB" desc="Avoid null pointer dereferencing" id="BD-PB-NP" sev="1">
+               <Stats authTot="7;" authUrg="7;" total="7"/>
+            </Rule>
+            <Rule cat="BD-PB" desc="Avoid buffer overflow due to defining incorrect format limits" id="BD-PB-OVERFFMT" sev="1">
+               <Stats authTot="0;" authUrg="0;" total="0"/>
+            </Rule>
+            <Rule cat="BD-PB" desc="Avoid overflow due to reading a not zero terminated string" id="BD-PB-OVERFNZT" sev="1">
+               <Stats authTot="0;" authUrg="0;" total="0"/>
+            </Rule>
+            <Rule cat="BD-PB" desc="Avoid overflow when reading from a buffer" id="BD-PB-OVERFRD" sev="1">
+               <Stats authTot="0;" authUrg="0;" total="0"/>
+            </Rule>
+            <Rule cat="BD-PB" desc="Avoid overflow when writing to a buffer" id="BD-PB-OVERFWR" sev="1">
+               <Stats authTot="1;" authUrg="1;" total="1"/>
+            </Rule>
+            <Rule cat="BD-PB" desc="Avoid division by zero" id="BD-PB-ZERO" sev="1">
+               <Stats authTot="2;" authUrg="2;" total="2"/>
+            </Rule>
+            <Rule cat="BD-PB" desc="Avoid accessing arrays out of bounds" id="BD-PB-ARRAY" sev="2">
+               <Stats authTot="1;" authUrg="1;" total="1"/>
+            </Rule>
+            <Rule cat="BD-PB" desc="Avoid conditions that always evaluate to the same value" id="BD-PB-CC" sev="2">
+               <Stats authTot="5;" authUrg="5;" total="5"/>
+            </Rule>
+            <Rule cat="BD-PB" desc="Do not check for null after dereferencing" id="BD-PB-DEREF" sev="2">
+               <Stats authTot="1;" authUrg="1;" total="1"/>
+            </Rule>
+            <Rule cat="BD-PB" desc="Suspicious setting of stream flags" id="BD-PB-STREAMFLAGS" sev="3">
+               <Stats authTot="0;" authUrg="0;" total="0"/>
+            </Rule>
+            <Rule cat="BD-PB" desc="Restore stream format" id="BD-PB-STREAMFMT" sev="3">
+               <Stats authTot="0;" authUrg="0;" total="0"/>
+            </Rule>
+            <Rule cat="BD-RES" desc="Properly deallocate dynamically allocated resources" id="BD-RES-BADDEALLOC" sev="1">
+               <Stats authTot="0;" authUrg="0;" total="0"/>
+            </Rule>
+            <Rule cat="BD-RES" desc="Do not use resources that have been freed" id="BD-RES-FREE" sev="1">
+               <Stats authTot="0;" authUrg="0;" total="0"/>
+            </Rule>
+            <Rule cat="BD-RES" desc="Do not free resources using invalid pointers" id="BD-RES-INVFREE" sev="1">
+               <Stats authTot="0;" authUrg="0;" total="0"/>
+            </Rule>
+            <Rule cat="BD-RES" desc="Ensure resources are freed" id="BD-RES-LEAKS" sev="1">
+               <Stats authTot="5;" authUrg="5;" total="5"/>
+            </Rule>
+            <Rule cat="BD-TRS" desc="Avoid double locking" id="BD-TRS-DLOCK" sev="1">
+               <Stats authTot="0;" authUrg="0;" total="0"/>
+            </Rule>
+            <Rule cat="BD-TRS" desc="Avoid race conditions when using fork and file descriptors" id="BD-TRS-FORKFILE" sev="1">
+               <Stats authTot="0;" authUrg="0;" total="0"/>
+            </Rule>
+            <Rule cat="BD-TRS" desc="Do not abandon unreleased locks" id="BD-TRS-LOCK" sev="1">
+               <Stats authTot="0;" authUrg="0;" total="0"/>
+            </Rule>
+            <Rule cat="BD-TRS" desc="Do not acquire locks in different order" id="BD-TRS-ORDER" sev="1">
+               <Stats authTot="0;" authUrg="0;" total="0"/>
+            </Rule>
+            <Rule cat="BD-TRS" desc="Avoid race conditions while checking for the existence of a symbolic link" id="BD-TRS-SYMLINK" sev="1">
+               <Stats authTot="0;" authUrg="0;" total="0"/>
+            </Rule>
+            <Rule cat="BD-TRS" desc="Do not use blocking functions while holding a lock" id="BD-TRS-TSHL" sev="1">
+               <Stats authTot="0;" authUrg="0;" total="0"/>
+            </Rule>
+            <Rule cat="CDD" desc="Avoid function duplication" id="CDD-DUPM" sev="2">
+               <Stats authTot="0;" authUrg="0;" total="0"/>
+            </Rule>
+            <Rule cat="CODSTA" desc="Local variables should not use the same names as member variables" id="CODSTA-44" sev="1">
+               <Stats authTot="0;" authUrg="0;" total="0"/>
+            </Rule>
+            <Rule cat="CODSTA" desc="Pointer should not be compared with NULL using relational operators &lt;, >, >=, &lt;=" id="CODSTA-147" sev="3">
+               <Stats authTot="0;" authUrg="0;" total="0"/>
+            </Rule>
+            <Rule cat="CODSTA" desc="Do not use string literals as operands of equality or relational operators" id="CODSTA-148" sev="3">
+               <Stats authTot="0;" authUrg="0;" total="0"/>
+            </Rule>
+            <Rule cat="CODSTA" desc="Avoid infinite loops" id="CODSTA-82" sev="3">
+               <Stats authTot="0;" authUrg="0;" total="0"/>
+            </Rule>
+            <Rule cat="CODSTA-CPP" desc="Constructors allowing for conversion should be made explicit" id="CODSTA-CPP-04" sev="1">
+               <Stats authTot="0;" authUrg="0;" total="0"/>
+            </Rule>
+            <Rule cat="EXCEPT" desc="Throw by value, catch by reference" id="EXCEPT-02" sev="1">
+               <Stats authTot="0;" authUrg="0;" total="0"/>
+            </Rule>
+            <Rule cat="EXCEPT" desc="Do not throw from within destructor" id="EXCEPT-03" sev="1">
+               <Stats authTot="0;" authUrg="0;" total="0"/>
+            </Rule>
+            <Rule cat="INIT" desc="All member variables should be initialized in constructor" id="INIT-06" sev="1">
+               <Stats authTot="0;" authUrg="0;" total="0"/>
+            </Rule>
+            <Rule cat="METRIC" desc="McCabe Cyclomatic Complexity" id="METRIC.CC" sev="3">
+               <Stats authTot="0;" authUrg="0;" total="0"/>
+            </Rule>
+            <Rule cat="METRIC" desc="Nested Blocks Depth" id="METRIC.NBD" sev="3">
+               <Stats authTot="0;" authUrg="0;" total="0"/>
+            </Rule>
+            <Rule cat="MISRA2004" desc="Floating-point expressions shall not be tested for equality or inequality" id="MISRA2004-13_3" sev="3">
+               <Stats authTot="0;" authUrg="0;" total="0"/>
+            </Rule>
+            <Rule cat="MISRA2004" desc="All exit paths from a function with non-void return type shall have an explicit return statement with an expression" id="MISRA2004-16_8" sev="3">
+               <Stats authTot="0;" authUrg="0;" total="0"/>
+            </Rule>
+            <Rule cat="MISRA2004" desc="The address of an object with automatic storage shall not be returned from a function" id="MISRA2004-17_6_a" sev="3">
+               <Stats authTot="0;" authUrg="0;" total="0"/>
+            </Rule>
+            <Rule cat="MRM" desc="Do not invoke malloc/realloc for objects having constructors" id="MRM-08" sev="1">
+               <Stats authTot="0;" authUrg="0;" total="0"/>
+            </Rule>
+            <Rule cat="MRM" desc="Declare a copy assignment operator for classes with dynamically allocated memory" id="MRM-37" sev="1">
+               <Stats authTot="0;" authUrg="0;" total="0"/>
+            </Rule>
+            <Rule cat="MRM" desc="Declare a copy constructor for classes with dynamically allocated memory" id="MRM-38" sev="1">
+               <Stats authTot="0;" authUrg="0;" total="0"/>
+            </Rule>
+            <Rule cat="MRM" desc="Never provide brackets ([]) for delete when deallocating non-arrays" id="MRM-35" sev="3">
+               <Stats authTot="0;" authUrg="0;" total="0"/>
+            </Rule>
+            <Rule cat="MRM" desc="Always provide empty brackets ([]) for delete when deallocating arrays" id="MRM-36" sev="3">
+               <Stats authTot="0;" authUrg="0;" total="0"/>
+            </Rule>
+            <Rule cat="MRM" desc="Do not use 'delete' on pointers to a void type" id="MRM-51" sev="3">
+               <Stats authTot="0;" authUrg="0;" total="0"/>
+            </Rule>
+            <Rule cat="OOP" desc="Class cannot inherit other class more than once unless it is virtual inheritance" id="OOP-03" sev="1">
+               <Stats authTot="0;" authUrg="0;" total="0"/>
+            </Rule>
+            <Rule cat="OOP" desc="Avoid calling virtual functions from constructors" id="OOP-16" sev="1">
+               <Stats authTot="0;" authUrg="0;" total="0"/>
+            </Rule>
+            <Rule cat="OOP" desc="If a class has virtual functions it shall have a virtual destructor" id="OOP-23" sev="2">
+               <Stats authTot="0;" authUrg="0;" total="0"/>
+            </Rule>
+            <Rule cat="OPT" desc="Pass objects by reference instead of by value" id="OPT-14" sev="3">
+               <Stats authTot="0;" authUrg="0;" total="0"/>
+            </Rule>
+            <Rule cat="PB" desc="Do not call delete on non-pointers" id="PB-13" sev="1">
+               <Stats authTot="0;" authUrg="0;" total="0"/>
+            </Rule>
+            <Rule cat="PB" desc="Properly terminate character strings" id="PB-21" sev="1">
+               <Stats authTot="0;" authUrg="0;" total="0"/>
+            </Rule>
+            <Rule cat="PB" desc="Do not cast from or to incomplete class at the point of casting" id="PB-54" sev="2">
+               <Stats authTot="0;" authUrg="0;" total="0"/>
+            </Rule>
+            <Rule cat="PB" desc="Do not delete objects with incomplete class at the point of deletion" id="PB-55" sev="2">
+               <Stats authTot="0;" authUrg="0;" total="0"/>
+            </Rule>
+            <Rule cat="PB" desc="Boolean condition always evaluates to the same value due to enumeration with only zero or only non-zero constants" id="PB-68" sev="2">
+               <Stats authTot="0;" authUrg="0;" total="0"/>
+            </Rule>
+            <Rule cat="PB" desc="Suspicious argument to malloc" id="PB-60" sev="3">
+               <Stats authTot="0;" authUrg="0;" total="0"/>
+            </Rule>
+            <Rule cat="PB" desc="Pointer arithmetic performed on freshly allocated memory" id="PB-61" sev="3">
+               <Stats authTot="0;" authUrg="0;" total="0"/>
+            </Rule>
+         </RulesList>
+         <CategoriesList>
+            <Category desc="Flow Analysis" name="BD" total="125">
+               <Category desc="Incorrect API usage" name="BD-API" total="7">
+                  <Stats authTot="0;" authUrg="0;" total="0"/>
+               </Category>
+               <Category desc="Possible Bugs" name="BD-PB" total="69">
+                  <Stats authTot="19;" authUrg="19;" total="19"/>
+               </Category>
+               <Category desc="Resources" name="BD-RES" total="8">
+                  <Stats authTot="5;" authUrg="5;" total="5"/>
+               </Category>
+               <Category desc="Threads &amp; Synchronization" name="BD-TRS" total="15">
+                  <Stats authTot="0;" authUrg="0;" total="0"/>
+               </Category>
+               <Stats authTot="0;" authUrg="0;" total="0"/>
+            </Category>
+            <Category desc="Code Duplication Detection" name="CDD" total="4">
+               <Stats authTot="0;" authUrg="0;" total="0"/>
+            </Category>
+            <Category desc="Coding Conventions" name="CODSTA" total="465">
+               <Category desc="Coding Conventions for C++" name="CODSTA-CPP" total="112">
+                  <Stats authTot="0;" authUrg="0;" total="0"/>
+               </Category>
+               <Stats authTot="0;" authUrg="0;" total="0"/>
+            </Category>
+            <Category desc="Exceptions" name="EXCEPT" total="26">
+               <Stats authTot="0;" authUrg="0;" total="0"/>
+            </Category>
+            <Category desc="Initialization" name="INIT" total="22">
+               <Stats authTot="0;" authUrg="0;" total="0"/>
+            </Category>
+            <Category desc="Metric" name="METRIC" total="50">
+               <Stats authTot="0;" authUrg="0;" total="0"/>
+            </Category>
+            <Category desc="MISRA C 2004" name="MISRA2004" total="223">
+               <Stats authTot="0;" authUrg="0;" total="0"/>
+            </Category>
+            <Category desc="Memory and Resource Management" name="MRM" total="60">
+               <Stats authTot="0;" authUrg="0;" total="0"/>
+            </Category>
+            <Category desc="Object Oriented" name="OOP" total="61">
+               <Stats authTot="0;" authUrg="0;" total="0"/>
+            </Category>
+            <Category desc="Optimization" name="OPT" total="43">
+               <Stats authTot="0;" authUrg="0;" total="0"/>
+            </Category>
+            <Category desc="Possible Bugs" name="PB" total="85">
+               <Stats authTot="0;" authUrg="0;" total="0"/>
+            </Category>
+         </CategoriesList>
+         <SeverityList>
+            <Severity id="1">
+               <Stats authTot="17;" authUrg="17;" total="17"/>
+            </Severity>
+            <Severity id="2">
+               <Stats authTot="7;" authUrg="7;" total="7"/>
+            </Severity>
+         </SeverityList>
+      </Rules>
+      
+  <StdViols>
+    <FlowViol msg="Possibly accessing array &quot;cache&quot; out of bounds at index [1...1000]. Correct index(es): [0...999]" ln="37" ruleSAFMsg="Out of bounds access point" auth="root" sev="2" rule="BD-PB-ARRAY" ruleSCSCMsg="Start of the path" tool="c++test" id="1283572058" lang="cpp" locType="sr" urgent="true" config="1" hash="-1375949553" locStartln="37" locStartPos="0" locEndLn="38" locEndPos="0" locFile="/BugDetective/arrayOutOfBounds.c" FirstElSrcRngStartln="44" FirstElSrcRngStartPos="0" FirstElSrcRngEndLn="45" FirstElSrcRngEndPos="0" FirstElSrcRngFile="/BugDetective/arrayOutOfBounds.c">
+      <Props/>
+      <ElDescList>
+        <ElDesc srcRngStartln="44" srcRngStartPos="0" srcRngEndLn="45" srcRngEndPos="0" srcRngFile="/BugDetective/arrayOutOfBounds.c" srcRnghash="-1375949553" ln="44" ElType=".C" desc="void clearAllCache()" rngLn="44">
+          <Props/>
+          <Anns>
+            <Ann msg="Start of the path" kind="cause"/>
+          </Anns>
+        </ElDesc>
+        <ElDesc srcRngStartln="46" srcRngStartPos="0" srcRngEndLn="47" srcRngEndPos="0" srcRngFile="/BugDetective/arrayOutOfBounds.c" srcRnghash="-1375949553" ln="46" ElType="!" desc="clearCache(0, CACHE_SIZE /* -1 */ ); /* Uncomment to fix accessing out of bounds */" rngLn="46">
+          <ElDescList>
+            <ElDesc srcRngStartln="35" srcRngStartPos="0" srcRngEndLn="36" srcRngEndPos="0" srcRngFile="/BugDetective/arrayOutOfBounds.c" srcRnghash="-1375949553" ln="35" ElType="." desc="int i;" rngLn="35">
+              <Props/>
+            </ElDesc>
+            <ElDesc srcRngStartln="36" srcRngStartPos="0" srcRngEndLn="37" srcRngEndPos="0" srcRngFile="/BugDetective/arrayOutOfBounds.c" srcRnghash="-1375949553" ln="36" ElType="." desc="for (i = from_id; i &lt;= to_id; i++) {" rngLn="36">
+              <Props/>
+              <Anns>
+                <Ann msg="Loop condition evaluation: (i &lt;= to_id) (true)" kind="condEval"/>
+                <Ann msg="Entering the loop" kind="condEval"/>
+              </Anns>
+            </ElDesc>
+            <ElDesc srcRngStartln="37" srcRngStartPos="0" srcRngEndLn="38" srcRngEndPos="0" srcRngFile="/BugDetective/arrayOutOfBounds.c" srcRnghash="-1375949553" ln="37" ElType="." desc="if (cache[i] != 0) {" rngLn="37">
+              <Props/>
+              <Anns>
+                <Ann msg="Condition evaluation: (cache[i] != 0) (assuming false)" kind="condEval"/>
+              </Anns>
+            </ElDesc>
+            <ElDesc srcRngStartln="36" srcRngStartPos="0" srcRngEndLn="37" srcRngEndPos="0" srcRngFile="/BugDetective/arrayOutOfBounds.c" srcRnghash="-1375949553" ln="36" ElType="." desc="for (i = from_id; i &lt;= to_id; i++) {" rngLn="36">
+              <Props/>
+              <Anns>
+                <Ann msg="Loop condition evaluation: (i &lt;= to_id) (true)" kind="condEval"/>
+                <Ann msg="Entering the loop" kind="condEval"/>
+              </Anns>
+            </ElDesc>
+            <ElDesc srcRngStartln="37" srcRngStartPos="0" srcRngEndLn="38" srcRngEndPos="0" srcRngFile="/BugDetective/arrayOutOfBounds.c" srcRnghash="-1375949553" ln="37" ElType=".P" desc="if (cache[i] != 0) {" rngLn="37">
+              <Props/>
+              <Anns>
+                <Ann msg="Out of bounds access point" kind="point"/>
+              </Anns>
+            </ElDesc>
+          </ElDescList>
+          <Props/>
+        </ElDesc>
+      </ElDescList>
+    </FlowViol>
+    <FlowViol msg="Overflow when writing to buffer &quot;buffer&quot; (char[999], 999 bytes large). Number of bytes written = 1000" ln="27" ruleSAFMsg="Point where the buffer overflow occurs" auth="root" sev="1" rule="BD-PB-OVERFWR" ruleSCSCMsg="Point where number of elements to write is defined" tool="c++test" id="-334608489" lang="cpp" locType="sr" urgent="true" config="1" hash="1082458265" locStartln="27" locStartPos="0" locEndLn="28" locEndPos="0" locFile="/BugDetective/bufferOverflow.c" FirstElSrcRngStartln="27" FirstElSrcRngStartPos="0" FirstElSrcRngEndLn="28" FirstElSrcRngEndPos="0" FirstElSrcRngFile="/BugDetective/bufferOverflow.c">
+      <Props/>
+      <ElDescList>
+        <ElDesc srcRngStartln="33" srcRngStartPos="0" srcRngEndLn="34" srcRngEndPos="0" srcRngFile="/BugDetective/bufferOverflow.c" srcRnghash="1082458265" ln="33" ElType="!" desc="resetBuffer(1000 /* BUFFER_SIZE */); /* POSSIBLE BUFFER OVERFLOW HERE */" rngLn="33">
+          <ElDescList>
+            <ElDesc srcRngStartln="26" srcRngStartPos="0" srcRngEndLn="27" srcRngEndPos="0" srcRngFile="/BugDetective/bufferOverflow.c" srcRnghash="1082458265" ln="26" ElType="." desc="int i;" rngLn="26">
+              <Props/>
+            </ElDesc>
+            <ElDesc srcRngStartln="27" srcRngStartPos="0" srcRngEndLn="28" srcRngEndPos="0" srcRngFile="/BugDetective/bufferOverflow.c" srcRnghash="1082458265" ln="27" ElType="CP" desc="memset(buffer, 0, size);" rngLn="27">
+              <Props/>
+              <Anns>
+                <Ann msg="Point where number of elements to write is defined" kind="cause"/>
+                <Ann msg="Point where the buffer overflow occurs" kind="point"/>
+              </Anns>
+            </ElDesc>
+          </ElDescList>
+          <Props/>
+        </ElDesc>
+      </ElDescList>
+    </FlowViol>
+    <FlowViol msg="Division by &quot;person->daysWorkedInPassedMonth&quot; which may possibly be zero" ln="9" ruleSAFMsg="Point of division by zero" auth="root" sev="1" rule="BD-PB-ZERO" ruleSCSCMsg="Start of the path" tool="c++test" id="1716935372" lang="cpp" locType="sr" urgent="true" config="1" hash="1923244810" locStartln="9" locStartPos="0" locEndLn="10" locEndPos="0" locFile="/BugDetective/divisionByZero.c" FirstElSrcRngStartln="18" FirstElSrcRngStartPos="0" FirstElSrcRngEndLn="19" FirstElSrcRngEndPos="0" FirstElSrcRngFile="/BugDetective/divisionByZero.c">
+      <Props/>
+      <ElDescList>
+        <ElDesc srcRngStartln="18" srcRngStartPos="0" srcRngEndLn="19" srcRngEndPos="0" srcRngFile="/BugDetective/divisionByZero.c" srcRnghash="1923244810" ln="18" ElType=".C" desc="p->daysWorkedInPassedMonth = 0;" rngLn="18">
+          <Props/>
+          <Anns>
+            <Ann msg="Start of the path" kind="cause"/>
+          </Anns>
+        </ElDesc>
+        <ElDesc srcRngStartln="19" srcRngStartPos="0" srcRngEndLn="20" srcRngEndPos="0" srcRngFile="/BugDetective/divisionByZero.c" srcRnghash="1923244810" ln="19" ElType="!" desc="displayPersonalInfo(p);" rngLn="19">
+          <ElDescList>
+            <ElDesc srcRngStartln="7" srcRngStartPos="0" srcRngEndLn="8" srcRngEndPos="0" srcRngFile="/BugDetective/divisionByZero.c" srcRnghash="1923244810" ln="7" ElType="." desc="printf(&quot;Name: %s\n&quot;, person->name);" rngLn="7">
+              <Props/>
+            </ElDesc>
+            <ElDesc srcRngStartln="8" srcRngStartPos="0" srcRngEndLn="9" srcRngEndPos="0" srcRngFile="/BugDetective/divisionByZero.c" srcRnghash="1923244810" ln="8" ElType="." desc="printf(&quot;Salary: %d\n&quot;, person->salary);" rngLn="8">
+              <Props/>
+            </ElDesc>
+            <ElDesc srcRngStartln="9" srcRngStartPos="0" srcRngEndLn="10" srcRngEndPos="0" srcRngFile="/BugDetective/divisionByZero.c" srcRnghash="1923244810" ln="9" ElType=".P" desc="printf(&quot;Day's pay: %d\n&quot;, person->salary/person->daysWorkedInPassedMonth);" rngLn="9">
+              <Props/>
+              <Anns>
+                <Ann msg="Point of division by zero" kind="point"/>
+              </Anns>
+            </ElDesc>
+          </ElDescList>
+          <Props/>
+        </ElDesc>
+      </ElDescList>
+    </FlowViol>
+    <FlowViol msg="Division by &quot;numberOfEmployees&quot; which may possibly be zero" ln="26" ruleSAFMsg="Point of division by zero" auth="root" sev="1" rule="BD-PB-ZERO" ruleSCSCMsg="Start of the path" tool="c++test" id="-440383681" lang="cpp" locType="sr" urgent="true" config="1" hash="1923244810" locStartln="26" locStartPos="0" locEndLn="27" locEndPos="0" locFile="/BugDetective/divisionByZero.c" FirstElSrcRngStartln="53" FirstElSrcRngStartPos="0" FirstElSrcRngEndLn="54" FirstElSrcRngEndPos="0" FirstElSrcRngFile="/BugDetective/divisionByZero.c">
+      <Props/>
+      <ElDescList>
+        <ElDesc srcRngStartln="53" srcRngStartPos="0" srcRngEndLn="54" srcRngEndPos="0" srcRngFile="/BugDetective/divisionByZero.c" srcRnghash="1923244810" ln="53" ElType=".C" desc="numberOfEmployees = processFile(file, employees);" rngLn="53">
+          <ElDescList>
+            <ElDesc srcRngStartln="41" srcRngStartPos="0" srcRngEndLn="42" srcRngEndPos="0" srcRngFile="/BugDetective/divisionByZero.c" srcRnghash="1923244810" ln="41" ElType="!" desc="return 0;" rngLn="41">
+              <Props/>
+              <Anns>
+                <Ann msg="Returning value: 0" kind="valEval"/>
+              </Anns>
+            </ElDesc>
+          </ElDescList>
+          <Props/>
+          <Anns>
+            <Ann msg="Start of the path" kind="cause"/>
+            <Ann msg="Variable assignment: numberOfEmployees = processFile(file,employees) -> numberOfEmployees = 0" kind="valEval"/>
+          </Anns>
+        </ElDesc>
+        <ElDesc srcRngStartln="54" srcRngStartPos="0" srcRngEndLn="55" srcRngEndPos="0" srcRngFile="/BugDetective/divisionByZero.c" srcRnghash="1923244810" ln="54" ElType="!" desc="processStaff(employees, numberOfEmployees);" rngLn="54">
+          <ElDescList>
+            <ElDesc srcRngStartln="29" srcRngStartPos="0" srcRngEndLn="30" srcRngEndPos="0" srcRngFile="/BugDetective/divisionByZero.c" srcRnghash="1923244810" ln="29" ElType="!" desc="void processStaff(Person* employees[], int sizeOfStaff)" rngLn="29">
+              <Props/>
+              <Anns>
+                <Ann msg="Parameter value: sizeOfStaff = numberOfEmployees -> sizeOfStaff = 0" kind="valEval"/>
+              </Anns>
+            </ElDesc>
+            <ElDesc srcRngStartln="31" srcRngStartPos="0" srcRngEndLn="32" srcRngEndPos="0" srcRngFile="/BugDetective/divisionByZero.c" srcRnghash="1923244810" ln="31" ElType="." desc="int i;" rngLn="31">
+              <Props/>
+            </ElDesc>
+            <ElDesc srcRngStartln="32" srcRngStartPos="0" srcRngEndLn="33" srcRngEndPos="0" srcRngFile="/BugDetective/divisionByZero.c" srcRnghash="1923244810" ln="32" ElType="." desc="for (i = 0; i &lt; sizeOfStaff; ++i) {" rngLn="32">
+              <Props/>
+              <Anns>
+                <Ann msg="Loop condition evaluation: (i &lt; sizeOfStaff) (false)" kind="condEval"/>
+                <Ann msg="Not entering the loop" kind="condEval"/>
+              </Anns>
+            </ElDesc>
+            <ElDesc srcRngStartln="35" srcRngStartPos="0" srcRngEndLn="36" srcRngEndPos="0" srcRngFile="/BugDetective/divisionByZero.c" srcRnghash="1923244810" ln="35" ElType="!" desc="calculateAverageSalary(...)" rngLn="35">
+              <ElDescList>
+                <ElDesc srcRngStartln="23" srcRngStartPos="0" srcRngEndLn="24" srcRngEndPos="0" srcRngFile="/BugDetective/divisionByZero.c" srcRnghash="1923244810" ln="23" ElType="!" desc="int calculateAverageSalary(int numberOfEmployees)" rngLn="23">
+                  <Props/>
+                  <Anns>
+                    <Ann msg="Parameter value: numberOfEmployees = sizeOfStaff -> numberOfEmployees = 0" kind="valEval"/>
+                  </Anns>
+                </ElDesc>
+                <ElDesc srcRngStartln="25" srcRngStartPos="0" srcRngEndLn="26" srcRngEndPos="0" srcRngFile="/BugDetective/divisionByZero.c" srcRnghash="1923244810" ln="25" ElType="." desc="int WAGE_FUND = 10000;" rngLn="25">
+                  <Props/>
+                </ElDesc>
+                <ElDesc srcRngStartln="26" srcRngStartPos="0" srcRngEndLn="27" srcRngEndPos="0" srcRngFile="/BugDetective/divisionByZero.c" srcRnghash="1923244810" ln="26" ElType=".P" desc="return WAGE_FUND/numberOfEmployees;" rngLn="26">
+                  <Props/>
+                  <Anns>
+                    <Ann msg="Point of division by zero" kind="point"/>
+                  </Anns>
+                </ElDesc>
+              </ElDescList>
+              <Props/>
+            </ElDesc>
+          </ElDescList>
+          <Props/>
+        </ElDesc>
+      </ElDescList>
+    </FlowViol>
+    <FlowViol msg="File not closed: file" ln="36" ruleSAFMsg="Point where opened file is lost" auth="root" sev="1" rule="BD-RES-LEAKS" ruleSCSCMsg="Point where file is opened" tool="c++test" id="1573681103" lang="cpp" locType="sr" urgent="true" config="1" hash="1210532432" locStartln="36" locStartPos="0" locEndLn="37" locEndPos="0" locFile="/BugDetective/fileLeaks.c" FirstElSrcRngStartln="26" FirstElSrcRngStartPos="0" FirstElSrcRngEndLn="27" FirstElSrcRngEndPos="0" FirstElSrcRngFile="/BugDetective/fileLeaks.c">
+      <Props>
+        <Prop key="Tracked variables" val="Opened file"/>
+      </Props>
+      <ElDescList>
+        <ElDesc srcRngStartln="25" srcRngStartPos="0" srcRngEndLn="26" srcRngEndPos="0" srcRngFile="/BugDetective/fileLeaks.c" srcRnghash="1210532432" ln="25" ElType="." desc="FILE *file;" rngLn="25">
+          <Props/>
+        </ElDesc>
+        <ElDesc srcRngStartln="26" srcRngStartPos="0" srcRngEndLn="27" srcRngEndPos="0" srcRngFile="/BugDetective/fileLeaks.c" srcRnghash="1210532432" ln="26" ElType=".C" desc="file = fopen(&quot;myfile.txt&quot;, &quot;r&quot;);" rngLn="26">
+          <Props>
+            <Prop key="Tracked variables" val="file"/>
+          </Props>
+          <Anns>
+            <Ann msg="Point where file is opened" kind="cause"/>
+            <Ann msg="Opened file: file" kind="var"/>
+          </Anns>
+        </ElDesc>
+        <ElDesc srcRngStartln="27" srcRngStartPos="0" srcRngEndLn="28" srcRngEndPos="0" srcRngFile="/BugDetective/fileLeaks.c" srcRnghash="1210532432" ln="27" ElType="." desc="if (file==NULL) {" rngLn="27">
+          <Props/>
+          <Anns>
+            <Ann msg="Condition evaluation: (file == 0) (assuming false)" kind="condEval"/>
+          </Anns>
+        </ElDesc>
+        <ElDesc srcRngStartln="31" srcRngStartPos="0" srcRngEndLn="32" srcRngEndPos="0" srcRngFile="/BugDetective/fileLeaks.c" srcRnghash="1210532432" ln="31" ElType="." desc="printf(&quot;File successfully opened.\n\n&quot;);" rngLn="31">
+          <Props/>
+        </ElDesc>
+        <ElDesc srcRngStartln="32" srcRngStartPos="0" srcRngEndLn="33" srcRngEndPos="0" srcRngFile="/BugDetective/fileLeaks.c" srcRnghash="1210532432" ln="32" ElType="." desc="printFile(file);" rngLn="32">
+          <ElDescList>
+            <ElDesc srcRngStartln="11" srcRngStartPos="0" srcRngEndLn="12" srcRngEndPos="0" srcRngFile="/BugDetective/fileLeaks.c" srcRnghash="1210532432" ln="11" ElType="." desc="char c;" rngLn="11">
+              <Props>
+                <Prop key="Tracked variables" val="file"/>
+              </Props>
+              <Anns>
+                <Ann msg="Opened file: file" kind="var"/>
+              </Anns>
+            </ElDesc>
+            <ElDesc srcRngStartln="12" srcRngStartPos="0" srcRngEndLn="13" srcRngEndPos="0" srcRngFile="/BugDetective/fileLeaks.c" srcRnghash="1210532432" ln="12" ElType="." desc="printf(&quot;Reading file contents:\n\n&quot;);" rngLn="12">
+              <Props/>
+            </ElDesc>
+            <ElDesc srcRngStartln="13" srcRngStartPos="0" srcRngEndLn="14" srcRngEndPos="0" srcRngFile="/BugDetective/fileLeaks.c" srcRnghash="1210532432" ln="13" ElType="." desc="while(1) {" rngLn="13">
+              <Props/>
+              <Anns>
+                <Ann msg="Loop condition evaluation: 1 (true)" kind="condEval"/>
+                <Ann msg="Entering the loop" kind="condEval"/>
+              </Anns>
+            </ElDesc>
+            <ElDesc srcRngStartln="14" srcRngStartPos="0" srcRngEndLn="15" srcRngEndPos="0" srcRngFile="/BugDetective/fileLeaks.c" srcRnghash="1210532432" ln="14" ElType="." desc="c = fgetc(file);" rngLn="14">
+              <Props/>
+            </ElDesc>
+            <ElDesc srcRngStartln="15" srcRngStartPos="0" srcRngEndLn="16" srcRngEndPos="0" srcRngFile="/BugDetective/fileLeaks.c" srcRnghash="1210532432" ln="15" ElType="." desc="if (c!=EOF) {" rngLn="15">
+              <Props/>
+              <Anns>
+                <Ann msg="Condition evaluation: (c != -1) (assuming false)" kind="condEval"/>
+              </Anns>
+            </ElDesc>
+            <ElDesc srcRngStartln="18" srcRngStartPos="0" srcRngEndLn="19" srcRngEndPos="0" srcRngFile="/BugDetective/fileLeaks.c" srcRnghash="1210532432" ln="18" ElType="." desc="break;" rngLn="18">
+              <Props/>
+              <Anns>
+                <Ann msg="Exit the loop" kind="condEval"/>
+              </Anns>
+            </ElDesc>
+          </ElDescList>
+          <Props/>
+        </ElDesc>
+        <ElDesc srcRngStartln="35" srcRngStartPos="0" srcRngEndLn="36" srcRngEndPos="0" srcRngFile="/BugDetective/fileLeaks.c" srcRnghash="1210532432" ln="35" ElType="." desc="return 0;" rngLn="35">
+          <Props/>
+        </ElDesc>
+        <ElDesc srcRngStartln="36" srcRngStartPos="0" srcRngEndLn="37" srcRngEndPos="0" srcRngFile="/BugDetective/fileLeaks.c" srcRnghash="1210532432" ln="36" ElType=".P" desc="}" rngLn="36">
+          <Props>
+            <Prop key="Tracked variables" val="file"/>
+          </Props>
+          <Anns>
+            <Ann msg="Opened file: file" kind="var"/>
+            <Ann msg="Point where opened file is lost" kind="point"/>
+          </Anns>
+        </ElDesc>
+      </ElDescList>
+    </FlowViol>
+    <FlowViol msg="File not closed: file" ln="49" ruleSAFMsg="Point where opened file is lost" auth="root" sev="1" rule="BD-RES-LEAKS" ruleSCSCMsg="Point where file is opened" tool="c++test" id="603044296" lang="cpp" locType="sr" urgent="true" config="1" hash="1210532432" locStartln="49" locStartPos="0" locEndLn="50" locEndPos="0" locFile="/BugDetective/fileLeaks.c" FirstElSrcRngStartln="49" FirstElSrcRngStartPos="0" FirstElSrcRngEndLn="50" FirstElSrcRngEndPos="0" FirstElSrcRngFile="/BugDetective/fileLeaks.c">
+      <Props>
+        <Prop key="Tracked variables" val="Opened file"/>
+      </Props>
+      <ElDescList>
+        <ElDesc srcRngStartln="40" srcRngStartPos="0" srcRngEndLn="41" srcRngEndPos="0" srcRngFile="/BugDetective/fileLeaks.c" srcRnghash="1210532432" ln="40" ElType="." desc="int ARRSIZE = 3;" rngLn="40">
+          <Props/>
+        </ElDesc>
+        <ElDesc srcRngStartln="46" srcRngStartPos="0" srcRngEndLn="47" srcRngEndPos="0" srcRngFile="/BugDetective/fileLeaks.c" srcRnghash="1210532432" ln="46" ElType="." desc="int i;" rngLn="46">
+          <Props/>
+        </ElDesc>
+        <ElDesc srcRngStartln="47" srcRngStartPos="0" srcRngEndLn="48" srcRngEndPos="0" srcRngFile="/BugDetective/fileLeaks.c" srcRnghash="1210532432" ln="47" ElType="." desc="FILE *file = NULL;" rngLn="47">
+          <Props/>
+        </ElDesc>
+        <ElDesc srcRngStartln="48" srcRngStartPos="0" srcRngEndLn="49" srcRngEndPos="0" srcRngFile="/BugDetective/fileLeaks.c" srcRnghash="1210532432" ln="48" ElType="." desc="for (i = 0; i &lt; ARRSIZE; ++i) {" rngLn="48">
+          <Props/>
+          <Anns>
+            <Ann msg="Loop condition evaluation: (i &lt; ARRSIZE) (true)" kind="condEval"/>
+            <Ann msg="Entering the loop" kind="condEval"/>
+          </Anns>
+        </ElDesc>
+        <ElDesc srcRngStartln="49" srcRngStartPos="0" srcRngEndLn="50" srcRngEndPos="0" srcRngFile="/BugDetective/fileLeaks.c" srcRnghash="1210532432" ln="49" ElType=".C" desc="file = fopen(names[i], &quot;r&quot;);" rngLn="49">
+          <Props>
+            <Prop key="Tracked variables" val="file"/>
+          </Props>
+          <Anns>
+            <Ann msg="Point where file is opened" kind="cause"/>
+            <Ann msg="Opened file: file" kind="var"/>
+          </Anns>
+        </ElDesc>
+        <ElDesc srcRngStartln="50" srcRngStartPos="0" srcRngEndLn="51" srcRngEndPos="0" srcRngFile="/BugDetective/fileLeaks.c" srcRnghash="1210532432" ln="50" ElType="." desc="if(file==NULL) {" rngLn="50">
+          <Props/>
+          <Anns>
+            <Ann msg="Condition evaluation: (file == 0) (assuming false)" kind="condEval"/>
+          </Anns>
+        </ElDesc>
+        <ElDesc srcRngStartln="54" srcRngStartPos="0" srcRngEndLn="55" srcRngEndPos="0" srcRngFile="/BugDetective/fileLeaks.c" srcRnghash="1210532432" ln="54" ElType="." desc="printFile(file);" rngLn="54">
+          <ElDescList>
+            <ElDesc srcRngStartln="11" srcRngStartPos="0" srcRngEndLn="12" srcRngEndPos="0" srcRngFile="/BugDetective/fileLeaks.c" srcRnghash="1210532432" ln="11" ElType="." desc="char c;" rngLn="11">
+              <Props>
+                <Prop key="Tracked variables" val="file"/>
+              </Props>
+              <Anns>
+                <Ann msg="Opened file: file" kind="var"/>
+              </Anns>
+            </ElDesc>
+            <ElDesc srcRngStartln="12" srcRngStartPos="0" srcRngEndLn="13" srcRngEndPos="0" srcRngFile="/BugDetective/fileLeaks.c" srcRnghash="1210532432" ln="12" ElType="." desc="printf(&quot;Reading file contents:\n\n&quot;);" rngLn="12">
+              <Props/>
+            </ElDesc>
+            <ElDesc srcRngStartln="13" srcRngStartPos="0" srcRngEndLn="14" srcRngEndPos="0" srcRngFile="/BugDetective/fileLeaks.c" srcRnghash="1210532432" ln="13" ElType="." desc="while(1) {" rngLn="13">
+              <Props/>
+              <Anns>
+                <Ann msg="Loop condition evaluation: 1 (true)" kind="condEval"/>
+                <Ann msg="Entering the loop" kind="condEval"/>
+              </Anns>
+            </ElDesc>
+            <ElDesc srcRngStartln="14" srcRngStartPos="0" srcRngEndLn="15" srcRngEndPos="0" srcRngFile="/BugDetective/fileLeaks.c" srcRnghash="1210532432" ln="14" ElType="." desc="c = fgetc(file);" rngLn="14">
+              <Props/>
+            </ElDesc>
+            <ElDesc srcRngStartln="15" srcRngStartPos="0" srcRngEndLn="16" srcRngEndPos="0" srcRngFile="/BugDetective/fileLeaks.c" srcRnghash="1210532432" ln="15" ElType="." desc="if (c!=EOF) {" rngLn="15">
+              <Props/>
+              <Anns>
+                <Ann msg="Condition evaluation: (c != -1) (assuming false)" kind="condEval"/>
+              </Anns>
+            </ElDesc>
+            <ElDesc srcRngStartln="18" srcRngStartPos="0" srcRngEndLn="19" srcRngEndPos="0" srcRngFile="/BugDetective/fileLeaks.c" srcRnghash="1210532432" ln="18" ElType="." desc="break;" rngLn="18">
+              <Props/>
+              <Anns>
+                <Ann msg="Exit the loop" kind="condEval"/>
+              </Anns>
+            </ElDesc>
+          </ElDescList>
+          <Props/>
+        </ElDesc>
+        <ElDesc srcRngStartln="48" srcRngStartPos="0" srcRngEndLn="49" srcRngEndPos="0" srcRngFile="/BugDetective/fileLeaks.c" srcRnghash="1210532432" ln="48" ElType="." desc="for (i = 0; i &lt; ARRSIZE; ++i) {" rngLn="48">
+          <Props/>
+          <Anns>
+            <Ann msg="Loop condition evaluation: (i &lt; ARRSIZE) (assuming true)" kind="condEval"/>
+            <Ann msg="Entering the loop" kind="condEval"/>
+          </Anns>
+        </ElDesc>
+        <ElDesc srcRngStartln="49" srcRngStartPos="0" srcRngEndLn="50" srcRngEndPos="0" srcRngFile="/BugDetective/fileLeaks.c" srcRnghash="1210532432" ln="49" ElType=".P" desc="file = fopen(names[i], &quot;r&quot;);" rngLn="49">
+          <Props>
+            <Prop key="Tracked variables" val="file"/>
+          </Props>
+          <Anns>
+            <Ann msg="Opened file: file" kind="var"/>
+            <Ann msg="Point where opened file is lost" kind="point"/>
+          </Anns>
+        </ElDesc>
+      </ElDescList>
+    </FlowViol>
+    <FlowViol msg="Memory not deallocated: p" ln="26" ruleSAFMsg="Point where allocated memory is lost" auth="root" sev="1" rule="BD-RES-LEAKS" ruleSCSCMsg="Point where memory is allocated" tool="c++test" id="585789567" lang="cpp" locType="sr" urgent="true" config="1" hash="1502549011" locStartln="26" locStartPos="0" locEndLn="27" locEndPos="0" locFile="/BugDetective/memoryLeaks.c" FirstElSrcRngStartln="18" FirstElSrcRngStartPos="0" FirstElSrcRngEndLn="19" FirstElSrcRngEndPos="0" FirstElSrcRngFile="/BugDetective/memoryLeaks.c">
+      <Props>
+        <Prop key="Tracked variables" val="Allocated memory"/>
+      </Props>
+      <ElDescList>
+        <ElDesc srcRngStartln="12" srcRngStartPos="0" srcRngEndLn="13" srcRngEndPos="0" srcRngFile="/BugDetective/memoryLeaks.c" srcRnghash="1502549011" ln="12" ElType="." desc="char *c;" rngLn="12">
+          <Props/>
+        </ElDesc>
+        <ElDesc srcRngStartln="13" srcRngStartPos="0" srcRngEndLn="14" srcRngEndPos="0" srcRngFile="/BugDetective/memoryLeaks.c" srcRnghash="1502549011" ln="13" ElType="." desc="char buf[100];" rngLn="13">
+          <Props/>
+        </ElDesc>
+        <ElDesc srcRngStartln="14" srcRngStartPos="0" srcRngEndLn="15" srcRngEndPos="0" srcRngFile="/BugDetective/memoryLeaks.c" srcRnghash="1502549011" ln="14" ElType="." desc="int id = 0;" rngLn="14">
+          <Props/>
+        </ElDesc>
+        <ElDesc srcRngStartln="15" srcRngStartPos="0" srcRngEndLn="16" srcRngEndPos="0" srcRngFile="/BugDetective/memoryLeaks.c" srcRnghash="1502549011" ln="15" ElType="." desc="while(1) {" rngLn="15">
+          <Props/>
+          <Anns>
+            <Ann msg="Loop condition evaluation: 1 (true)" kind="condEval"/>
+            <Ann msg="Entering the loop" kind="condEval"/>
+          </Anns>
+        </ElDesc>
+        <ElDesc srcRngStartln="16" srcRngStartPos="0" srcRngEndLn="17" srcRngEndPos="0" srcRngFile="/BugDetective/memoryLeaks.c" srcRnghash="1502549011" ln="16" ElType="." desc="c = fgets(buf, 100, file);" rngLn="16">
+          <Props/>
+        </ElDesc>
+        <ElDesc srcRngStartln="17" srcRngStartPos="0" srcRngEndLn="18" srcRngEndPos="0" srcRngFile="/BugDetective/memoryLeaks.c" srcRnghash="1502549011" ln="17" ElType="." desc="if (c!=NULL) {" rngLn="17">
+          <Props/>
+          <Anns>
+            <Ann msg="Condition evaluation: (c != 0) (assuming true)" kind="condEval"/>
+          </Anns>
+        </ElDesc>
+        <ElDesc srcRngStartln="18" srcRngStartPos="0" srcRngEndLn="19" srcRngEndPos="0" srcRngFile="/BugDetective/memoryLeaks.c" srcRnghash="1502549011" ln="18" ElType=".C" desc="malloc(...)" rngLn="18">
+          <Props>
+            <Prop key="Tracked variables" val="malloc(...)"/>
+          </Props>
+          <Anns>
+            <Ann msg="Point where memory is allocated" kind="cause"/>
+            <Ann msg="Allocated memory: malloc(...)" kind="var"/>
+          </Anns>
+        </ElDesc>
+        <ElDesc srcRngStartln="18" srcRngStartPos="0" srcRngEndLn="19" srcRngEndPos="0" srcRngFile="/BugDetective/memoryLeaks.c" srcRnghash="1502549011" ln="18" ElType="!" desc="Person* p = malloc(sizeof(Person));" rngLn="18">
+          <Props/>
+        </ElDesc>
+        <ElDesc srcRngStartln="19" srcRngStartPos="0" srcRngEndLn="20" srcRngEndPos="0" srcRngFile="/BugDetective/memoryLeaks.c" srcRnghash="1502549011" ln="19" ElType="." desc="if (p == 0) exit(1);" rngLn="19">
+          <Props>
+            <Prop key="Tracked variables" val="p"/>
+          </Props>
+          <Anns>
+            <Ann msg="Allocated memory: p" kind="var"/>
+            <Ann msg="Condition evaluation: (p == 0) (assuming false)" kind="condEval"/>
+          </Anns>
+        </ElDesc>
+        <ElDesc srcRngStartln="20" srcRngStartPos="0" srcRngEndLn="21" srcRngEndPos="0" srcRngFile="/BugDetective/memoryLeaks.c" srcRnghash="1502549011" ln="20" ElType="." desc="p->personalId = ++id;" rngLn="20">
+          <Props/>
+        </ElDesc>
+        <ElDesc srcRngStartln="21" srcRngStartPos="0" srcRngEndLn="22" srcRngEndPos="0" srcRngFile="/BugDetective/memoryLeaks.c" srcRnghash="1502549011" ln="21" ElType="." desc="p->name = buf;" rngLn="21">
+          <Props/>
+        </ElDesc>
+        <ElDesc srcRngStartln="22" srcRngStartPos="0" srcRngEndLn="23" srcRngEndPos="0" srcRngFile="/BugDetective/memoryLeaks.c" srcRnghash="1502549011" ln="22" ElType="." desc="storePerson(p);" rngLn="22">
+          <Props/>
+        </ElDesc>
+        <ElDesc srcRngStartln="26" srcRngStartPos="0" srcRngEndLn="27" srcRngEndPos="0" srcRngFile="/BugDetective/memoryLeaks.c" srcRnghash="1502549011" ln="26" ElType=".P" desc="} else {" rngLn="26">
+          <Props>
+            <Prop key="Tracked variables" val="p"/>
+          </Props>
+          <Anns>
+            <Ann msg="Allocated memory: p" kind="var"/>
+            <Ann msg="Point where allocated memory is lost" kind="point"/>
+          </Anns>
+        </ElDesc>
+      </ElDescList>
+    </FlowViol>
+    <FlowViol msg="Memory not deallocated: pointer" ln="40" ruleSAFMsg="Point where allocated memory is lost" auth="root" sev="1" rule="BD-RES-LEAKS" ruleSCSCMsg="Point where memory is allocated" tool="c++test" id="525280961" lang="cpp" locType="sr" urgent="true" config="1" hash="1502549011" locStartln="40" locStartPos="0" locEndLn="41" locEndPos="0" locFile="/BugDetective/memoryLeaks.c" FirstElSrcRngStartln="40" FirstElSrcRngStartPos="0" FirstElSrcRngEndLn="41" FirstElSrcRngEndPos="0" FirstElSrcRngFile="/BugDetective/memoryLeaks.c">
+      <Props>
+        <Prop key="Tracked variables" val="Allocated memory"/>
+      </Props>
+      <ElDescList>
+        <ElDesc srcRngStartln="34" srcRngStartPos="0" srcRngEndLn="35" srcRngEndPos="0" srcRngFile="/BugDetective/memoryLeaks.c" srcRnghash="1502549011" ln="34" ElType="." desc="int count = 0;" rngLn="34">
+          <Props/>
+        </ElDesc>
+        <ElDesc srcRngStartln="35" srcRngStartPos="0" srcRngEndLn="36" srcRngEndPos="0" srcRngFile="/BugDetective/memoryLeaks.c" srcRnghash="1502549011" ln="35" ElType="." desc="int LOOPS = 100;" rngLn="35">
+          <Props/>
+        </ElDesc>
+        <ElDesc srcRngStartln="36" srcRngStartPos="0" srcRngEndLn="37" srcRngEndPos="0" srcRngFile="/BugDetective/memoryLeaks.c" srcRnghash="1502549011" ln="36" ElType="." desc="int MAXSIZE = 100;" rngLn="36">
+          <Props/>
+        </ElDesc>
+        <ElDesc srcRngStartln="37" srcRngStartPos="0" srcRngEndLn="38" srcRngEndPos="0" srcRngFile="/BugDetective/memoryLeaks.c" srcRnghash="1502549011" ln="37" ElType="." desc="char *pointer = NULL;" rngLn="37">
+          <Props/>
+        </ElDesc>
+        <ElDesc srcRngStartln="39" srcRngStartPos="0" srcRngEndLn="40" srcRngEndPos="0" srcRngFile="/BugDetective/memoryLeaks.c" srcRnghash="1502549011" ln="39" ElType="." desc="for(count=0; count &lt; LOOPS; count++) {" rngLn="39">
+          <Props/>
+          <Anns>
+            <Ann msg="Loop condition evaluation: (count &lt; LOOPS) (true)" kind="condEval"/>
+            <Ann msg="Entering the loop" kind="condEval"/>
+          </Anns>
+        </ElDesc>
+        <ElDesc srcRngStartln="40" srcRngStartPos="0" srcRngEndLn="41" srcRngEndPos="0" srcRngFile="/BugDetective/memoryLeaks.c" srcRnghash="1502549011" ln="40" ElType=".C" desc="malloc(...)" rngLn="40">
+          <Props>
+            <Prop key="Tracked variables" val="malloc(...)"/>
+          </Props>
+          <Anns>
+            <Ann msg="Point where memory is allocated" kind="cause"/>
+            <Ann msg="Allocated memory: malloc(...)" kind="var"/>
+          </Anns>
+        </ElDesc>
+        <ElDesc srcRngStartln="40" srcRngStartPos="0" srcRngEndLn="41" srcRngEndPos="0" srcRngFile="/BugDetective/memoryLeaks.c" srcRnghash="1502549011" ln="40" ElType="!" desc="pointer = (char *)malloc(sizeof(char) * MAXSIZE);" rngLn="40">
+          <Props/>
+        </ElDesc>
+        <ElDesc srcRngStartln="39" srcRngStartPos="0" srcRngEndLn="40" srcRngEndPos="0" srcRngFile="/BugDetective/memoryLeaks.c" srcRnghash="1502549011" ln="39" ElType="." desc="for(count=0; count &lt; LOOPS; count++) {" rngLn="39">
+          <Props>
+            <Prop key="Tracked variables" val="pointer"/>
+          </Props>
+          <Anns>
+            <Ann msg="Allocated memory: pointer" kind="var"/>
+            <Ann msg="Loop condition evaluation: (count &lt; LOOPS) (assuming true)" kind="condEval"/>
+            <Ann msg="Entering the loop" kind="condEval"/>
+          </Anns>
+        </ElDesc>
+        <ElDesc srcRngStartln="40" srcRngStartPos="0" srcRngEndLn="41" srcRngEndPos="0" srcRngFile="/BugDetective/memoryLeaks.c" srcRnghash="1502549011" ln="40" ElType=".P" desc="pointer = (char *)malloc(sizeof(char) * MAXSIZE);" rngLn="40">
+          <Props>
+            <Prop key="Tracked variables" val="pointer"/>
+          </Props>
+          <Anns>
+            <Ann msg="Allocated memory: pointer" kind="var"/>
+            <Ann msg="Point where allocated memory is lost" kind="point"/>
+          </Anns>
+        </ElDesc>
+      </ElDescList>
+    </FlowViol>
+    <FlowViol msg="&quot;person&quot; may possibly be null" ln="13" ruleSAFMsg="Null pointer dereferencing point" auth="root" sev="1" rule="BD-PB-NP" ruleSCSCMsg="Source of null value" tool="c++test" id="-289034743" lang="cpp" locType="sr" urgent="true" config="1" hash="522847191" locStartln="13" locStartPos="0" locEndLn="14" locEndPos="0" locFile="/BugDetective/nullPointerDeref.c" FirstElSrcRngStartln="10" FirstElSrcRngStartPos="0" FirstElSrcRngEndLn="11" FirstElSrcRngEndPos="0" FirstElSrcRngFile="/BugDetective/dbutil.c">
+      <Props>
+        <Prop key="Tracked variables" val="Null value carrier"/>
+      </Props>
+      <ElDescList>
+        <ElDesc srcRngStartln="22" srcRngStartPos="0" srcRngEndLn="23" srcRngEndPos="0" srcRngFile="/BugDetective/nullPointerDeref.c" srcRnghash="522847191" ln="22" ElType="!" desc="Person* p = retrievePersonFromDB(id);" rngLn="22">
+          <ElDescList>
+            <ElDesc srcRngStartln="7" srcRngStartPos="0" srcRngEndLn="8" srcRngEndPos="0" srcRngFile="/BugDetective/dbutil.c" srcRnghash="-892903586" ln="7" ElType="." desc="Person* p;" rngLn="7">
+              <Props/>
+            </ElDesc>
+            <ElDesc srcRngStartln="8" srcRngStartPos="0" srcRngEndLn="9" srcRngEndPos="0" srcRngFile="/BugDetective/dbutil.c" srcRnghash="-892903586" ln="8" ElType="." desc="int MIN_ID = 1;" rngLn="8">
+              <Props/>
+            </ElDesc>
+            <ElDesc srcRngStartln="9" srcRngStartPos="0" srcRngEndLn="10" srcRngEndPos="0" srcRngFile="/BugDetective/dbutil.c" srcRnghash="-892903586" ln="9" ElType="." desc="if (id &lt; MIN_ID) {" rngLn="9">
+              <Props/>
+              <Anns>
+                <Ann msg="Condition evaluation: (id &lt; MIN_ID) (assuming true)" kind="condEval"/>
+              </Anns>
+            </ElDesc>
+            <ElDesc srcRngStartln="10" srcRngStartPos="0" srcRngEndLn="11" srcRngEndPos="0" srcRngFile="/BugDetective/dbutil.c" srcRnghash="-892903586" ln="10" ElType=".C" desc="return NULL;" rngLn="10">
+              <Props/>
+              <Anns>
+                <Ann msg="Source of null value" kind="cause"/>
+                <Ann msg="Null value carrier: &lt;returned value of retrievePersonFromDB()>" kind="comment"/>
+              </Anns>
+            </ElDesc>
+          </ElDescList>
+          <Props/>
+          <Anns>
+            <Ann msg="Null value carrier: &lt;returned value of retrievePersonFromDB()> -> p" kind="comment"/>
+          </Anns>
+        </ElDesc>
+        <ElDesc srcRngStartln="23" srcRngStartPos="0" srcRngEndLn="24" srcRngEndPos="0" srcRngFile="/BugDetective/nullPointerDeref.c" srcRnghash="522847191" ln="23" ElType="!" desc="storePersonToFile(p, file);" rngLn="23">
+          <ElDescList>
+            <ElDesc srcRngStartln="10" srcRngStartPos="0" srcRngEndLn="11" srcRngEndPos="0" srcRngFile="/BugDetective/nullPointerDeref.c" srcRnghash="522847191" ln="10" ElType="!" desc="void storePersonToFile(Person *person, FILE* file)" rngLn="10">
+              <Props/>
+              <Anns>
+                <Ann msg="Null value carrier: p -> person" kind="comment"/>
+              </Anns>
+            </ElDesc>
+            <ElDesc srcRngStartln="12" srcRngStartPos="0" srcRngEndLn="13" srcRngEndPos="0" srcRngFile="/BugDetective/nullPointerDeref.c" srcRnghash="522847191" ln="12" ElType="." desc="if (file!=NULL) {" rngLn="12">
+              <Props/>
+              <Anns>
+                <Ann msg="Condition evaluation: (file != 0) (assuming true)" kind="condEval"/>
+              </Anns>
+            </ElDesc>
+            <ElDesc srcRngStartln="13" srcRngStartPos="0" srcRngEndLn="14" srcRngEndPos="0" srcRngFile="/BugDetective/nullPointerDeref.c" srcRnghash="522847191" ln="13" ElType=".P" desc="fprintf(file, &quot;Id: %d Name: %s References:%s\n&quot;," rngLn="13">
+              <Props/>
+              <Anns>
+                <Ann msg="Null value carrier: person" kind="comment"/>
+                <Ann msg="Null pointer dereferencing point" kind="point"/>
+              </Anns>
+            </ElDesc>
+          </ElDescList>
+          <Props/>
+          <Anns>
+            <Ann msg="Null value carrier: p" kind="comment"/>
+          </Anns>
+        </ElDesc>
+      </ElDescList>
+    </FlowViol>
+    <FlowViol msg="&quot;file&quot; may possibly be null" ln="17" ruleSAFMsg="Null pointer dereferencing point" auth="root" sev="1" rule="BD-PB-NP" ruleSCSCMsg="Source of null value" tool="c++test" id="1368694412" lang="cpp" locType="sr" urgent="true" config="1" hash="522847191" locStartln="17" locStartPos="0" locEndLn="18" locEndPos="0" locFile="/BugDetective/nullPointerDeref.c" FirstElSrcRngStartln="12" FirstElSrcRngStartPos="0" FirstElSrcRngEndLn="13" FirstElSrcRngEndPos="0" FirstElSrcRngFile="/BugDetective/nullPointerDeref.c">
+      <Props>
+        <Prop key="Tracked variables" val="Null value carrier"/>
+      </Props>
+      <ElDescList>
+        <ElDesc srcRngStartln="12" srcRngStartPos="0" srcRngEndLn="13" srcRngEndPos="0" srcRngFile="/BugDetective/nullPointerDeref.c" srcRnghash="522847191" ln="12" ElType=".C" desc="if (file!=NULL) {" rngLn="12">
+          <Props/>
+          <Anns>
+            <Ann msg="Source of null value" kind="cause"/>
+            <Ann msg="Null value carrier: file" kind="comment"/>
+            <Ann msg="Condition evaluation: (file != 0) (assuming false)" kind="condEval"/>
+          </Anns>
+        </ElDesc>
+        <ElDesc srcRngStartln="17" srcRngStartPos="0" srcRngEndLn="18" srcRngEndPos="0" srcRngFile="/BugDetective/nullPointerDeref.c" srcRnghash="522847191" ln="17" ElType=".P" desc="fclose(file);" rngLn="17">
+          <Props/>
+          <Anns>
+            <Ann msg="Null value carrier: file" kind="comment"/>
+            <Ann msg="Null pointer dereferencing point" kind="point"/>
+          </Anns>
+        </ElDesc>
+      </ElDescList>
+    </FlowViol>
+    <FlowViol msg="&quot;p&quot; may possibly be null" ln="30" ruleSAFMsg="Null pointer dereferencing point" auth="root" sev="1" rule="BD-PB-NP" ruleSCSCMsg="Source of null value" tool="c++test" id="541566912" lang="cpp" locType="sr" urgent="true" config="1" hash="522847191" locStartln="30" locStartPos="0" locEndLn="31" locEndPos="0" locFile="/BugDetective/nullPointerDeref.c" FirstElSrcRngStartln="29" FirstElSrcRngStartPos="0" FirstElSrcRngEndLn="30" FirstElSrcRngEndPos="0" FirstElSrcRngFile="/BugDetective/nullPointerDeref.c">
+      <Props>
+        <Prop key="Tracked variables" val="Null value carrier"/>
+      </Props>
+      <ElDescList>
+        <ElDesc srcRngStartln="29" srcRngStartPos="0" srcRngEndLn="30" srcRngEndPos="0" srcRngFile="/BugDetective/nullPointerDeref.c" srcRnghash="522847191" ln="29" ElType=".C" desc="Person* p = malloc(sizeof(Person));" rngLn="29">
+          <Props/>
+          <Anns>
+            <Ann msg="Source of null value" kind="cause"/>
+            <Ann msg="Null value carrier: malloc(...)" kind="comment"/>
+            <Ann msg="Null value carrier: malloc(...) -> p" kind="comment"/>
+          </Anns>
+        </ElDesc>
+        <ElDesc srcRngStartln="30" srcRngStartPos="0" srcRngEndLn="31" srcRngEndPos="0" srcRngFile="/BugDetective/nullPointerDeref.c" srcRnghash="522847191" ln="30" ElType=".P" desc="p->name = name;" rngLn="30">
+          <Props/>
+          <Anns>
+            <Ann msg="Null value carrier: p" kind="comment"/>
+            <Ann msg="Null pointer dereferencing point" kind="point"/>
+          </Anns>
+        </ElDesc>
+      </ElDescList>
+    </FlowViol>
+    <FlowViol msg="&quot;p->reference&quot; may possibly be null" ln="40" ruleSAFMsg="Null pointer dereferencing point" auth="root" sev="1" rule="BD-PB-NP" ruleSCSCMsg="Source of null value" tool="c++test" id="-1881455769" lang="cpp" locType="sr" urgent="true" config="1" hash="522847191" locStartln="40" locStartPos="0" locEndLn="41" locEndPos="0" locFile="/BugDetective/nullPointerDeref.c" FirstElSrcRngStartln="39" FirstElSrcRngStartPos="0" FirstElSrcRngEndLn="40" FirstElSrcRngEndPos="0" FirstElSrcRngFile="/BugDetective/nullPointerDeref.c">
+      <Props>
+        <Prop key="Tracked variables" val="Null value carrier"/>
+      </Props>
+      <ElDescList>
+        <ElDesc srcRngStartln="38" srcRngStartPos="0" srcRngEndLn="39" srcRngEndPos="0" srcRngFile="/BugDetective/nullPointerDeref.c" srcRnghash="522847191" ln="38" ElType="." desc="char c;" rngLn="38">
+          <Props/>
+        </ElDesc>
+        <ElDesc srcRngStartln="39" srcRngStartPos="0" srcRngEndLn="40" srcRngEndPos="0" srcRngFile="/BugDetective/nullPointerDeref.c" srcRnghash="522847191" ln="39" ElType=".C" desc="Person* p = createPerson(7, &quot;Alice&quot;, NULL);" rngLn="39">
+          <ElDescList>
+            <ElDesc srcRngStartln="27" srcRngStartPos="0" srcRngEndLn="28" srcRngEndPos="0" srcRngFile="/BugDetective/nullPointerDeref.c" srcRnghash="522847191" ln="27" ElType="!" desc="Person* createPerson(int id, char* name, char* ref)" rngLn="27">
+              <Props/>
+              <Anns>
+                <Ann msg="Null value carrier: &lt;parameter #3 of createPerson()> -> ref" kind="comment"/>
+              </Anns>
+            </ElDesc>
+            <ElDesc srcRngStartln="29" srcRngStartPos="0" srcRngEndLn="30" srcRngEndPos="0" srcRngFile="/BugDetective/nullPointerDeref.c" srcRnghash="522847191" ln="29" ElType="." desc="Person* p = malloc(sizeof(Person));" rngLn="29">
+              <Props/>
+            </ElDesc>
+            <ElDesc srcRngStartln="30" srcRngStartPos="0" srcRngEndLn="31" srcRngEndPos="0" srcRngFile="/BugDetective/nullPointerDeref.c" srcRnghash="522847191" ln="30" ElType="." desc="p->name = name;" rngLn="30">
+              <Props/>
+            </ElDesc>
+            <ElDesc srcRngStartln="31" srcRngStartPos="0" srcRngEndLn="32" srcRngEndPos="0" srcRngFile="/BugDetective/nullPointerDeref.c" srcRnghash="522847191" ln="31" ElType="." desc="p->personalId = id;" rngLn="31">
+              <Props/>
+            </ElDesc>
+            <ElDesc srcRngStartln="32" srcRngStartPos="0" srcRngEndLn="33" srcRngEndPos="0" srcRngFile="/BugDetective/nullPointerDeref.c" srcRnghash="522847191" ln="32" ElType="!" desc="p->reference = ref;" rngLn="32">
+              <Props/>
+              <Anns>
+                <Ann msg="Null value carrier: ref -> p->reference" kind="comment"/>
+              </Anns>
+            </ElDesc>
+            <ElDesc srcRngStartln="33" srcRngStartPos="0" srcRngEndLn="34" srcRngEndPos="0" srcRngFile="/BugDetective/nullPointerDeref.c" srcRnghash="522847191" ln="33" ElType="." desc="return p;" rngLn="33">
+              <Props/>
+              <Anns>
+                <Ann msg="Null value carrier: &lt;returned value of createPerson()>->reference, p->reference" kind="comment"/>
+              </Anns>
+            </ElDesc>
+          </ElDescList>
+          <Props/>
+          <Anns>
+            <Ann msg="Source of null value" kind="cause"/>
+            <Ann msg="Null value carrier: &lt;parameter #3 of createPerson()>" kind="comment"/>
+          </Anns>
+        </ElDesc>
+        <ElDesc srcRngStartln="40" srcRngStartPos="0" srcRngEndLn="41" srcRngEndPos="0" srcRngFile="/BugDetective/nullPointerDeref.c" srcRnghash="522847191" ln="40" ElType=".P" desc="c = *p->reference;" rngLn="40">
+          <Props/>
+          <Anns>
+            <Ann msg="Null value carrier: p->reference" kind="comment"/>
+            <Ann msg="Null pointer dereferencing point" kind="point"/>
+          </Anns>
+        </ElDesc>
+      </ElDescList>
+    </FlowViol>
+    <FlowViol msg="&quot;x&quot; may possibly be null" ln="9" ruleSAFMsg="Null pointer dereferencing point" auth="root" sev="1" rule="BD-PB-NP" ruleSCSCMsg="Source of null value" tool="c++test" id="203144837" lang="cpp" locType="sr" urgent="true" config="1" hash="-1583021683" locStartln="9" locStartPos="0" locEndLn="10" locEndPos="0" locFile="/BugDetective/nullPointerDerefBenchmark.c" FirstElSrcRngStartln="69" FirstElSrcRngStartPos="0" FirstElSrcRngEndLn="70" FirstElSrcRngEndPos="0" FirstElSrcRngFile="/BugDetective/nullPointerDerefBenchmark.c">
+      <Props>
+        <Prop key="Tracked variables" val="Null value carrier"/>
+      </Props>
+      <ElDescList>
+        <ElDesc srcRngStartln="69" srcRngStartPos="0" srcRngEndLn="70" srcRngEndPos="0" srcRngFile="/BugDetective/nullPointerDerefBenchmark.c" srcRnghash="-1583021683" ln="69" ElType=".C" desc="x = 0;" rngLn="69">
+          <Props/>
+          <Anns>
+            <Ann msg="Source of null value" kind="cause"/>
+            <Ann msg="Null value carrier: x" kind="comment"/>
+          </Anns>
+        </ElDesc>
+        <ElDesc srcRngStartln="70" srcRngStartPos="0" srcRngEndLn="71" srcRngEndPos="0" srcRngFile="/BugDetective/nullPointerDerefBenchmark.c" srcRnghash="-1583021683" ln="70" ElType="." desc="if (b)" rngLn="70">
+          <Props/>
+          <Anns>
+            <Ann msg="Condition evaluation: (b != 0) (assuming false)" kind="condEval"/>
+          </Anns>
+        </ElDesc>
+        <ElDesc srcRngStartln="72" srcRngStartPos="0" srcRngEndLn="73" srcRngEndPos="0" srcRngFile="/BugDetective/nullPointerDerefBenchmark.c" srcRnghash="-1583021683" ln="72" ElType="!" desc="helper1(...)" rngLn="72">
+          <ElDescList>
+            <ElDesc srcRngStartln="7" srcRngStartPos="0" srcRngEndLn="8" srcRngEndPos="0" srcRngFile="/BugDetective/nullPointerDerefBenchmark.c" srcRnghash="-1583021683" ln="7" ElType="." desc="if (b)" rngLn="7">
+              <Props/>
+              <Anns>
+                <Ann msg="Condition evaluation: (b != 0) (false)" kind="condEval"/>
+              </Anns>
+            </ElDesc>
+            <ElDesc srcRngStartln="9" srcRngStartPos="0" srcRngEndLn="10" srcRngEndPos="0" srcRngFile="/BugDetective/nullPointerDerefBenchmark.c" srcRnghash="-1583021683" ln="9" ElType=".P" desc="return *x;" rngLn="9">
+              <Props/>
+              <Anns>
+                <Ann msg="Null value carrier: x" kind="comment"/>
+                <Ann msg="Null pointer dereferencing point" kind="point"/>
+              </Anns>
+            </ElDesc>
+          </ElDescList>
+          <Props/>
+        </ElDesc>
+      </ElDescList>
+    </FlowViol>
+    <FlowViol msg="&quot;x&quot; may possibly be null" ln="13" ruleSAFMsg="Null pointer dereferencing point" auth="root" sev="1" rule="BD-PB-NP" ruleSCSCMsg="Source of null value" tool="c++test" id="-577794662" lang="cpp" locType="sr" urgent="true" config="1" hash="-1583021683" locStartln="13" locStartPos="0" locEndLn="14" locEndPos="0" locFile="/BugDetective/nullPointerDerefBenchmark.c" FirstElSrcRngStartln="76" FirstElSrcRngStartPos="0" FirstElSrcRngEndLn="77" FirstElSrcRngEndPos="0" FirstElSrcRngFile="/BugDetective/nullPointerDerefBenchmark.c">
+      <Props>
+        <Prop key="Tracked variables" val="Null value carrier"/>
+      </Props>
+      <ElDescList>
+        <ElDesc srcRngStartln="76" srcRngStartPos="0" srcRngEndLn="77" srcRngEndPos="0" srcRngFile="/BugDetective/nullPointerDerefBenchmark.c" srcRnghash="-1583021683" ln="76" ElType=".C" desc="x = 0;" rngLn="76">
+          <Props/>
+          <Anns>
+            <Ann msg="Source of null value" kind="cause"/>
+            <Ann msg="Null value carrier: x" kind="comment"/>
+          </Anns>
+        </ElDesc>
+        <ElDesc srcRngStartln="77" srcRngStartPos="0" srcRngEndLn="78" srcRngEndPos="0" srcRngFile="/BugDetective/nullPointerDerefBenchmark.c" srcRnghash="-1583021683" ln="77" ElType="!" desc="helper2()" rngLn="77">
+          <ElDescList>
+            <ElDesc srcRngStartln="13" srcRngStartPos="0" srcRngEndLn="14" srcRngEndPos="0" srcRngFile="/BugDetective/nullPointerDerefBenchmark.c" srcRnghash="-1583021683" ln="13" ElType=".P" desc="return *x;" rngLn="13">
+              <Props/>
+              <Anns>
+                <Ann msg="Null value carrier: x" kind="comment"/>
+                <Ann msg="Null pointer dereferencing point" kind="point"/>
+              </Anns>
+            </ElDesc>
+          </ElDescList>
+          <Props/>
+        </ElDesc>
+      </ElDescList>
+    </FlowViol>
+    <FlowViol msg="&quot;x&quot; may possibly be null" ln="51" ruleSAFMsg="Null pointer dereferencing point" auth="root" sev="1" rule="BD-PB-NP" ruleSCSCMsg="Source of null value" tool="c++test" id="-1823566354" lang="cpp" locType="sr" urgent="true" config="1" hash="-1583021683" locStartln="51" locStartPos="0" locEndLn="52" locEndPos="0" locFile="/BugDetective/nullPointerDerefBenchmark.c" FirstElSrcRngStartln="46" FirstElSrcRngStartPos="0" FirstElSrcRngEndLn="47" FirstElSrcRngEndPos="0" FirstElSrcRngFile="/BugDetective/nullPointerDerefBenchmark.c">
+      <Props>
+        <Prop key="Tracked variables" val="Null value carrier"/>
+      </Props>
+      <ElDescList>
+        <ElDesc srcRngStartln="45" srcRngStartPos="0" srcRngEndLn="46" srcRngEndPos="0" srcRngFile="/BugDetective/nullPointerDerefBenchmark.c" srcRnghash="-1583021683" ln="45" ElType="." desc="int* y = 0;" rngLn="45">
+          <Props/>
+        </ElDesc>
+        <ElDesc srcRngStartln="46" srcRngStartPos="0" srcRngEndLn="47" srcRngEndPos="0" srcRngFile="/BugDetective/nullPointerDerefBenchmark.c" srcRnghash="-1583021683" ln="46" ElType=".C" desc="if (x != 0)" rngLn="46">
+          <Props/>
+          <Anns>
+            <Ann msg="Source of null value" kind="cause"/>
+            <Ann msg="Null value carrier: x" kind="comment"/>
+            <Ann msg="Condition evaluation: (x != 0) (assuming false)" kind="condEval"/>
+          </Anns>
+        </ElDesc>
+        <ElDesc srcRngStartln="48" srcRngStartPos="0" srcRngEndLn="49" srcRngEndPos="0" srcRngFile="/BugDetective/nullPointerDerefBenchmark.c" srcRnghash="-1583021683" ln="48" ElType="." desc="if (y != 0)" rngLn="48">
+          <Props/>
+          <Anns>
+            <Ann msg="Condition evaluation: (y != 0) (false)" kind="condEval"/>
+          </Anns>
+        </ElDesc>
+        <ElDesc srcRngStartln="51" srcRngStartPos="0" srcRngEndLn="52" srcRngEndPos="0" srcRngFile="/BugDetective/nullPointerDerefBenchmark.c" srcRnghash="-1583021683" ln="51" ElType=".P" desc="return *x;" rngLn="51">
+          <Props/>
+          <Anns>
+            <Ann msg="Null value carrier: x" kind="comment"/>
+            <Ann msg="Null pointer dereferencing point" kind="point"/>
+          </Anns>
+        </ElDesc>
+      </ElDescList>
+    </FlowViol>
+    <FlowViol msg="Condition &quot;!volumetric&quot; always evaluates to true" ln="16" ruleSAFMsg="Point where senseless condition is used" auth="root" sev="2" rule="BD-PB-CC" ruleSCSCMsg="Start of the path" tool="c++test" id="-527458111" lang="cpp" locType="sr" urgent="true" config="1" hash="1398926183" locStartln="16" locStartPos="0" locEndLn="17" locEndPos="0" locFile="/BugDetective/unreachableCode.c" FirstElSrcRngStartln="11" FirstElSrcRngStartPos="0" FirstElSrcRngEndLn="12" FirstElSrcRngEndPos="0" FirstElSrcRngFile="/BugDetective/unreachableCode.c">
+      <Props/>
+      <ElDescList>
+        <ElDesc srcRngStartln="11" srcRngStartPos="0" srcRngEndLn="12" srcRngEndPos="0" srcRngFile="/BugDetective/unreachableCode.c" srcRnghash="1398926183" ln="11" ElType=".C" desc="static void guessFigure(int round, int volumetric)" rngLn="11">
+          <Props/>
+          <Anns>
+            <Ann msg="Start of the path" kind="cause"/>
+          </Anns>
+        </ElDesc>
+        <ElDesc srcRngStartln="13" srcRngStartPos="0" srcRngEndLn="14" srcRngEndPos="0" srcRngFile="/BugDetective/unreachableCode.c" srcRnghash="1398926183" ln="13" ElType="." desc="int figure;" rngLn="13">
+          <Props/>
+        </ElDesc>
+        <ElDesc srcRngStartln="14" srcRngStartPos="0" srcRngEndLn="15" srcRngEndPos="0" srcRngFile="/BugDetective/unreachableCode.c" srcRnghash="1398926183" ln="14" ElType="!" desc="if (round &amp;&amp; volumetric) {" rngLn="14">
+          <Props/>
+          <Anns>
+            <Ann msg="Condition evaluation: (round != 0) (assuming true)" kind="condEval"/>
+            <Ann msg="Condition evaluation: (volumetric != 0) (assuming false)" kind="condEval"/>
+            <Ann msg="Condition evaluation: round &amp;&amp; volumetric (false)" kind="condEval"/>
+          </Anns>
+        </ElDesc>
+        <ElDesc srcRngStartln="16" srcRngStartPos="0" srcRngEndLn="17" srcRngEndPos="0" srcRngFile="/BugDetective/unreachableCode.c" srcRnghash="1398926183" ln="16" ElType=".P" desc="} else if (round &amp;&amp; !volumetric) {" rngLn="16">
+          <Props/>
+          <Anns>
+            <Ann msg="Condition evaluation: (round != 0) (true)" kind="condEval"/>
+            <Ann msg="Point where senseless condition is used" kind="point"/>
+          </Anns>
+        </ElDesc>
+      </ElDescList>
+    </FlowViol>
+    <FlowViol msg="Condition &quot;!round&quot; always evaluates to true" ln="18" ruleSAFMsg="Point where senseless condition is used" auth="root" sev="2" rule="BD-PB-CC" ruleSCSCMsg="Start of the path" tool="c++test" id="1630626668" lang="cpp" locType="sr" urgent="true" config="1" hash="1398926183" locStartln="18" locStartPos="0" locEndLn="19" locEndPos="0" locFile="/BugDetective/unreachableCode.c" FirstElSrcRngStartln="11" FirstElSrcRngStartPos="0" FirstElSrcRngEndLn="12" FirstElSrcRngEndPos="0" FirstElSrcRngFile="/BugDetective/unreachableCode.c">
+      <Props/>
+      <ElDescList>
+        <ElDesc srcRngStartln="11" srcRngStartPos="0" srcRngEndLn="12" srcRngEndPos="0" srcRngFile="/BugDetective/unreachableCode.c" srcRnghash="1398926183" ln="11" ElType=".C" desc="static void guessFigure(int round, int volumetric)" rngLn="11">
+          <Props/>
+          <Anns>
+            <Ann msg="Start of the path" kind="cause"/>
+          </Anns>
+        </ElDesc>
+        <ElDesc srcRngStartln="13" srcRngStartPos="0" srcRngEndLn="14" srcRngEndPos="0" srcRngFile="/BugDetective/unreachableCode.c" srcRnghash="1398926183" ln="13" ElType="." desc="int figure;" rngLn="13">
+          <Props/>
+        </ElDesc>
+        <ElDesc srcRngStartln="14" srcRngStartPos="0" srcRngEndLn="15" srcRngEndPos="0" srcRngFile="/BugDetective/unreachableCode.c" srcRnghash="1398926183" ln="14" ElType="!" desc="if (round &amp;&amp; volumetric) {" rngLn="14">
+          <Props/>
+          <Anns>
+            <Ann msg="Condition evaluation: (round != 0) (assuming false)" kind="condEval"/>
+            <Ann msg="Condition evaluation: round &amp;&amp; volumetric (false)" kind="condEval"/>
+          </Anns>
+        </ElDesc>
+        <ElDesc srcRngStartln="16" srcRngStartPos="0" srcRngEndLn="17" srcRngEndPos="0" srcRngFile="/BugDetective/unreachableCode.c" srcRnghash="1398926183" ln="16" ElType="." desc="} else if (round &amp;&amp; !volumetric) {" rngLn="16">
+          <Props/>
+          <Anns>
+            <Ann msg="Condition evaluation: (round != 0) (false)" kind="condEval"/>
+            <Ann msg="Condition evaluation: round &amp;&amp; !volumetric (false)" kind="condEval"/>
+          </Anns>
+        </ElDesc>
+        <ElDesc srcRngStartln="18" srcRngStartPos="0" srcRngEndLn="19" srcRngEndPos="0" srcRngFile="/BugDetective/unreachableCode.c" srcRnghash="1398926183" ln="18" ElType=".P" desc="} else if (!round &amp;&amp; volumetric) {" rngLn="18">
+          <Props/>
+          <Anns>
+            <Ann msg="Point where senseless condition is used" kind="point"/>
+          </Anns>
+        </ElDesc>
+      </ElDescList>
+    </FlowViol>
+    <FlowViol msg="Condition &quot;(*cur >= 'a') &amp;&amp; (*cur &lt;= 'f')&quot; always evaluates to false" ln="51" ruleSAFMsg="Point where senseless condition is used" auth="root" sev="2" rule="BD-PB-CC" ruleSCSCMsg="Start of the path" tool="c++test" id="1451351576" lang="cpp" locType="sr" urgent="true" config="1" hash="1398926183" locStartln="51" locStartPos="0" locEndLn="52" locEndPos="0" locFile="/BugDetective/unreachableCode.c" FirstElSrcRngStartln="44" FirstElSrcRngStartPos="0" FirstElSrcRngEndLn="45" FirstElSrcRngEndPos="0" FirstElSrcRngFile="/BugDetective/unreachableCode.c">
+      <Props/>
+      <ElDescList>
+        <ElDesc srcRngStartln="44" srcRngStartPos="0" srcRngEndLn="45" srcRngEndPos="0" srcRngFile="/BugDetective/unreachableCode.c" srcRnghash="1398926183" ln="44" ElType=".C" desc="static void checkRange(char* cur)" rngLn="44">
+          <Props/>
+          <Anns>
+            <Ann msg="Start of the path" kind="cause"/>
+          </Anns>
+        </ElDesc>
+        <ElDesc srcRngStartln="46" srcRngStartPos="0" srcRngEndLn="47" srcRngEndPos="0" srcRngFile="/BugDetective/unreachableCode.c" srcRnghash="1398926183" ln="46" ElType="." desc="if ((*cur &lt; '0') || (*cur > '9')) {" rngLn="46">
+          <Props/>
+          <Anns>
+            <Ann msg="Condition evaluation: (*cur &lt; 48) (assuming false)" kind="condEval"/>
+            <Ann msg="Condition evaluation: (*cur > 57) (assuming false)" kind="condEval"/>
+            <Ann msg="Condition evaluation: (*cur &lt; '0') || (*cur > '9') (false)" kind="condEval"/>
+          </Anns>
+        </ElDesc>
+        <ElDesc srcRngStartln="51" srcRngStartPos="0" srcRngEndLn="52" srcRngEndPos="0" srcRngFile="/BugDetective/unreachableCode.c" srcRnghash="1398926183" ln="51" ElType=".P" desc="if ((*cur >= 'a') &amp;&amp; (*cur &lt;= 'f')) {" rngLn="51">
+          <Props/>
+          <Anns>
+            <Ann msg="Condition evaluation: (*cur >= 97) (false)" kind="condEval"/>
+            <Ann msg="Point where senseless condition is used" kind="point"/>
+          </Anns>
+        </ElDesc>
+      </ElDescList>
+    </FlowViol>
+    <FlowViol msg="Condition &quot;(int)*cur >= 97&quot; always evaluates to false" ln="51" ruleSAFMsg="Point where senseless condition is used" auth="root" sev="2" rule="BD-PB-CC" ruleSCSCMsg="Start of the path" tool="c++test" id="-589878461" lang="cpp" locType="sr" urgent="true" config="1" hash="1398926183" locStartln="51" locStartPos="0" locEndLn="52" locEndPos="0" locFile="/BugDetective/unreachableCode.c" FirstElSrcRngStartln="44" FirstElSrcRngStartPos="0" FirstElSrcRngEndLn="45" FirstElSrcRngEndPos="0" FirstElSrcRngFile="/BugDetective/unreachableCode.c">
+      <Props/>
+      <ElDescList>
+        <ElDesc srcRngStartln="44" srcRngStartPos="0" srcRngEndLn="45" srcRngEndPos="0" srcRngFile="/BugDetective/unreachableCode.c" srcRnghash="1398926183" ln="44" ElType=".C" desc="static void checkRange(char* cur)" rngLn="44">
+          <Props/>
+          <Anns>
+            <Ann msg="Start of the path" kind="cause"/>
+          </Anns>
+        </ElDesc>
+        <ElDesc srcRngStartln="46" srcRngStartPos="0" srcRngEndLn="47" srcRngEndPos="0" srcRngFile="/BugDetective/unreachableCode.c" srcRnghash="1398926183" ln="46" ElType="." desc="if ((*cur &lt; '0') || (*cur > '9')) {" rngLn="46">
+          <Props/>
+          <Anns>
+            <Ann msg="Condition evaluation: (*cur &lt; 48) (assuming false)" kind="condEval"/>
+            <Ann msg="Condition evaluation: (*cur > 57) (assuming false)" kind="condEval"/>
+            <Ann msg="Condition evaluation: (*cur &lt; '0') || (*cur > '9') (false)" kind="condEval"/>
+          </Anns>
+        </ElDesc>
+        <ElDesc srcRngStartln="51" srcRngStartPos="0" srcRngEndLn="52" srcRngEndPos="0" srcRngFile="/BugDetective/unreachableCode.c" srcRnghash="1398926183" ln="51" ElType=".P" desc="if ((*cur >= 'a') &amp;&amp; (*cur &lt;= 'f')) {" rngLn="51">
+          <Props/>
+          <Anns>
+            <Ann msg="Point where senseless condition is used" kind="point"/>
+          </Anns>
+        </ElDesc>
+      </ElDescList>
+    </FlowViol>
+    <FlowViol msg="&quot;cur&quot; is checked for null after being dereferenced" ln="63" ruleSAFMsg="Point of checking for nullity" auth="root" sev="2" rule="BD-PB-DEREF" ruleSCSCMsg="Point of dereferencing" tool="c++test" id="-1480975621" lang="cpp" locType="sr" urgent="true" config="1" hash="1398926183" locStartln="63" locStartPos="0" locEndLn="64" locEndPos="0" locFile="/BugDetective/unreachableCode.c" FirstElSrcRngStartln="58" FirstElSrcRngStartPos="0" FirstElSrcRngEndLn="59" FirstElSrcRngEndPos="0" FirstElSrcRngFile="/BugDetective/unreachableCode.c">
+      <Props>
+        <Prop key="Tracked variables" val="Important values"/>
+      </Props>
+      <ElDescList>
+        <ElDesc srcRngStartln="58" srcRngStartPos="0" srcRngEndLn="59" srcRngEndPos="0" srcRngFile="/BugDetective/unreachableCode.c" srcRnghash="1398926183" ln="58" ElType=".C" desc="if (cur[0] == '-') {" rngLn="58">
+          <Props>
+            <Prop key="Tracked variables" val="cur != null"/>
+          </Props>
+          <Anns>
+            <Ann msg="Point of dereferencing" kind="cause"/>
+            <Ann msg="Important values: cur != null" kind="var"/>
+            <Ann msg="Condition evaluation: (cur[0] == 45) (assuming false)" kind="condEval"/>
+          </Anns>
+        </ElDesc>
+        <ElDesc srcRngStartln="63" srcRngStartPos="0" srcRngEndLn="64" srcRngEndPos="0" srcRngFile="/BugDetective/unreachableCode.c" srcRnghash="1398926183" ln="63" ElType=".P" desc="if (cur == 0) {" rngLn="63">
+          <Props>
+            <Prop key="Tracked variables" val="cur != null"/>
+          </Props>
+          <Anns>
+            <Ann msg="Important values: cur != null" kind="var"/>
+            <Ann msg="Point of checking for nullity" kind="point"/>
+          </Anns>
+        </ElDesc>
+      </ElDescList>
+    </FlowViol>
+    <FlowViol msg="Condition &quot;cur == 0&quot; always evaluates to false" ln="63" ruleSAFMsg="Point where senseless condition is used" auth="root" sev="2" rule="BD-PB-CC" ruleSCSCMsg="Start of the path" tool="c++test" id="1056502269" lang="cpp" locType="sr" urgent="true" config="1" hash="1398926183" locStartln="63" locStartPos="0" locEndLn="64" locEndPos="0" locFile="/BugDetective/unreachableCode.c" FirstElSrcRngStartln="56" FirstElSrcRngStartPos="0" FirstElSrcRngEndLn="57" FirstElSrcRngEndPos="0" FirstElSrcRngFile="/BugDetective/unreachableCode.c">
+      <Props/>
+      <ElDescList>
+        <ElDesc srcRngStartln="56" srcRngStartPos="0" srcRngEndLn="57" srcRngEndPos="0" srcRngFile="/BugDetective/unreachableCode.c" srcRnghash="1398926183" ln="56" ElType=".C" desc="static void checkSequence(char cur[])" rngLn="56">
+          <Props/>
+          <Anns>
+            <Ann msg="Start of the path" kind="cause"/>
+          </Anns>
+        </ElDesc>
+        <ElDesc srcRngStartln="58" srcRngStartPos="0" srcRngEndLn="59" srcRngEndPos="0" srcRngFile="/BugDetective/unreachableCode.c" srcRnghash="1398926183" ln="58" ElType="." desc="if (cur[0] == '-') {" rngLn="58">
+          <Props/>
+          <Anns>
+            <Ann msg="Condition evaluation: (cur[0] == 45) (assuming false)" kind="condEval"/>
+          </Anns>
+        </ElDesc>
+        <ElDesc srcRngStartln="63" srcRngStartPos="0" srcRngEndLn="64" srcRngEndPos="0" srcRngFile="/BugDetective/unreachableCode.c" srcRnghash="1398926183" ln="63" ElType=".P" desc="if (cur == 0) {" rngLn="63">
+          <Props/>
+          <Anns>
+            <Ann msg="Point where senseless condition is used" kind="point"/>
+          </Anns>
+        </ElDesc>
+      </ElDescList>
+    </FlowViol>
+    <FlowViol msg="&quot;numberOfCharactersPrinted&quot; is used prior to initialization" ln="27" ruleSAFMsg="Usage point" auth="root" sev="1" rule="BD-PB-NOTINIT" ruleSCSCMsg="Source of not initialized value" tool="c++test" id="2060208960" lang="cpp" locType="sr" urgent="true" config="1" hash="-54878936" locStartln="27" locStartPos="0" locEndLn="28" locEndPos="0" locFile="/BugDetective/useBeforeInit.c" FirstElSrcRngStartln="18" FirstElSrcRngStartPos="0" FirstElSrcRngEndLn="19" FirstElSrcRngEndPos="0" FirstElSrcRngFile="/BugDetective/useBeforeInit.c">
+      <Props>
+        <Prop key="Tracked variables" val="Not initialized value"/>
+      </Props>
+      <ElDescList>
+        <ElDesc srcRngStartln="17" srcRngStartPos="0" srcRngEndLn="18" srcRngEndPos="0" srcRngFile="/BugDetective/useBeforeInit.c" srcRnghash="-54878936" ln="17" ElType="." desc="FILE *file;" rngLn="17">
+          <Props/>
+        </ElDesc>
+        <ElDesc srcRngStartln="18" srcRngStartPos="0" srcRngEndLn="19" srcRngEndPos="0" srcRngFile="/BugDetective/useBeforeInit.c" srcRnghash="-54878936" ln="18" ElType=".C" desc="int numberOfCharactersPrinted;" rngLn="18">
+          <Props>
+            <Prop key="Tracked variables" val="numberOfCharactersPrinted"/>
+          </Props>
+          <Anns>
+            <Ann msg="Source of not initialized value" kind="cause"/>
+            <Ann msg="Not initialized value: numberOfCharactersPrinted" kind="var"/>
+          </Anns>
+        </ElDesc>
+        <ElDesc srcRngStartln="19" srcRngStartPos="0" srcRngEndLn="20" srcRngEndPos="0" srcRngFile="/BugDetective/useBeforeInit.c" srcRnghash="-54878936" ln="19" ElType="." desc="file = fopen(filename, &quot;w&quot;);" rngLn="19">
+          <Props/>
+        </ElDesc>
+        <ElDesc srcRngStartln="21" srcRngStartPos="0" srcRngEndLn="22" srcRngEndPos="0" srcRngFile="/BugDetective/useBeforeInit.c" srcRnghash="-54878936" ln="21" ElType="." desc="if (file!=NULL) {" rngLn="21">
+          <Props/>
+          <Anns>
+            <Ann msg="Condition evaluation: (file != 0) (assuming false)" kind="condEval"/>
+          </Anns>
+        </ElDesc>
+        <ElDesc srcRngStartln="27" srcRngStartPos="0" srcRngEndLn="28" srcRngEndPos="0" srcRngFile="/BugDetective/useBeforeInit.c" srcRnghash="-54878936" ln="27" ElType=".P" desc="printf(&quot;File length: %d\n&quot;, numberOfCharactersPrinted);" rngLn="27">
+          <Props>
+            <Prop key="Tracked variables" val="numberOfCharactersPrinted"/>
+          </Props>
+          <Anns>
+            <Ann msg="Not initialized value: numberOfCharactersPrinted" kind="var"/>
+            <Ann msg="Usage point" kind="point"/>
+          </Anns>
+        </ElDesc>
+      </ElDescList>
+    </FlowViol>
+    <FlowViol msg="File not closed: file" ln="40" ruleSAFMsg="Point where opened file is lost" auth="root" sev="1" rule="BD-RES-LEAKS" ruleSCSCMsg="Point where file is opened" tool="c++test" id="1991957079" lang="cpp" locType="sr" urgent="true" config="1" hash="-54878936" locStartln="40" locStartPos="0" locEndLn="41" locEndPos="0" locFile="/BugDetective/useBeforeInit.c" FirstElSrcRngStartln="34" FirstElSrcRngStartPos="0" FirstElSrcRngEndLn="35" FirstElSrcRngEndPos="0" FirstElSrcRngFile="/BugDetective/useBeforeInit.c">
+      <Props>
+        <Prop key="Tracked variables" val="Opened file"/>
+      </Props>
+      <ElDescList>
+        <ElDesc srcRngStartln="32" srcRngStartPos="0" srcRngEndLn="33" srcRngEndPos="0" srcRngFile="/BugDetective/useBeforeInit.c" srcRnghash="-54878936" ln="32" ElType="." desc="Person* p;" rngLn="32">
+          <Props/>
+        </ElDesc>
+        <ElDesc srcRngStartln="33" srcRngStartPos="0" srcRngEndLn="34" srcRngEndPos="0" srcRngFile="/BugDetective/useBeforeInit.c" srcRnghash="-54878936" ln="33" ElType="." desc="FILE *file;" rngLn="33">
+          <Props/>
+        </ElDesc>
+        <ElDesc srcRngStartln="34" srcRngStartPos="0" srcRngEndLn="35" srcRngEndPos="0" srcRngFile="/BugDetective/useBeforeInit.c" srcRnghash="-54878936" ln="34" ElType=".C" desc="file = fopen(filename, &quot;r&quot;);" rngLn="34">
+          <Props>
+            <Prop key="Tracked variables" val="file"/>
+          </Props>
+          <Anns>
+            <Ann msg="Point where file is opened" kind="cause"/>
+            <Ann msg="Opened file: file" kind="var"/>
+          </Anns>
+        </ElDesc>
+        <ElDesc srcRngStartln="35" srcRngStartPos="0" srcRngEndLn="36" srcRngEndPos="0" srcRngFile="/BugDetective/useBeforeInit.c" srcRnghash="-54878936" ln="35" ElType="." desc="if (file!=NULL) {" rngLn="35">
+          <Props/>
+          <Anns>
+            <Ann msg="Condition evaluation: (file != 0) (assuming true)" kind="condEval"/>
+          </Anns>
+        </ElDesc>
+        <ElDesc srcRngStartln="36" srcRngStartPos="0" srcRngEndLn="37" srcRngEndPos="0" srcRngFile="/BugDetective/useBeforeInit.c" srcRnghash="-54878936" ln="36" ElType="." desc="char id[10];" rngLn="36">
+          <Props/>
+        </ElDesc>
+        <ElDesc srcRngStartln="37" srcRngStartPos="0" srcRngEndLn="38" srcRngEndPos="0" srcRngFile="/BugDetective/useBeforeInit.c" srcRnghash="-54878936" ln="37" ElType="." desc="char name[100];" rngLn="37">
+          <Props/>
+        </ElDesc>
+        <ElDesc srcRngStartln="38" srcRngStartPos="0" srcRngEndLn="39" srcRngEndPos="0" srcRngFile="/BugDetective/useBeforeInit.c" srcRnghash="-54878936" ln="38" ElType="." desc="char reference[1000];" rngLn="38">
+          <Props/>
+        </ElDesc>
+        <ElDesc srcRngStartln="39" srcRngStartPos="0" srcRngEndLn="40" srcRngEndPos="0" srcRngFile="/BugDetective/useBeforeInit.c" srcRnghash="-54878936" ln="39" ElType="." desc="p = malloc(sizeof(Person));" rngLn="39">
+          <Props/>
+        </ElDesc>
+        <ElDesc srcRngStartln="40" srcRngStartPos="0" srcRngEndLn="41" srcRngEndPos="0" srcRngFile="/BugDetective/useBeforeInit.c" srcRnghash="-54878936" ln="40" ElType=".P" desc="exit(...)" rngLn="40">
+          <Props>
+            <Prop key="Tracked variables" val="file"/>
+          </Props>
+          <Anns>
+            <Ann msg="Opened file: file" kind="var"/>
+            <Ann msg="Point where opened file is lost" kind="point"/>
+          </Anns>
+        </ElDesc>
+      </ElDescList>
+    </FlowViol>
+    <FlowViol msg="&quot;p&quot; is used prior to initialization" ln="51" ruleSAFMsg="Usage point" auth="root" sev="1" rule="BD-PB-NOTINIT" ruleSCSCMsg="Source of not initialized value" tool="c++test" id="-1888625583" lang="cpp" locType="sr" urgent="true" config="1" hash="-54878936" locStartln="51" locStartPos="0" locEndLn="52" locEndPos="0" locFile="/BugDetective/useBeforeInit.c" FirstElSrcRngStartln="32" FirstElSrcRngStartPos="0" FirstElSrcRngEndLn="33" FirstElSrcRngEndPos="0" FirstElSrcRngFile="/BugDetective/useBeforeInit.c">
+      <Props>
+        <Prop key="Tracked variables" val="Not initialized value"/>
+      </Props>
+      <ElDescList>
+        <ElDesc srcRngStartln="32" srcRngStartPos="0" srcRngEndLn="33" srcRngEndPos="0" srcRngFile="/BugDetective/useBeforeInit.c" srcRnghash="-54878936" ln="32" ElType=".C" desc="Person* p;" rngLn="32">
+          <Props>
+            <Prop key="Tracked variables" val="p"/>
+          </Props>
+          <Anns>
+            <Ann msg="Source of not initialized value" kind="cause"/>
+            <Ann msg="Not initialized value: p" kind="var"/>
+          </Anns>
+        </ElDesc>
+        <ElDesc srcRngStartln="33" srcRngStartPos="0" srcRngEndLn="34" srcRngEndPos="0" srcRngFile="/BugDetective/useBeforeInit.c" srcRnghash="-54878936" ln="33" ElType="." desc="FILE *file;" rngLn="33">
+          <Props/>
+        </ElDesc>
+        <ElDesc srcRngStartln="34" srcRngStartPos="0" srcRngEndLn="35" srcRngEndPos="0" srcRngFile="/BugDetective/useBeforeInit.c" srcRnghash="-54878936" ln="34" ElType="." desc="file = fopen(filename, &quot;r&quot;);" rngLn="34">
+          <Props/>
+        </ElDesc>
+        <ElDesc srcRngStartln="35" srcRngStartPos="0" srcRngEndLn="36" srcRngEndPos="0" srcRngFile="/BugDetective/useBeforeInit.c" srcRnghash="-54878936" ln="35" ElType="." desc="if (file!=NULL) {" rngLn="35">
+          <Props/>
+          <Anns>
+            <Ann msg="Condition evaluation: (file != 0) (assuming false)" kind="condEval"/>
+          </Anns>
+        </ElDesc>
+        <ElDesc srcRngStartln="50" srcRngStartPos="0" srcRngEndLn="51" srcRngEndPos="0" srcRngFile="/BugDetective/useBeforeInit.c" srcRnghash="-54878936" ln="50" ElType="." desc="storePersonToDB(p);" rngLn="50">
+          <Props/>
+        </ElDesc>
+        <ElDesc srcRngStartln="51" srcRngStartPos="0" srcRngEndLn="52" srcRngEndPos="0" srcRngFile="/BugDetective/useBeforeInit.c" srcRnghash="-54878936" ln="51" ElType=".P" desc="free(p);" rngLn="51">
+          <Props>
+            <Prop key="Tracked variables" val="p"/>
+          </Props>
+          <Anns>
+            <Ann msg="Not initialized value: p" kind="var"/>
+            <Ann msg="Usage point" kind="point"/>
+          </Anns>
+        </ElDesc>
+      </ElDescList>
+    </FlowViol>
+  </StdViols>
+
+      <Supps/>
+      
+      
+   </CodingStandards>
+   <Metrics ownerId="com.parasoft.xtest.checkers.api.standards" time="0:00:09">
+      
+   </Metrics>
+   <AssocUrls/>
+</ResultsSession>

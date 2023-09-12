@@ -1,0 +1,10 @@
+!SESSION 2023-09-12 06:03:57.961 -----------------------------------------------
+eclipse.buildId=4.14.0.I20191210-0610
+java.version=11.0.15
+java.vendor=Azul Systems, Inc.
+BootLoader constants: OS=linux, ARCH=x86_64, WS=gtk, NL=en_US
+Framework arguments:  -application com.parasoft.ptest.checkers.eclipse.core.XtestApplication8 -config builtin://Recommended Rules -bdf ./BugDetective/cpptestscan.bdf -localsettings ./cpptestcli.properties -report /home/keio/git_and_docker_cpptest/git_and_docker/DevelopSampleProject/reports
+Command-line arguments:  -data ./ -application com.parasoft.ptest.checkers.eclipse.core.XtestApplication8 -config builtin://Recommended Rules -bdf ./BugDetective/cpptestscan.bdf -localsettings ./cpptestcli.properties -report /home/keio/git_and_docker_cpptest/git_and_docker/DevelopSampleProject/reports
+
+!ENTRY org.eclipse.cdt.core 1 0 2023-09-12 06:04:06.323
+!MESSAGE Indexed 'BugDetective' (13 sources, 3 headers) in 0.324 sec: 180 declarations; 459 references; 26 unresolved inclusions; 0 syntax errors; 24 unresolved names (3.6%)
