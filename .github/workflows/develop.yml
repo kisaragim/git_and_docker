@@ -50,7 +50,7 @@ jobs:
         compilerConfig: 'gcc_11-64'
         testConfig: 'builtin://Recommended Rules'
         reportFormat: xml,html,sarif
-        input: './DevelopSampleProject/BugDetective/cpptestscan.bdf'
+        input: './BugDetective/cpptestscan.bdf'
         reportDir: '/home/keio/git_and_docker_cpptest/git_and_docker/DevelopSampleProject/reports'
         additionalParams: './cpptestcli.properties'
         commandLinePattern: docker exec gcc "${installDir}/cpptestcli" -data ./BugDetective -config "${testConfig}" -bdf "${input}" -localsettings "${additionalParams}" -report "${reportDir}"
