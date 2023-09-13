@@ -59,7 +59,7 @@ jobs:
         testConfig: 'builtin://Flow Analysis Aggressive'
         reportFormat: xml,html,sarif
         input: './BugDetective/cpptestscan.bdf'
-        reportDir: './DevelopSampleProject/reports'
+        reportDir: './reports'
         additionalParams: './cpptestcli.properties'
         commandLinePattern: docker exec gcc "${installDir}/cpptestcli" -data ./ -config "${testConfig}" -bdf "${input}" -localsettings "${additionalParams}" -report "${reportDir}"
 
