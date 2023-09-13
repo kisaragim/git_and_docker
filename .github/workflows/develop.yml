@@ -23,6 +23,10 @@ jobs:
       run: |
          pwd
          ls 
+         
+    - name: start_container
+      run: |
+         docker run --name gcc --workdir=/home/keio/actions-runner/develop_work/git_and_docker/git_and_docker/DevelopSampleProject -itd -v /home/keio/actions-runner/develop_work/git_and_docker/git_and_docker:/home/keio/actions-runner/develop_work/git_and_docker/git_and_docker -v /opt/app/parasoft/cpptest:/opt/app/parasoft/cpptest -v /home/keio/git_and_docker_cpptest/git_and_docker/DevelopSampleProject:/home/keio/git_and_docker_cpptest/git_and_docker/DevelopSampleProject gcc 
 
     - name: Generate BDF
       env: 
@@ -54,7 +58,11 @@ jobs:
         reportDir: './DevelopSampleProject/reports'
         additionalParams: './cpptestcli.properties'
         commandLinePattern: docker exec gcc "${installDir}/cpptestcli" -data ./ -config "${testConfig}" -bdf "${input}" -localsettings "${additionalParams}" -report "${reportDir}"
-        
+
+    - name: remove_container
+      run: |
+         docker stop gcc 
+         docker rm gcc
 
     # Uploads analysis results in the SARIF format, so that they are displayed as GitHub code scanning alerts.
     - name: Upload results (SARIF)
