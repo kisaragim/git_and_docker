@@ -16,6 +16,10 @@ jobs:
     runs-on: docker_label-1
 
     steps:
+    - name: delete_dir
+      run: |
+         sudo rm -rf /home/keio/actions-runner/develop_work/git_and_docker/git_and_docker
+
     - name: Checkout code
       uses: actions/checkout@v3
     
