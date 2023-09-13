@@ -1,6 +1,0 @@
-fileName=/home/keio/git_and_docker_cpptest/git_and_docker/DevelopSampleProject/BugDetective/unreachableCode.c
-isCpp=
-compilerOpts=-I/opt/app/parasoft/cpptest/bin/engine/runtime/include -DPARASOFT_CPPTEST
-compilerId=gcc_11-64
-workingDir=/home/keio/git_and_docker_cpptest/git_and_docker/DevelopSampleProject/BugDetective
-advancedOptionsHash=1237154733

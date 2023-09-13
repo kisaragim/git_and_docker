@@ -1,1 +1,0 @@
-[ERROR] [05:57:58,005] Non existing .opts file entered: ./DevelopSampleProject/BugDetective/cpptestscan.bdf at com.parasoft.xtest.checkers.eclipse.core.cpp.internal.cli8.CppCliWorkspaceSetup.importBdf(CppCliWorkspaceSetup.java:362)
