@@ -13,7 +13,7 @@ permissions: write-all
 jobs:
   test-cpptest:
     name: Analyze project with C/C++test
-    runs-on: docker_label-1
+    runs-on: self-hosted
 
     steps:
     - name: delete_dir
