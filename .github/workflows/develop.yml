@@ -16,9 +16,9 @@ jobs:
     runs-on: develop_work
 
     steps:
-    - name: delete_dir
-      run: |
-         rm -rf /home/keio/actions-runner/develop_work/git_and_docker/git_and_docker/DevelopSampleProject
+    #- name: delete_dir
+    #  run: |
+    #     rm -rf /home/keio/actions-runner/develop_work/git_and_docker/git_and_docker/DevelopSampleProject
 
     - name: Checkout code
       uses: actions/checkout@v3
