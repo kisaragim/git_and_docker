@@ -30,7 +30,7 @@ jobs:
          
     - name: start_container
       run: |
-         docker run --name gcc --workdir=/home/keio/actions-runner/_work/git_and_docker/git_and_docker/DevelopSampleProject -itd -v /home/keio/actions-runner/develop_work/git_and_docker/git_and_docker:/home/keio/actions-runner/develop_work/git_and_docker/git_and_docker -v /opt/app/parasoft/cpptest:/opt/app/parasoft/cpptest -v /home/keio/git_and_docker_cpptest/git_and_docker/DevelopSampleProject:/home/keio/git_and_docker_cpptest/git_and_docker/DevelopSampleProject gcc 
+         docker run --name gcc --workdir=/home/keio/actions-runner/_work/git_and_docker/git_and_docker/DevelopSampleProject -itd -v /home/keio/actions-runner/_work/git_and_docker/git_and_docker:/home/keio/actions-runner/_work/git_and_docker/git_and_docker -v /opt/app/parasoft/cpptest:/opt/app/parasoft/cpptest -v /home/keio/git_and_docker_cpptest/git_and_docker/DevelopSampleProject:/home/keio/git_and_docker_cpptest/git_and_docker/DevelopSampleProject gcc 
 
     - name: Generate BDF
       env: 
