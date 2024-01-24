@@ -36,7 +36,7 @@ jobs:
       env: 
         CPPTEST_SCAN_PROJECT_NAME: DevelopSampleProject
       run: |
-           docker exec gcc /opt/app/parasoft/cpptest/bin/cpptesttrace make all
+           docker exec gcc /opt/app/parasoft/cpptest/bin/cpptesttrace make clean all
 
       working-directory: ./DevelopSampleProject
       
