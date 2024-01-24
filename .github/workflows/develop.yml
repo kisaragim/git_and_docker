@@ -13,7 +13,7 @@ permissions: write-all
 jobs:
   test-cpptest:
     name: Analyze project with C/C++test
-    runs-on: self-hosted
+    runs-on: develop_work
 
     steps:
     - name: delete_dir
