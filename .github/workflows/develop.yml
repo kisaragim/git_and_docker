@@ -13,12 +13,12 @@ permissions: write-all
 jobs:
   test-cpptest:
     name: Analyze project with C/C++test
-    runs-on: develop_work
+    runs-on: self-hosted
 
     steps:
     - name: delete_dir
       run: |
-         rm -rf /home/keio/actions-runner/develop_work/git_and_docker/git_and_docker/DevelopSampleProject
+         sudo rm -rf /home/keio/actions-runner/develop_work/git_and_docker/git_and_docker/DevelopSampleProject
 
     - name: Checkout code
       uses: actions/checkout@v3
