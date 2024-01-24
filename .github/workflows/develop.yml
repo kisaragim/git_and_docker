@@ -18,7 +18,7 @@ jobs:
     steps:
     - name: delete_dir
       run: |
-         sudo rm -rf /home/keio/actions-runner/develop_work/git_and_docker/git_and_docker/DevelopSampleProject
+         rm -rf /home/keio/actions-runner/develop_work/git_and_docker/git_and_docker/DevelopSampleProject
 
     - name: Checkout code
       uses: actions/checkout@v3
